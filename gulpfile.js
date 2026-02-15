@@ -212,7 +212,7 @@ gulp.task('default', gulp.series(
 
 
 // BUILD
-gulp.task('default', gulp.series(
+gulp.task('build', gulp.series(
   'clean',
   'copy',
   gulp.parallel(
