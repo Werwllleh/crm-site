@@ -1,0 +1,30 @@
+mixin aboutSteps(title, items, lastCard)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //about-steps
+    .about-steps&attributes(attributes)
+        p.h2.about-steps__title= title
+        if items && items.length
+          ul.about-steps__list
+              for item in items
+                li.about-steps__item
+                    p.about-steps__item--title= item.title
+                    span.about-steps__item--index= item.index
+                    p.about-steps__item--text= item.text
+              if !lastCard && items.length < 6
+                  li.about-steps__item.plug
+                      p.about-steps__item--title
+                        | Обсудим
+                        br
+                        | интеграцию?
+                      .about-steps__item--footer
+                        button(data-modal="analysis").btn.primary.medium Написать нам
+              if lastCard
+                  li.about-steps__item.plug
+                      p.about-steps__item--title= lastCard.title
+                      .about-steps__item--footer
+                          button(data-modal=lastCard.modal).btn.primary.medium= lastCard.buttonText
+
+

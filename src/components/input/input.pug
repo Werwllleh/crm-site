@@ -1,0 +1,13 @@
+mixin input(name, placeholder, error, className, inputmode, type)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regLibrary('', 'input-mask/input-mask.js')
+    //input
+    label.input-field&attributes(attributes)
+        input(name=name, type=type ? type : 'text', inputmode=inputmode ? inputmode : '', class=className ? className : '', autocomplete="on")
+        span.input-field__placeholder= placeholder
+        if error
+            span.input-field__error= error
+        span.input-field__verified
+            +svg("input-verified")

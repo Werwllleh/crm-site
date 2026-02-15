@@ -1,0 +1,311 @@
+mixin tariff(title)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //tariff
+    .tariff&attributes(attributes)
+        p.h2.tariff__title= title
+        .tariff__body
+            .tariff__type-select
+                .segmented
+                    input.segmented__input(type="hidden", value="box-bitrix")
+                    .segmented__wrap
+                        button(data-value="box-bitrix").segmented__item.active Коробочная версия
+                        button(data-value="cloud-bitrix").segmented__item Облачная версия
+                        span.segmented__thumb
+            .tariff__content.container
+                .tariff__type-data.active(data-value="box-bitrix")
+                    .tariff__items.swiper
+                        .swiper-wrapper
+                            .swiper-slide
+                                .tariff-card
+                                    .tariff-card__body
+                                        p.tariff-card__title Интернет магазин + CRM
+                                        .tariff-card__values
+                                            .tariff-card__users
+                                                span 12
+                                                p Пользователей
+                                        .tariff-card__price
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 109 000 ₽
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 92 650 ₽/год
+                                                span.tariff-card__price--discount -15%
+                                        ul.tariff-card__options
+                                            li Экстранет
+                                            li eCommerce-платформа
+                                            li CoPilot
+                                            li Онлайн-запись
+                                            li.disabled Документы Онлайн
+                                            li.disabled Кадровый документооборот
+                                            li.disabled Многодепартаментность
+                                            li.disabled Веб-кластер
+                                            li.disabled VIP поддержка 24/7
+                                        button(data-modal="license").btn.primary.medium.tariff-card__buy-button Купить лицензию
+
+                            .swiper-slide
+                                .tariff-card.dark
+                                    span.tariff-card__label Популярный
+                                    .tariff-card__body
+                                        p.tariff-card__title Корпоративный портал
+                                        .tariff-card__segmented
+                                            .segmented
+                                                input.segmented__input(type="hidden", value="50")
+                                                .segmented__wrap
+                                                    button(data-value="50").segmented__item.active 50
+                                                    button(data-value="100").segmented__item 100
+                                                    button(data-value="250").segmented__item 250
+                                                    button(data-value="500").segmented__item 500
+                                                    span.segmented__thumb
+                                            p Пользователей
+                                        .tariff-card__price(data-segment-content="50")
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 159 000 ₽
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 135 150 ₽/год
+                                                span.tariff-card__price--discount -15%
+                                        .tariff-card__price(data-segment-content="100").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 229 000 ₽
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 194 650 ₽/год
+                                                span.tariff-card__price--discount -15%
+                                        .tariff-card__price(data-segment-content="250").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 349 000 ₽
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 296 650 ₽/год
+                                                span.tariff-card__price--discount -15%
+                                        .tariff-card__price(data-segment-content="500").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 599 000 ₽
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 509 150 ₽/год
+                                                span.tariff-card__price--discount -15%
+                                        ul.tariff-card__options
+                                            li Экстранет
+                                            li eCommerce-платформа
+                                            li CoPilot
+                                            li Онлайн-запись
+                                            li Документы Онлайн
+                                            li Кадровый документооборот
+                                            li.disabled Многодепартаментность
+                                            li.disabled Веб-кластер
+                                            li.disabled VIP поддержка 24/7
+                                        button(data-modal="license").btn.primary.medium.tariff-card__buy-button Купить лицензию
+
+                            .swiper-slide
+                                .tariff-card
+                                    .tariff-card__body
+                                        p.tariff-card__title Энтерпрайз
+                                        .tariff-card__values
+                                            .tariff-card__users
+                                                span 1 000+
+                                                p Пользователей
+                                        .tariff-card__price
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 1 299 000 ₽/год
+                                                span.tariff-card__price--discount -15%
+                                        ul.tariff-card__options
+                                            li Экстранет
+                                            li eCommerce-платформа
+                                            li CoPilot
+                                            li Онлайн-запись
+                                            li Документы Онлайн
+                                            li Кадровый документооборот
+                                            li Многодепартаментность
+                                            li Веб-кластер
+                                            li VIP поддержка 24/7
+                                        button(data-modal="license").btn.primary.medium.tariff-card__buy-button Купить лицензию
+
+                .tariff__type-data(data-value="cloud-bitrix")
+                    .tariff__items.swiper
+                        .swiper-wrapper
+                            .swiper-slide
+                                .tariff-card
+                                    .tariff-card__body
+                                        p.tariff-card__title Базовый
+                                        p.tariff-card__description CRM для совместной работы небольших отделов продаж
+                                        .tariff-card__values
+                                            .tariff-card__users
+                                                span 5
+                                                p Пользователей
+                                            .tariff-card__memory
+                                                span 24 ГБ
+                                                p Облачный диск
+                                        .tariff-card__price
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 2 490 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 23 880 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        button(data-modal="license").btn.primary.medium.tariff-card__buy-button Купить лицензию
+                            .swiper-slide
+                                .tariff-card
+                                    .tariff-card__body
+                                        p.tariff-card__title Стандартный
+                                        p.tariff-card__description Для совместной работы всей компании  или рабочих групп
+                                        .tariff-card__values
+                                            .tariff-card__users
+                                                span 50
+                                                p Пользователей
+                                            .tariff-card__memory
+                                                span 100 ГБ
+                                                p Облачный диск
+                                        .tariff-card__price
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 6 990 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 67 080 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        button(data-modal="license").btn.primary.medium.tariff-card__buy-button Купить лицензию
+
+                            .swiper-slide
+                                .tariff-card.dark
+                                    span.tariff-card__label Популярный
+                                    .tariff-card__body
+                                        p.tariff-card__title Профессиональный
+                                        p.tariff-card__description Для максимальной автоматизации всех процессов в компании
+                                        .tariff-card__values
+                                            .tariff-card__users
+                                                span 100
+                                                p Пользователей
+                                            .tariff-card__memory
+                                                span 1024 ГБ
+                                                p Облачный диск
+                                        .tariff-card__price
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 13 990 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 134 280 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        button(data-modal="license").btn.primary.medium.tariff-card__buy-button Купить лицензию
+
+                            .swiper-slide
+                                .tariff-card.blue
+                                    .tariff-card__body
+                                        p.tariff-card__title Энтерпрайз
+                                        p.tariff-card__description Для цифровизации крупного и среднего бизнеса на максимальных скоростях
+                                        .tariff-card__values
+                                            .tariff-card__users.select
+                                                span
+                                                    span.select__value 500
+                                                    span.select__icon
+                                                        +svg("arrow-up")
+                                                p Пользователей
+                                                ul.select__list
+                                                    li(data-select-value="500").selected 500
+                                                    li(data-select-value="1000") 1&nbsp;000
+                                                    li(data-select-value="2000") 2&nbsp;000
+                                                    li(data-select-value="3000") 3&nbsp;000
+                                                    li(data-select-value="4000") 4&nbsp;000
+                                                    li(data-select-value="5000") 5&nbsp;000
+                                                    li(data-select-value="6000") 6&nbsp;000
+                                                    li(data-select-value="7000") 7&nbsp;000
+                                                    li(data-select-value="8000") 8&nbsp;000
+                                                    li(data-select-value="9000") 9&nbsp;000
+                                                    li(data-select-value="10000") 10&nbsp;000
+                                            .tariff-card__memory
+                                                .tariff-card__memory--item(data-select-content="500")
+                                                    span 1 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="1000").hide
+                                                    span 10 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="2000").hide
+                                                    span 20 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="3000").hide
+                                                    span 30 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="4000").hide
+                                                    span 40 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="5000").hide
+                                                    span 50 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="6000").hide
+                                                    span 60 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="7000").hide
+                                                    span 70 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="8000").hide
+                                                    span 80 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="9000").hide
+                                                    span 90 ТБ
+                                                    p Облачный диск
+                                                .tariff-card__memory--item(data-select-content="10000").hide
+                                                    span 100 ТБ
+                                                    p Облачный диск
+                                        .tariff-card__price(data-select-content="500")
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 35 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 431 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="1000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 59 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 719 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="2000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 119 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 1 439 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="3000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 179 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 2 159 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="4000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 239 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 2 899 400 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="5000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 299 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 3 599 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="6000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 359 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 4 319 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="7000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 419 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 5 039 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="8000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 479 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 5 759 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="9000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 539 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 6 479 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        .tariff-card__price(data-select-content="10000").hide
+                                            .tariff-card__price--top
+                                                span.tariff-card__price--crossed 599 994 ₽/мес
+                                            .tariff-card__price--bottom
+                                                span.tariff-card__price--current 7 199 928 ₽/год
+                                                span.tariff-card__price--discount -20%
+                                        button(data-modal="license").btn.primary.medium.tariff-card__buy-button Купить лицензию

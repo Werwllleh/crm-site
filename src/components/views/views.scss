@@ -1,0 +1,35 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// views
+.views {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    color: $grey-blue;
+  }
+
+  &__value {
+    font-weight: 450;
+    font-size: 13px;
+    line-height: 1;
+    color: $grey-blue;
+    white-space: nowrap;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    span {
+      display: none;
+
+      @include semiDesktop {
+        display: inline;
+      }
+    }
+  }
+}

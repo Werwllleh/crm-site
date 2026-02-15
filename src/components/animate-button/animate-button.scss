@@ -1,0 +1,97 @@
+@use '../../app/scss/variables.scss' as *;
+
+// animate-button
+.animate-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: $white;
+  border-radius: 100%;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color $transition-default;
+
+  &:hover {
+    background-color: $blue;
+
+    .icon {
+      color: $white;
+
+      &:nth-child(2) {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .icon {
+    width: 15px;
+    height: 14px;
+    color: $grey-blue;
+    transition: opacity $transition-default, visibility $transition-default, transform $transition-default, color $transition-default;
+
+    &:nth-child(1) {
+
+    }
+
+    &:nth-child(2) {
+      color: $white;
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &.prev {
+    .icon {
+      &:nth-child(1) {
+        transform: translateX(0);
+      }
+
+      &:nth-child(2) {
+        transform: translateX(250%);
+      }
+    }
+
+    &:hover {
+      .icon {
+        &:nth-child(1) {
+          transform: translateX(-250%);
+        }
+
+        &:nth-child(2) {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  &.next {
+    .icon {
+      &:nth-child(1) {
+        transform: translateX(0);
+      }
+
+      &:nth-child(2) {
+        transform: translateX(-250%);
+      }
+    }
+
+    &:hover {
+      .icon {
+        &:nth-child(1) {
+          transform: translateX(250%);
+        }
+
+        &:nth-child(2) {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+mixin headerSearch()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //header-search
+    .header-search&attributes(attributes)
+        .header-search__container.container
+            .header-search__body
+                .header-search__top
+                    .header-search__form
+                        form(data-form="search")
+                            .header-search__form_input
+                                input(name="search", placeholder="Поиск по сайту")
+                                button(type="button").clean-button
+                                    +svg("close")
+                            span.header-search__form_note Начните вводить, чтобы начать поиск
+                .header-search__results
+                    ul.header-search__results_list
+                        li
+                            .header-search__result
+                                a(href="#").header-search__result_link
+                                span.header-search__result_arrow
+                                    +svg("arrow45")
+                                    +svg("arrow45")
+                                .header-search__result_left
+                                    p.header-search__result_category Услуги
+                                .header-search__result_right
+                                    p.header-search__result_title Внедрение CRM системы
+                                    p.header-search__result_text Автоматизация B2B-дистрибуции. Помогаем выводить B2B-продажи в нлайн и провести цифровизацию бизнес-процессов. Интегрируем с CRM, ERP, MDM и другими системами. С помощью продуманных сервисов с отраслевой спецификой повышаем продажи компании и оптимизируем работу менеджеров.
+                        li
+                            .header-search__result
+                                a(href="#").header-search__result_link
+                                span.header-search__result_arrow
+                                    +svg("arrow45")
+                                    +svg("arrow45")
+                                .header-search__result_left
+                                    p.header-search__result_category Отрасли
+                                .header-search__result_right
+                                    p.header-search__result_title B2B
+                                    p.header-search__result_text Автоматизация B2B-дистрибуции. Помогаем выводить B2B-продажи в нлайн и провести цифровизацию бизнес-процессов. Интегрируем с CRM, ERP, MDM и другими системами. С помощью продуманных сервисов с отраслевой спецификой повышаем продажи компании и оптимизируем работу менеджеров.
+                        li
+                            .header-search__result
+                                a(href="#").header-search__result_link
+                                span.header-search__result_arrow
+                                    +svg("arrow45")
+                                    +svg("arrow45")
+                                .header-search__result_left
+                                    p.header-search__result_category Решения
+                                .header-search__result_right
+                                    p.header-search__result_title Разработка внедрение системы управления продажами
+                                    p.header-search__result_text Автоматизация бизнес-процессов до 30% сокращает ручной труд и бумажный документооборот. Автоматизирует процессы подачи заявок на больничные и отпуска...
+                        li
+                            .header-search__result
+                                a(href="#").header-search__result_link
+                                span.header-search__result_arrow
+                                    +svg("arrow45")
+                                    +svg("arrow45")
+                                .header-search__result_left
+                                    p.header-search__result_category Кейсы
+                                .header-search__result_right
+                                    p.header-search__result_title Автоматизация бизнес-процессов для вертикально-интегрированной нефтяной компании
+                                    p.header-search__result_text Один из лидеров российского топливно-энергетического комплекса. Компания занимается разведкой и разработкой месторождений нефти и газа, а также нефтепереработкой, производством и сбытом нефтепродуктов...
+                        li
+                            .header-search__result
+                                a(href="#").header-search__result_link
+                                span.header-search__result_arrow
+                                    +svg("arrow45")
+                                    +svg("arrow45")
+                                .header-search__result_left
+                                    p.header-search__result_category Услуги 2
+                                .header-search__result_right
+                                    p.header-search__result_title Автоматизация бизнес-процессов для вертикально-интегрированной нефтяной компании
+                                    p.header-search__result_text Один из лидеров российского топливно-энергетического комплекса. Компания занимается разведкой и разработкой месторождений нефти и газа, а также нефтепереработкой, производством и сбытом нефтепродуктов...

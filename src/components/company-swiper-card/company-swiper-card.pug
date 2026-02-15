@@ -1,0 +1,18 @@
+mixin companySwiperCard(image, name)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //company-swiper-card
+    .company-swiper-card&attributes(attributes)
+        .company-swiper-card__body
+            span.company-swiper-card__arrow
+                p.company-swiper-card__arrow-text Смотреть кейсы
+                span.company-swiper-card__arrow-icon
+                    +svg("arrow2")
+                    +svg("arrow2")
+            .company-swiper-card__logo
+                img(src=`./images/logos/${image}`)
+            a(href="#").company-swiper-card__link
+            .company-swiper-card__bg
+                p.company-swiper-card__name= name

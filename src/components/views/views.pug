@@ -1,0 +1,11 @@
+mixin views()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //views
+    span.views&attributes(attributes)
+        +svg("eye")
+        span.views__value
+            | 148
+            span &nbsp;просмотров

@@ -1,0 +1,38 @@
+@use '../../app/scss/variables.scss' as *;
+
+// be-interested
+.be-interested {
+
+  &__body {}
+
+  &__title {}
+
+  &__swiper {
+    margin-top: 30px;
+
+    .swiper {
+
+      .swiper-wrapper {
+        align-items: stretch;
+      }
+
+      .swiper-slide {
+        width: auto;
+        height: auto;
+
+        .material-card {
+          height: 100%;
+          max-width: 270px;
+
+          .material-card__image {
+            height: 182px;
+          }
+
+          .material-card__tags {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

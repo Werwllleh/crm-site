@@ -1,0 +1,256 @@
+mixin pricingPlans(title)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //tariff-table
+    .pricing-plans&attributes(attributes)
+        p.h2.pricing-plans__title= title
+        .pricing-plans__content
+            .pricing-plans__table-wrap
+                table.pricing-plans__table
+                    thead
+                        tr
+                            th
+                            th
+                                span Старт
+                            th
+                                span Базовый
+                            th
+                                span Расширенный
+                            th
+                                span Профессиональный
+                    tr
+                        td Создание портала Битрикс24
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Подключение сотрудников к порталу
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Создание структуры компании
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Настройка ролей и прав сотрудников в CRM
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Настройка статусов воронки лидов
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Настройка стадий воронок сделок (количество воронок)
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Настройка стадий воронок сделок (количество воронок)
+                        td 2
+                        td 2
+                        td 4
+                        td 6
+                    tr
+                        td Настройка пользовательских полей в сущностях Лид, Сделка, Контакт, Компания
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Настройка автоматических действий (количество триггеров и роботов на одну воронку)
+                        td
+                            +svg("dash")
+                        td 5
+                        td 10
+                        td 15
+                    tr
+                        td Подключение социальных сетей как источников лидогенерации и каналов коммуникации в пределах штатных возможностей Битрикс24
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Подключение мессенджеров (WhatsApp, Telegram) как источников лидогенерации и каналов коммуникации в пределах штатных возможностей Битрикс24
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Подключение корпоративной почты компании
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Подключение рабочих почт сотрудников
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Настройка и интеграция IP телефонии (кроме Asterisk)
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Подключение SMS-сервиса
+                        td
+                            +svg("dash")
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Подключение и настройка онлайн-чата Битрикс24 для сайта заказчика
+                        td
+                            +svg("dash")
+                        td
+                            +svg("dash")
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                    tr
+                        td Создание, настройка и подключение форм обратной связи для сайта с помощью CRM-форм Битрикс24 на сайт заказчика
+                        td
+                            +svg("dash")
+                        td
+                            +svg("dash")
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                    tr
+                        td Подключение VK Leads как каналов лидогенерации в CRM Битрикс24 стандартными возможностями
+                        td
+                            +svg("dash")
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Создание и настройка отчетов на основе полей CRM в пределах стандартных возможностей Битрикс24
+                        td
+                            +svg("dash")
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Настройка штатной CRM-аналитики Битрикс24
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tr
+                        td Генерация документов (количество шаблонов)
+                        td
+                            +svg("dash")
+                        td
+                            +svg("dash")
+                        td 3
+                        td 5
+                    tr
+                        td Онлайн-обучение сотрудников заказчика работе в настроенном портале Битрикс24 (количество часов)
+                        td 1
+                        td 1
+                        td 1
+                        td 2
+                    tr
+                        td Создание индивидуальных обучающих материалов для работы сотрудников
+                        td
+                            +svg("dash")
+                        td
+                            +svg("dash")
+                        td
+                            +svg("check")
+                        td
+                            +svg("check")
+                    tfoot
+                        tr
+                            td Стоимость
+                            td 25 000 ₽
+                            td 50 000 ₽
+                            td 75 000 ₽
+                            td 100 000 ₽
+                        tr
+                            td
+                            td
+                                button(data-modal="consultation").btn.primary.medium Заказать
+                            td
+                                button(data-modal="consultation").btn.primary.medium Заказать
+                            td
+                                button(data-modal="consultation").btn.primary.medium Заказать
+                            td
+                                button(data-modal="consultation").btn.primary.medium Заказать

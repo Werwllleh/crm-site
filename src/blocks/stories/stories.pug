@@ -1,0 +1,77 @@
+mixin stories()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    //stories
+    .stories&attributes(attributes)
+        .stories__wrapper
+            .swiper.stories__swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        .story-card
+                            .story-card__body
+                                img(src="./images/stories1.png", alt="").story-card__logo
+                                p.story-card__text Компания «Богословский кабельный завод» благодарит ООО «Медиаворкс» за быстрое внедрение портала Б24 и оперативную тех. поддержку по всем вопросам. Благодаря вашим усилиям нам удалось структурировать внутренние процессы в отделах, что значительно повысило их эффективность.
+                                .story-card__author
+                                    p.story-card__name Ирина Лимитовская
+                                    p.story-card__post Руководитель отдела маркетинга ООО&nbsp;“Богословский&nbsp;кабельный&nbsp;завод”
+                                span.story-card__more
+                                    +svg("plus")
+                                .story-card__overlay-img(data-src="./images/story-card__overlay-img.png", data-lightgallery)
+                                    a(href="./images/story-card-img/photo-full.webp")
+                                        img(src="./images/story-card-img/photo.webp", alt="")
+                    .swiper-slide
+                        .story-card
+                            .story-card__body
+                                img(src="./images/stories2.png", alt="").story-card__logo
+                                p.story-card__text Швейная фабрика «Бинита» благодарит Медиаворкс за комплекс работ по репрезентации бренда компании в цифровой среде. За год сотрудничества команда Медиворкс разработала новый корпоративный сайт, а также провела аудит, переработала структуру и сделала редизайн внутреннего портала компании.
+                                .story-card__author
+                                    p.story-card__name Нина Семенова
+                                    p.story-card__post Директор ООО "Бинита"
+                                span.story-card__more
+                                    +svg("plus")
+                                .story-card__overlay-img(data-src="./images/story-card__overlay-img.png", data-lightgallery)
+                                    a(href="./images/story-card-img/photo-full.webp")
+                                        img(src="./images/story-card-img/photo.webp", alt="")
+                    .swiper-slide
+                        .story-card
+                            .story-card__body
+                                img(src="./images/stories3.png", alt="").story-card__logo
+                                p.story-card__text Компания «Склад рядом» благодарит digital-агентство Медиаворкс за проделанную работу по проектированию, дизайну и разработке сайта жилого комплекса «Новые академики».
+                                .story-card__author
+                                    p.story-card__name Артем Викторович
+                                    p.story-card__post Коммерческий директор ИП “Замараев Артем Викторович”
+                                span.story-card__more
+                                    +svg("plus")
+                                .story-card__overlay-img(data-src="./images/story-card__overlay-img.png", data-lightgallery)
+                                    a(href="./images/story-card-img/photo-full.webp")
+                                        img(src="./images/story-card-img/photo.webp", alt="")
+                    .swiper-slide
+                        .story-card
+                            .story-card__body
+                                img(src="./images/stories2.png", alt="").story-card__logo
+                                p.story-card__text Швейная фабрика «Бинита» благодарит Медиаворкс за комплекс работ по репрезентации бренда компании в цифровой среде. За год сотрудничества команда Медиворкс разработала новый корпоративный сайт, а также провела аудит, переработала структуру и сделала редизайн внутреннего портала компании.
+                                .story-card__author
+                                    p.story-card__name Нина Семенова
+                                    p.story-card__post Директор ООО "Бинита"
+                                span.story-card__more
+                                    +svg("plus")
+                                .story-card__overlay-img(data-src="./images/story-card__overlay-img.png", data-lightgallery)
+                                    a(href="./images/story-card-img/photo-full.webp")
+                                        img(src="./images/story-card-img/photo.webp", alt="")
+                    .swiper-slide
+                        .story-card
+                            .story-card__body
+                                img(src="./images/stories3.png", alt="").story-card__logo
+                                p.story-card__text Компания «Склад рядом» благодарит digital-агентство Медиаворкс за проделанную работу по проектированию, дизайну и разработке сайта жилого комплекса «Новые академики».
+                                .story-card__author
+                                    p.story-card__name Артем Викторович
+                                    p.story-card__post Коммерческий директор ИП “Замараев Артем Викторович”
+                                span.story-card__more
+                                    +svg("plus")
+                                .story-card__overlay-img(data-src="./images/story-card__overlay-img.png", data-lightgallery)
+                                    a(href="./images/story-card-img/photo-full.webp")
+                                        img(src="./images/story-card-img/photo.webp", alt="")
+                .stories__swiper_footer
+                    .stories__swiper_pagination

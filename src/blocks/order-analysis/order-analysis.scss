@@ -1,0 +1,135 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// order-analysis
+.order-analysis {
+  border-radius: 20px;
+  border: 6px solid $background;
+  background-color: $background;
+
+  @include semiDesktop {
+    border-width: 8px;
+    background-color: transparent;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: stretch;
+
+    @include semiDesktop {
+      grid-template-columns: 1fr .8fr;
+    }
+
+    @include laptop {
+      grid-template-columns: 1fr .6fr;
+    }
+
+  }
+
+  &__left {
+    padding: 30px 22px;
+    border-radius: 20px;
+    background-color: $white;
+
+    @include semiDesktop {
+      padding: 40px;
+      background-color: transparent;
+    }
+
+    &_body {}
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: $black;
+
+    @include desktop {
+      font-size: 34px;
+    }
+
+    @include laptop {
+      font-size: 44px;
+    }
+
+    span {
+      color: $light-grey;
+    }
+  }
+
+  &__description {
+    margin-top: 16px;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.26;
+    color: $black;
+
+    @include semiDesktop {
+      margin-top: 20px;
+      font-size: 22px;
+    }
+  }
+
+  &__button {
+    margin-top: 60px;
+
+    @include semiDesktop {
+      margin-top: 200px;
+    }
+  }
+
+  &__right {
+    padding: 30px 22px;
+    background-color: $background;
+
+    @include semiDesktop {
+      padding: 40px;
+    }
+
+    &_body {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 60px;
+
+      @include semiDesktop {
+        gap: 10px;
+      }
+    }
+
+    &_top {
+      max-width: 412px;
+    }
+
+    &_bottom {
+      margin-top: auto;
+      max-width: 300px;
+
+      p {
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 1.26;
+        color: $light-grey;
+
+        @include semiDesktop {
+          font-size: 16px;
+        }
+      }
+
+      a.btn {
+        border-color: $blue;
+
+        .icon {
+          color: $blue;
+        }
+
+        span {
+          color: $blue;
+        }
+      }
+    }
+  }
+}

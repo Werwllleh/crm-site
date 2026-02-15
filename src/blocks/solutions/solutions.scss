@@ -1,0 +1,292 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// solutions
+.solutions {
+
+  &__grid {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: stretch;
+
+    @include tablet {
+      grid-template-columns: .6fr 1fr;
+      gap: 50px;
+      justify-content: space-between;
+    }
+
+    @include w1250 {
+      gap: 100px;
+    }
+  }
+
+  &__nav {}
+
+  &__list {
+  }
+
+  &__item {}
+
+  &__link {
+    position: relative;
+    padding-block: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    overflow: hidden;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      transition: width $transition-default;
+    }
+
+    &::before {
+      width: 100%;
+      background-color: $line-grey;
+    }
+
+    &::after {
+      width: 0;
+      background-color: $blue;
+    }
+
+    &.active,
+    &:hover {
+
+      @include tablet {
+        &::after {
+          width: 100%;
+        }
+
+        p {
+          color: $blue;
+        }
+
+        span {
+          .icon {
+            transform: rotate(0);
+            color: $blue;
+          }
+        }
+      }
+
+    }
+
+    p {
+      font-weight: 450;
+      font-size: 18px;
+      line-height: 1.24;
+      color: $text;
+      max-width: 350px;
+      transition: color $transition-default;
+    }
+
+    span {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon {
+      width: 19px;
+      height: 19px;
+      color: $line-grey;
+      transform: rotate(-45deg);
+      transition: transform $transition-default, color $transition-default;
+    }
+  }
+
+  &__cards {
+    display: none;
+    position: relative;
+    background: #101a30;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include tablet {
+      display: block;
+    }
+
+    &_bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  &__card {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-default, visibility $transition-default;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+
+      .solutions__card_title {
+        animation: showCardTitle 1s ease-in-out forwards;
+      }
+
+      .solutions__card_list {
+        animation: showCardList 1s ease-in-out forwards;
+      }
+
+      .solutions__card_image {
+        animation: showCardImage 1s ease-in-out forwards;
+      }
+    }
+
+    &_body {
+      padding: 30px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      height: 100%;
+    }
+
+    &_title {
+      position: relative;
+      z-index: 1;
+      color: $white;
+      max-width: 750px;
+      animation: hideCardTitle 1s ease-in-out;
+    }
+
+    &_list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      max-width: max-content;
+      transform-style: preserve-3d;
+      transform-origin: top center;
+      perspective: 800px;
+      animation: hideCardList 1s ease-in-out forwards;
+
+      li {
+        position: relative;
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 1.4;
+        color: $white;
+        padding-left: 25px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto 0;
+          width: 6px;
+          height: 6px;
+          background-color: $blue;
+          border-radius: 100%;
+        }
+      }
+    }
+
+    &_image {
+      position: absolute;
+      top: 35px;
+      right: 35px;
+      bottom: 35px;
+      max-width: 350px;
+      margin: auto 0;
+      z-index: 0;
+      pointer-events: none;
+      animation: hideCardImage 1s ease-in-out;
+
+
+      @include w1250 {
+        top: auto;
+        right: 65px;
+        bottom: 65px;
+        max-width: 500px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@keyframes hideCardTitle {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes showCardTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hideCardImage {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(.85);
+  }
+}
+
+@keyframes showCardImage {
+  from {
+    opacity: 0;
+    transform: scale(.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hideCardList {
+  from {
+    opacity: 1;
+    transform: rotateX(0deg) translateZ(0);
+  }
+  to {
+    opacity: 0;
+    transform: rotateX(30deg) translateZ(-100px);
+  }
+}
+
+@keyframes showCardList {
+  from {
+    opacity: 0;
+    transform: rotateX(30deg) translateZ(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0deg) translateZ(0);
+  }
+}
+

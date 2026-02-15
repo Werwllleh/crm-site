@@ -1,0 +1,10 @@
+mixin date(d,m,y)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //date
+    time.date(datetime=`${y}-${m}-${d}`)&attributes(attributes)
+        span= d
+        span= m
+        span= y

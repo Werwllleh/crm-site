@@ -1,0 +1,113 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// technologies
+.technologies {
+
+  &__body {}
+
+  &__categories {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "frontend"
+                          "backend"
+                          "db"
+                          "nocode"
+                          "cms"
+                          "ai"
+                          "metrika";
+    gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "frontend backend"
+                          "frontend cms"
+                          "db db"
+                          "nocode ai"
+                          "metrika ai";
+    }
+
+    @include w1250 {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "frontend backend db"
+                          "frontend cms ai"
+                          "nocode metrika ai";
+    }
+  }
+
+  &__category {
+    border-radius: 16px;
+    padding: 30px;
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px 0;
+
+    &--title {
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #201d26;
+    }
+
+    &--list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      li {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 30px;
+        padding-block: 8px;
+        padding-inline: 10px 22px;
+        background-color: $white;
+        white-space: nowrap;
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 1.22222;
+        color: $text;
+
+        img {
+          flex: 0 0 auto;
+          width: 32px;
+          height: 32px;
+          border-radius: 100%;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &.frontend {
+      grid-area: frontend;
+    }
+
+    &.backend {
+      grid-area: backend;
+    }
+
+    &.db {
+      grid-area: db;
+    }
+
+    &.cms {
+      grid-area: cms;
+    }
+
+    &.nocode {
+      grid-area: nocode;
+    }
+
+    &.metrika {
+      grid-area: metrika;
+    }
+
+    &.ai {
+      grid-area: ai;
+    }
+  }
+}

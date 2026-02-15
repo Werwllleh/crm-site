@@ -1,0 +1,136 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins' as *;
+
+// instruction-set
+.instruction-set {
+  position: relative;
+  background: #101a30;
+  border-radius: $radius-lg;
+  padding: 22px;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 40px;
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: flex-start;
+    gap: 40px;
+
+    @include tablet {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &__left {
+  }
+
+  &__right {
+
+  }
+
+  &__docs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 14px;
+
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.24;
+    color: $white;
+
+    @include tablet {
+      font-size: 24px;
+    }
+
+    @include semiDesktop {
+      font-size: 26px;
+    }
+  }
+
+  &__text {
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $white;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include semiDesktop{
+      font-size: 18px;
+    }
+  }
+
+  &__doc {
+    flex: 1 1 auto;
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    align-items: flex-end;
+    gap: 10px;
+    margin-inline: auto;
+
+    @include tablet {
+      margin-inline: 0;
+      max-width: 320px;
+    }
+
+    &_info {
+
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.24;
+        color: $white;
+      }
+
+      span {
+        margin-top: 16px;
+        display: block;
+        font-weight: 450;
+        font-size: 13px;
+        line-height: 1.24;
+        color: $line-grey;
+      }
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    a {
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__download {
+    margin-top: 40px;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

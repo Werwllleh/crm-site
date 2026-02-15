@@ -1,0 +1,78 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// banner-help-selection
+.banner-help-selection {
+  border-radius: 20px;
+  background: $background;
+
+  &__body {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 25px;
+    padding: 20px 20px 30px 20px;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    @include semiDesktop {
+      padding: 60px;
+    }
+  }
+
+  &__info {
+
+    &--title {}
+
+    &--text {
+      margin-top: 16px;
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 1.4;
+      color: $text;
+      max-width: 780px;
+
+      @include tablet {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+
+      @include desktop {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+
+    @include desktop {
+      margin-top: 80px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      pointer-events: none;
+
+      @include tablet {
+        max-width: 420px;
+      }
+    }
+  }
+}

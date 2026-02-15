@@ -1,0 +1,23 @@
+mixin pagination(noPages)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //pagination
+    .pagination&attributes(attributes)
+        .pagination__body
+            button.pagination__show-more
+                span Показать еще
+                +svg('update')
+            if !noPages
+                .pagination__pages
+                    button.pagination__page.active
+                        span 1
+                    button.pagination__page
+                        span 2
+                    button.pagination__page
+                        span 3
+                    button.pagination__page.disable
+                        span ...
+                    button.pagination__page
+                        span 24

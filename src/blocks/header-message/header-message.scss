@@ -1,0 +1,186 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// header-message
+.header-message {
+  position: relative;
+  background: $blue-600;
+
+  &__body {}
+
+  &__marquee {
+    display: flex;
+    align-items: center;
+    animation: marquee 20s linear infinite;
+
+    @include semiDesktop {
+      justify-content: center;
+      animation: none;
+    }
+
+    &_inner {
+      padding-right: 50px;
+
+      @include semiDesktop {
+        padding-right: 0;
+      }
+
+      &:not(:first-child) {
+        display: block;
+
+        @include semiDesktop {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.live-demo {
+  padding: 10px 0;
+
+  @include semiDesktop {
+    padding: 12px 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    @include semiDesktop {
+      gap: 100px;
+    }
+  }
+
+  &__text {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 1;
+    color: $stroke;
+    white-space: nowrap;
+
+    @include semiDesktop {
+      font-size: 16px;
+    }
+
+  }
+
+  &__animate {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.25;
+    color: $white;
+    border-radius: 8px;
+    padding: 4px 6px 4px 25px;
+    background: #e63434;
+    margin-inline: 5px;
+    overflow: hidden;
+
+    @include semiDesktop {
+      font-size: 16px;
+      padding: 8px 12px 8px 25px;
+      border-radius: 10px;
+    }
+
+    .circle-triangle {
+
+    }
+  }
+
+  &__button-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__button {
+    padding-block: 7px !important;
+    pointer-events: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.circle-triangle {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  margin-block: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+
+  span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: $white;
+    border-radius: 100%;
+    position: relative;
+    animation: moveAndMorph 3s infinite ease-in-out;
+  }
+}
+
+/* Ключевые кадры */
+@keyframes moveAndMorph {
+  0% {
+    transform: translate(0, 0);
+    border-radius: 100%;
+    clip-path: none;
+  }
+  5% {
+    transform: translate(0, -10px);
+  }
+  10% {
+    transform: translate(0, 0);
+  }
+  15% {
+    transform: translate(0, -5px);
+  }
+  20% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(16px, 0);
+    border-radius: 100%;
+    clip-path: none;
+  }
+  40% {
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    border-radius: 0;
+  }
+  60% {
+    transform: translate(0, 0);
+  }
+  70% {
+    transform: translate(16px, 0);
+  }
+  80% {
+    border-radius: 100%;
+    clip-path: none;
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

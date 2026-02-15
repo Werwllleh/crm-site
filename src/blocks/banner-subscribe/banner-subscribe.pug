@@ -1,0 +1,26 @@
+mixin bannerSubscribe()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('animate-button', true, true)
+    +regComponent('checkbox', true)
+    //banner-subscribe
+    .banner-subscribe&attributes(attributes)
+        .banner-subscribe__body
+            .banner-subscribe__image
+                img(src="./images/message.png", alt="")
+            p.banner-subscribe__title Подпишись на рассылку
+            p.banner-subscribe__text Получайте актуальные материалы по автоматизации продаж и контролю бизнес процессов
+            form(data-form="form-subscribe").banner-subscribe__form
+                .banner-subscribe__form_field
+                    +input('email', 'E-mail', 'Некорректный E-mail', 'email')
+                    +animateButton('next')(type="submit").banner-subscribe__form_submit.next
+                .banner-subscribe__form_footer
+                    label.checkbox
+                        input.checkbox__input(type="checkbox", name="policy", value='ok')
+                        span.checkbox__label Соглашаюсь на получение новостной рассылки в соответствии с 
+                            a(href="#", target="_blank") Политикой
+        .banner-subscribe__bg
+            img(src="./images/banner-blur.svg", alt="")
+
+

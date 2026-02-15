@@ -1,0 +1,802 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// footer
+.footer {
+  position: relative;
+  overflow: hidden;
+  //background-color: #0C1323;
+
+  &__form {
+    position: relative;
+    z-index: 1;
+
+    &_grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      border: 8px solid $background;
+      background-color: $white;
+      border-radius: 20px;
+      padding: 30px 22px;
+
+      @include desktop {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        grid-template-columns: auto 1fr;
+        gap: 0 40px;
+      }
+
+      @include laptop {
+        gap: 0 80px;
+      }
+    }
+
+    &_left {
+
+      @include desktop {
+        margin-top: 60px;
+        max-width: 550px;
+      }
+    }
+
+    &_title {
+
+      span {
+        color: $light-grey;
+      }
+    }
+
+    &_text {
+      margin-top: 10px;
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 1.4;
+      color: $text;
+
+      @include desktop {
+        margin-top: 60px;
+        font-size: 20px;
+      }
+
+      @include w1250 {
+        font-size: 24px;
+      }
+    }
+
+    &_right {
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 0;
+
+    @include w1250 {
+      height: calc(100% - 80px);
+      bottom: 80px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .footer-block {
+
+    &__top {
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      &_grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        gap: 0 20px;
+
+        @include semiDesktop {
+          grid-template-columns: auto 1fr auto;
+          gap: 0 100px;
+        }
+
+      }
+
+      &_col {
+
+        &:nth-child(1) {
+        }
+
+        &:nth-child(2) {
+          display: none;
+
+          .footer-block__top_info {
+            max-width: 470px;
+          }
+
+          @include semiDesktop {
+            display: block;
+          }
+        }
+
+        &:nth-child(3) {
+          .footer-block__top_info {
+            display: flex;
+            align-items: center;
+            gap: 0 15px;
+
+            @include semiDesktop {
+              gap: 0 30px;
+            }
+          }
+        }
+      }
+
+      &_category {
+        font-weight: 450;
+        font-size: 15px;
+        line-height: 1.24;
+        color: $white;
+
+        @include semiDesktop {
+          margin-top: 16px;
+        }
+
+        @include w1250 {
+          margin-top: 18px;
+        }
+      }
+
+      &_info {
+        margin-top: 14px;
+
+        @include w1250 {
+          margin-top: 20px;
+        }
+
+        .contact-link {
+          display: block;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 1.24;
+          color: $white;
+          white-space: nowrap;
+
+          @include semiDesktop {
+            font-size: 24px;
+          }
+
+          @include w1250 {
+            font-size: 30px;
+          }
+        }
+
+        .contact-link + .contact-link {
+          margin-top: 10px;
+
+          @include w1250 {
+            margin-top: 16px;
+          }
+        }
+
+        .address-link {
+          display: block;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 1.24;
+          letter-spacing: 0.01em;
+          color: $white;
+
+          @include w1250 {
+            font-size: 24px;
+          }
+        }
+
+        .note {
+          margin-top: 10px;
+          display: block;
+          font-weight: 450;
+          font-size: 16px;
+          line-height: 1.26;
+          color: $light-grey;
+        }
+      }
+    }
+
+    &__middle {
+      padding-bottom: 30px;
+
+      @include tablet {
+        border-top: 1px solid rgba(246, 248, 254, 0.1);
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+
+      .container {
+
+
+        @media (max-width: 768px) {
+          padding-inline: 0;
+        }
+
+      }
+
+      &_grid {
+        display: grid;
+        grid-template-columns: auto;
+
+        @include tablet {
+          grid-template-columns: auto 1fr;
+          justify-content: space-between;
+          gap: 0 80px;
+        }
+
+        @include w1250 {
+          gap: 0 130px;
+        }
+      }
+
+      &_col {
+
+        &:nth-child(1) {
+          padding-inline: 15px;
+
+          @include tablet {
+            padding-inline: 0;
+          }
+        }
+
+        &:nth-child(2) {
+          padding-top: 30px;
+          margin-top: 30px;
+          border-top: 1px solid rgba(246, 248, 254, 0.1);
+
+          @include tablet {
+            margin-top: 0;
+            padding-top: 0;
+            border: none;
+          }
+        }
+      }
+
+      &_actions {
+        max-width: 255px;
+
+        .footer-block__buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 20px 0;
+
+          @include tablet {
+            margin-top: 40px;
+          }
+        }
+
+        .footer__logo {
+          display: none;
+
+          @include tablet {
+            margin-top: 16px;
+            display: block;
+          }
+
+          @include semiDesktop {
+            margin-top: 0;
+          }
+        }
+      }
+
+      &_links-grid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas:
+                "collapse"
+                "links-pages";
+        gap: 0 40px;
+        padding-inline: 15px;
+
+        @include tablet {
+          padding-inline: 0;
+        }
+
+        @include semiDesktop {
+          grid-template-areas:
+                "links-pages"
+                "collapse";
+        }
+
+        @include laptop {
+          align-items: flex-start;
+          grid-template-columns: 200px 1fr;
+          grid-template-areas: "links-pages collapse";
+          gap: 40px;
+        }
+      }
+
+      &_pages {
+        grid-area: links-pages;
+        display: grid;
+        grid-template-columns: auto;
+
+        @include semiDesktop {
+          grid-template-columns: repeat(4, auto);
+          justify-content: space-between;
+          gap: 30px;
+        }
+
+        @include laptop {
+          grid-template-columns: auto;
+          gap: 30px ;
+        }
+
+        li {
+
+          a {
+            display: inline-flex;
+            align-items: center;
+            padding-block: 16px;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 1;
+            color: $white;
+            border-bottom: 1px solid #F6F8FE1A;
+            width: 100%;
+
+            @include semiDesktop {
+              padding-block: 0;
+              border: none;
+              width: auto;
+            }
+          }
+        }
+      }
+
+      &_collapse {
+        grid-area: collapse;
+
+        @include semiDesktop {
+          margin-top: 30px;
+        }
+
+        @include w1250 {
+          margin-top: 60px;
+        }
+
+        @include laptop {
+          margin-top: 0;
+        }
+      }
+
+      &_footer {
+        margin-top: 30px;
+        padding-inline: 15px;
+
+        @include tablet {
+          padding-inline: 0;
+        }
+
+        @include semiDesktop {
+          margin-top: 60px;
+        }
+
+        .logo {
+          margin-bottom: 30px;
+
+          @include tablet {
+            display: none;
+          }
+        }
+
+        &_body {
+          display: grid;
+          grid-template-columns: auto;
+          gap: 20px 0;
+
+          @include semiDesktop {
+            align-items: center;
+            grid-template-columns: auto .84fr;
+          }
+        }
+
+        .date {
+          display: inline-block;
+        }
+
+        .note {
+          font-weight: 450;
+          font-size: 14px;
+          line-height: 1.24;
+          color: $light-grey;
+
+          a {
+            font-weight: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+
+      }
+    }
+
+    &__bottom {
+      border-top: 1px solid rgba(246, 248, 254, 0.1);
+      padding-top: 30px;
+      padding-bottom: 40px;
+      background-color: #0C1323;
+
+      @include semiDesktop {
+        padding-top: 40px;
+      }
+
+      &_grid {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 20px;
+        justify-content: space-between;
+
+        @include tablet {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        @include semiDesktop {
+          grid-template-columns: .95fr 1fr auto;
+        }
+      }
+
+      &_col {
+
+        &:nth-child(1) {}
+
+        &:nth-child(2) {}
+
+        &:nth-child(3) {}
+      }
+
+      &_contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        span {
+          font-weight: 450;
+          font-size: 14px;
+          line-height: 1.24;
+          color: $light-grey;
+
+          a {
+            color: inherit;
+
+            &:hover {
+              color: $white
+            }
+          }
+        }
+      }
+
+      &_company-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        span {
+          font-weight: 450;
+          font-size: 14px;
+          line-height: 1.24;
+          color: $light-grey;
+
+          @include semiDesktop {
+            text-align: right;
+          }
+        }
+      }
+
+      .footer-bottom-collapse {
+        max-width: 405px;
+      }
+    }
+  }
+
+  .footer-form {
+
+    @include desktop {
+      background-color: $white;
+      border: 8px solid $background;
+      border-radius: 20px;
+      padding: 40px 20px 20px 20px;
+    }
+
+    @include w1250 {
+      padding: 60px 40px 40px 40px;
+    }
+
+    .form-note {
+
+      .checkbox {
+        &__label {
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.messenger-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+
+  @include semiDesktop {
+    width: 60px;
+    height: 60px;
+  }
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 100%;
+    z-index: 0;
+  }
+
+  &::after {
+    border: 1px solid $white;
+    transition: border-color $transition-default;
+  }
+
+  &::before {
+    transform: scale(0);
+    transition: transform $transition-default;
+  }
+
+  &.telegram {
+    &::before {
+      background-color: #3ab3ff;
+    }
+  }
+
+  &.whatsapp {
+    &::before {
+      background-color: #37d54f;
+    }
+  }
+
+  .icon {
+    position: relative;
+    max-width: 24px;
+    max-height: 24px;
+    color: $white;
+    z-index: 0;
+
+    @include semiDesktop {
+      max-width: 28px;
+      max-height: 28px;
+    }
+  }
+
+  &:hover {
+    &::before {
+      transform: scale(1);
+    }
+
+    &.telegram {
+      &::after {
+        border-color: #3ab3ff;
+      }
+    }
+    &.whatsapp {
+      &::after {
+        border-color: #37d54f;
+      }
+    }
+  }
+}
+
+.footer-middle-collapse {
+
+  &__wrap {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: auto;
+
+    @include semiDesktop {
+      gap: 20px;
+    }
+
+    @include w1250 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+
+    @include w1250 {
+      max-width: 245px;
+    }
+
+    &_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #F6F8FE1A;
+      padding-block: 16px;
+
+      @include w1250 {
+        padding-block: 0;
+        border: none;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 1;
+        color: $white;
+      }
+
+      span {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 14px;
+        height: 14px;
+        max-height: 14px;
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+      }
+
+      .icon {
+        width: 14px;
+        height: 14px;
+        color: $white;
+
+        @include w1250 {
+          display: none;
+        }
+      }
+    }
+
+    &_content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height $transition-default;
+
+      @include w1250 {
+        max-height: none !important;
+      }
+    }
+
+    &_list {
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      @include w1250 {
+        padding-bottom: 0;
+      }
+
+      li {
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          padding-block: 10px;
+          font-weight: 450;
+          font-size: 16px;
+          line-height: 1.24;
+          color: $light-grey;
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    &.active {
+      .footer-middle-collapse__item_header {
+        span {
+          max-height: 2px;
+        }
+      }
+    }
+  }
+}
+
+.footer-bottom-collapse {
+
+  &__body {}
+
+  &__item {
+    .footer-bottom-collapse__header {
+      &:hover {
+        p, .icon {
+          color: $white;
+        }
+      }
+
+      p {
+        transition: color $transition-default;
+      }
+    }
+
+    &.active {
+      .footer-bottom-collapse__header {
+        p, .icon {
+          color: $white;
+        }
+
+        .icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__header {
+    padding-block: 6px 11px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+
+    p {
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 1.24;
+      letter-spacing: -0.02em;
+      color: $light-grey;
+    }
+
+    svg {
+      width: 10px;
+      height: 7px;
+      color: $light-grey;
+    }
+  }
+
+  &__wrap {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-default;
+  }
+
+  &__inner {
+    padding-block: 5px 10px;
+
+
+    p, li {
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      color: $light-grey;
+    }
+  }
+
+}

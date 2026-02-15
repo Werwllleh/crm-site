@@ -1,0 +1,31 @@
+mixin quicklyConsultation()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regBlock('search-team', true)
+    +regComponent('input', true, true)
+    +regComponent('faces-row', true, true)
+    //quickly-consultation
+    .quickly-consultation&attributes(attributes)
+        +facesRow()
+        p.quickly-consultation__title Проконсультируем быстро по любым вопросам
+        form(data-form="form-quickly-consultation").quickly-consultation__form
+            +input('phone', 'Телефон', 'Некорректный номер', 'input--phone', 'numeric').borderless
+            .form-note.quickly-consultation__agree
+                label.checkbox
+                    input.checkbox__input(type="checkbox", name="policy", value="agree", required)
+                    span.checkbox__label
+                        | Даю
+                        |
+                        a(href="#", target="_blank") согласие
+                        |
+                        | на обработку моих
+                        |
+                        a(href="#", target="_blank") персональных данных
+                        |
+                        | в соответствии
+                        |
+                        a(href="#", target="_blank") с&nbsp;политикой конфиденциальности
+            button(type="submit").btn.primary.medium Отправить
+        span.quickly-consultation__note Нажимая на кнопку отправить, я даю согласие на обработку
+            a(href="#", target="_blank")  моих персональных данных

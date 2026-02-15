@@ -1,0 +1,103 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// certificates-slider
+.certificates-slider {
+
+  &__body {
+  }
+
+  &__swiper {
+    position: relative;
+
+    @include tablet {
+      padding-inline: 128px;
+    }
+
+    &--pagination {
+      .swiper-pagination {
+        position: relative;
+        top: auto;
+        bottom: auto;
+
+        .swiper-pagination-bullet {
+          width: 100%;
+          max-width: 11px;
+          height: 4px;
+          background-color: $grey-blue;
+          border-radius: 15px;
+          transition: max-width $transition-default;
+        }
+
+        .swiper-pagination-bullet-active {
+          max-width: 64px;
+          background-color: $blue;
+        }
+      }
+    }
+
+    .prev,
+    .next {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      z-index: 1;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .swiper {
+      padding-block: 40px;
+      overflow: unset;
+
+      @include tablet {
+        overflow: hidden;
+      }
+
+      .swiper-wrapper {
+        align-items: center;
+      }
+
+      .swiper-slide {
+
+        @include tablet {
+          width: auto;
+        }
+      }
+
+      .swiper-slide-active {
+        .certificates-slider__item img {
+          transform: scale(1.1);
+          //max-width: 368px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      border: 6px solid $background;
+      border-radius: 10px;
+      max-width: 282px;
+      width: 100%;
+      height: auto;
+      transition: transform $transition-default;
+
+      @include tablet {
+        border: 8px solid $background;
+        max-width: 342px;
+      }
+    }
+  }
+}

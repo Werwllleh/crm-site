@@ -1,0 +1,64 @@
+mixin companiesSwipers()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regComponent('company-swiper-card', true, true)
+
+    //companies-swipers
+    .companies-swipers&attributes(attributes)
+        .companies-swipers__body
+            .companies-swipers__swiper
+                .swiper.companies-swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            +companySwiperCard('bff.png', 'BEST FOR FRIEND')
+                        .swiper-slide
+                            +companySwiperCard('ctep.png', 'Чебоксарский завод строительных профилей СТэП')
+                        .swiper-slide
+                            +companySwiperCard('iva.png', 'ООО "ИВА"')
+                        .swiper-slide
+                            +companySwiperCard('bff.png', 'BEST FOR FRIEND')
+                        .swiper-slide
+                            +companySwiperCard('ctep.png', 'Чебоксарский завод строительных профилей СТэП')
+                        .swiper-slide
+                            +companySwiperCard('iva.png', 'ООО "ИВА"')
+                        .swiper-slide
+                            +companySwiperCard('bff.png', 'BEST FOR FRIEND')
+                        .swiper-slide
+                            +companySwiperCard('ctep.png', 'Чебоксарский завод строительных профилей СТэП')
+                        .swiper-slide
+                            +companySwiperCard('iva.png', 'ООО "ИВА"')
+                        .swiper-slide
+                            +companySwiperCard('bff.png', 'BEST FOR FRIEND')
+                        .swiper-slide
+                            +companySwiperCard('ctep.png', 'Чебоксарский завод строительных профилей СТэП')
+                        .swiper-slide
+                            +companySwiperCard('iva.png', 'ООО "ИВА"')
+            .companies-swipers__swiper
+                .swiper.companies-swiper.reverse
+                    .swiper-wrapper
+                        .swiper-slide
+                            +companySwiperCard('iva.png', 'ООО "ИВА"')
+                        .swiper-slide
+                            +companySwiperCard('ctep.png', 'Чебоксарский завод строительных профилей СТэП')
+                        .swiper-slide
+                            +companySwiperCard('bff.png', 'BEST FOR FRIEND')
+                        .swiper-slide
+                            +companySwiperCard('iva.png', 'ООО "ИВА"')
+                        .swiper-slide
+                            +companySwiperCard('ctep.png', 'Чебоксарский завод строительных профилей СТэП')
+                        .swiper-slide
+                            +companySwiperCard('bff.png', 'BEST FOR FRIEND')
+                        .swiper-slide
+                            +companySwiperCard('iva.png', 'ООО "ИВА"')
+                        .swiper-slide
+                            +companySwiperCard('ctep.png', 'Чебоксарский завод строительных профилей СТэП')
+                        .swiper-slide
+                            +companySwiperCard('bff.png', 'BEST FOR FRIEND')
+                        .swiper-slide
+                            +companySwiperCard('iva.png', 'ООО "ИВА"')
+                        .swiper-slide
+                            +companySwiperCard('ctep.png', 'Чебоксарский завод строительных профилей СТэП')
+                        .swiper-slide
+                            +companySwiperCard('bff.png', 'BEST FOR FRIEND')

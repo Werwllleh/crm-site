@@ -1,0 +1,358 @@
+extends ../../app/pug/layouts/service-layout
+
+append vars
+  - title = "Пакетное внедрение"
+  - description = "Описание Пакетное внедрение"
+
+append content
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regPage('service-detail', true, true)
+    +regComponent('header', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('case-card', true, true)
+    +regComponent('material-card', true, true)
+    +regComponent('pagination', true, true)
+    +regComponent('animate-button', true, true)
+    +regComponent('faces-row', true, true)
+    +regBlock('order-analysis', true, true)
+    +regBlock('collapse-stages', true, true)
+    +regBlock('ai-chat', true, true)
+    +regBlock('training', true, true)
+    +regBlock('tags', true, true)
+    +regBlock('stories', true, true)
+    +regBlock('company-rating', true, true)
+    +regBlock('about-steps', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+
+    +header().light
+    .service-layout
+        .service-layout__main.package-integration
+            .container
+                .service-layout__main--body
+                    .service-layout__breadcrumbs
+                        +breadcrumbs(['Главная', 'Услуги', 'Пакетное внедрение'])
+                    .service-layout__main--content
+                        .service-layout__main--info
+                            h1.h1.service-layout__main--title Пакетное внедрение Битрикс24: Готовая CRM и&nbsp;портал за 7 дней.
+                            p.service-layout__main--description Переведем ваш бизнес на Битрикс24 в течение недели. Получите полностью настроенную систему, адаптированную под ваши цели.
+                            button(data-modal="license").btn.primary.lg Выбрать тариф
+                    .service-layout__companies
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    img(src="./images/companies/vodohod.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/sberstrahovane.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/x5.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/robokassa.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/ekra.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/poliklinika.svg", alt="")
+        .service-layout__content.package-integration
+            .service-layout__content--inner
+                .service-layout__container.container
+                    .service-layout__content--bg
+                        section.service-layout__statistics
+                            .statistics-list
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    | с
+                                                    |
+                                                    span.h1 2017
+                                                    |
+                                                    | года
+                                                p.statistics-list__card--text
+                                                    | успешно внедряем продукты 1С-Битрикс в компаниях с оборотом от 10 млн до 2,5 млрд рублей
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    span.h1 300+
+                                                p.statistics-list__card--text
+                                                    | проектов по внедрению и развитию Битрикс24 в портфолио
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    span.h1 65+
+                                                p.statistics-list__card--text
+                                                    | сертифицированных специалистов команде
+                        section.service-layout__batch-implementation
+                            p.h2 Зачем нужно пакетное внедрение и&nbsp;в&nbsp;чем его преимущества
+                            .batch-implementation
+                                .batch-implementation__items
+                                    .batch-implementation__item
+                                        p.batch-implementation__item--title Быстрый старт
+                                        .batch-implementation__item--icon
+                                            +svg('cup')
+                                        p.batch-implementation__item--text Запуск вашей системы от 5 до 14 рабочих дней
+                                    .batch-implementation__item
+                                        p.batch-implementation__item--title 100% Фиксация цены
+                                        .batch-implementation__item--icon
+                                            +svg('cup')
+                                        p.batch-implementation__item--text Никаких дополнительных счетов. Вы платите ровно ту сумму, которая указана в пакете
+                                    .batch-implementation__item
+                                        p.batch-implementation__item--title Экспертная настройка
+                                        .batch-implementation__item--icon
+                                            +svg('cup')
+                                        p.batch-implementation__item--text Работу ведут сертифицированные сотрудники, которые учтут специфику вашего бизнеса
+                                    .batch-implementation__item
+                                        p.batch-implementation__item--title Обучение работе в&nbsp;Битрикс24
+                                        .batch-implementation__item--icon
+                                            +svg('cup')
+                                        p.batch-implementation__item--text Расскажем про ключевые функции системы вашей команде
+                                    .batch-implementation__item.rowspan
+                                        p.batch-implementation__item--title Широкие возможности для масштабирования
+                                        p.batch-implementation__item--text Изучите возможности портала на практике и решите, как использовать его возможности, чтобы улучшать свои бизнес-показатели
+                                        .batch-implementation__item--img
+                                            img(src="./images/services-detail/graphs.png", alt="")
+                    section.service-layout__implementation-package
+                        p.h2 Выберите свой пакет внедрения
+                        p.description Мы&nbsp;разработали три готовых решения, которые закрывают&nbsp;90% потребностей современного бизнеса: от&nbsp;базовой работы с&nbsp;клиентами до&nbsp;построения полноценного цифрового офиса.
+                        .implementation-package
+                            .implementation-package__body
+                                .implementation-package__swiper.swiper
+                                    .swiper-wrapper
+                                        .swiper-slide
+                                            .implementation-package__card
+                                                .implementation-package__card--body
+                                                    p.implementation-package__card--title Быстрый старт
+                                                    p.implementation-package__card--department (Малый бизнес)
+                                                    p.implementation-package__card--price 80 000 ₽
+                                                    p.implementation-package__card--description Для компаний, которые только начинают работать с клиентской базой и лидами.
+                                                    ul.implementation-package__card--params
+                                                        li
+                                                            span Цель:
+                                                            p Быстро собрать и упорядочить клиентскую базу
+                                                        li
+                                                            span Сроки:
+                                                            p 5 рабочих дней
+                                                    .implementation-package__card--button
+                                                        button(data-modal="license").btn.primary.medium Заказать пакет
+                                                    span.implementation-package__card--separator
+                                                    .implementation-package__card--services
+                                                        p.title Ключевые услуги
+                                                        ul
+                                                            li Настройка структуры компании и карточек сотрудников
+                                                            li Настройка карточек клиентов (Лиды, Контакты, Компании)
+                                                            li Базовые права доступа
+                                        .swiper-slide
+                                            .implementation-package__card.light
+                                                .implementation-package__card--body
+                                                    p.implementation-package__card--title CRM Pro
+                                                    p.implementation-package__card--department (Отдел продаж)
+                                                    p.implementation-package__card--price 120 000 ₽
+                                                    p.implementation-package__card--description Для отделов продаж, которым нужна полная автоматизация воронки и каналов связи.
+                                                    ul.implementation-package__card--params
+                                                        li
+                                                            span Цель:
+                                                            p Максимально автоматизировать процесс продаж и увеличить конверсию
+                                                        li
+                                                            span Сроки:
+                                                            p 7-10 рабочих дней
+                                                    .implementation-package__card--button
+                                                        button(data-modal="license").btn.primary.medium Заказать пакет
+                                                    span.implementation-package__card--separator
+                                                    .implementation-package__card--services
+                                                        p.title Ключевые услуги
+                                                        p.text-about Весь функционал "Быстрый старт" +
+                                                        ul
+                                                            li Настройка основной воронки продаж и стадий сделки
+                                                            li Настройка интеграции для входящих лидов (почта, формы сайта)
+                                                            li Обучение менеджеров
+                                        .swiper-slide
+                                            .implementation-package__card.dark
+                                                .implementation-package__card--body
+                                                    p.implementation-package__card--title Корпоративный портал
+                                                    p.implementation-package__card--department (Совместная работа и управление)
+                                                    p.implementation-package__card--price 180 000 ₽
+                                                    p.implementation-package__card--description Для компаний, которые хотят перевести в онлайн-формат всю внутреннюю работу: проекты, согласования, HRM.
+                                                    ul.implementation-package__card--params
+                                                        li
+                                                            span Цель:
+                                                            p Создать единое цифровое пространство для эффективной совместной работы
+                                                        li
+                                                            span Сроки:
+                                                            p 10-14 рабочих дней
+                                                    .implementation-package__card--button
+                                                        button(data-modal="license").btn.primary.medium Заказать пакет
+                                                    span.implementation-package__card--separator
+                                                    .implementation-package__card--services
+                                                        p.title Ключевые услуги
+                                                        p.text-about Весь функционал "CRM Pro" +
+                                                        ul
+                                                            li Настройка структуры компании и карточек сотрудников
+                                                            li Настройка карточек клиентов (Лиды, Контакты, Компании)
+                                                            li Базовые права доступа
+                    section.service-layout__how-to-work
+                        .service-layout__how-to-work--inner
+                            p.h2 Как мы работаем
+                            .horizontal-animate-cards
+                                .horizontal-animate-cards__body
+                                    .horizontal-animate-cards__header
+                                    .horizontal-animate-cards__main
+                                        span.horizontal-animate-cards__line
+                                            span
+                                        .horizontal-animate-cards__main--bg
+                                            span
+                                            span
+                                            span
+                                            span
+                                            span
+                                            span
+                                            span
+                                        .horizontal-animate-cards__items
+                                            .horizontal-animate-cards__item.black
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Выбор пакета и&nbsp;анализ
+                                                    span.horizontal-animate-cards__item--index 01
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Вы&nbsp;выбираете пакет, мы&nbsp;проводим экспресс-анализ ваших процессов, чтобы убедиться, что пакет подходит
+                                            .horizontal-animate-cards__item
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Договор и&nbsp;оплата
+                                                    span.horizontal-animate-cards__item--index 02
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Фиксируем объем работ и&nbsp;стоимость в&nbsp;договоре
+                                            .horizontal-animate-cards__item.grey
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Настройка и&nbsp;адаптация
+                                                    span.horizontal-animate-cards__item--index 03
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Наши специалисты настраивают портал, адаптируя его под ваши поля, воронки и&nbsp;структуру
+                                            .horizontal-animate-cards__item
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Сдача и&nbsp;обучение
+                                                    span.horizontal-animate-cards__item--index 04
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Демонстрируем готовый портал, проводим обучение ключевых сотрудников
+                                            .horizontal-animate-cards__item.blue
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Запуск и&nbsp;поддержка
+                                                    span.horizontal-animate-cards__item--index 05
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Вы&nbsp;начинаете работу. Мы&nbsp;предоставляем вам 3&nbsp;часа технической поддержки в&nbsp;подарок для финишной настройки
+                    section.service-layout__advantages
+                        p.h2 Наши гарантии и преимущества
+                        p.description Помимо фиксированной цены и скорости, вы получаете опыт и надежность лидера рынка:
+                        .advantages-block.type2
+                            ul.advantages-block__list
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("flag")
+                                    p.advantages-block__item--title ТОП 3&nbsp;по&nbsp;интеграции CRM Битрикс24
+                                    p.advantages-block__item--text Наши внедрения завоевали признание среди лучших агентств России
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("user-group")
+                                    p.advantages-block__item--title 100% сотрудников в&nbsp;штате компании
+                                    p.advantages-block__item--text Вы&nbsp;получаете целую команду, которая будет заниматься ведением вашего проекта
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("chip")
+                                    p.advantages-block__item--title Подписываем NDA со&nbsp;всеми сотрудниками
+                                    p.advantages-block__item--text Вы&nbsp;получаете гарантию о&nbsp;неразглашении данных о&nbsp;вашей компании и&nbsp;бизнес-процессов
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("chip")
+                                    p.advantages-block__item--title Техническая поддержка и&nbsp;администрирование
+                                    p.advantages-block__item--text После внедрения мы&nbsp;остаемся на&nbsp;связи и&nbsp;всегда можем помочь в&nbsp;кастомизации и&nbsp;масштабировании вашего проекта
+                    section.service-layout__implementation-portal
+                        .about-steps
+                            p.h2.about-steps__title
+                                | Что дает внедрение портала
+                            ul.about-steps__list
+                                li.about-steps__item
+                                    p.about-steps__item--title Автоматизация бизнес-процессов
+                                    span.about-steps__item--index 01
+                                    p.about-steps__item--text До 30% сокращает ручной труд и&nbsp;бумажный документооборот. Автоматизирует процессы подачи заявок на больничные и отпуска...
+                                li.about-steps__item
+                                    p.about-steps__item--title Интеграция с&nbsp;другими системами
+                                    span.about-steps__item--index 02
+                                    p.about-steps__item--text Обеспечивает бесшовный обмен данными между различными платформами, улучшая согласованность и&nbsp;эффективность работы.
+                                li.about-steps__item
+                                    p.about-steps__item--title Контроль и&nbsp;удобство удаленной работы
+                                    span.about-steps__item--index 03
+                                    p.about-steps__item--text Позволяют сотрудникам эффективно работать из любой точки мира, обеспечивая гибкость и непрерывность бизнес-процессов, контроль работы и отчетность о выполненных задачах
+                                li.about-steps__item
+                                    p.about-steps__item--title Мониторинг и&nbsp;аналитика
+                                    span.about-steps__item--index 04
+                                    p.about-steps__item--text Предоставляют руководству актуальный срез данных о показателях бизнеса, отчеты по проектам в удобном виде дашбордов, графиков и таблиц.
+                                li.about-steps__item
+                                    p.about-steps__item--title Модули для обучения и&nbsp;адаптации персонала
+                                    span.about-steps__item--index 05
+                                    p.about-steps__item--text Упрощают процесс ввода в должность новых сотрудников и повышают квалификацию текущих, вся информация хранится централизовано в одном месте, упрощает работу старших сотрудников (менторов, наставников)
+                    section.service-layout__banner-task-consultation
+                        .order-analysis
+                            .order-analysis__body
+                                .order-analysis__left
+                                    .order-analysis__left_body
+                                        p.order-analysis__title
+                                            | Есть вопрос по Битрикс24 или появилась срочная задача?
+                                            |
+                                            span Напишите нам и получите бесплатную консультацию
+                                        button(data-modal="analysis").btn.primary.lg.order-analysis__button Обсудить вопрос
+                                .order-analysis__right
+                                    .order-analysis__right_body
+                                        .order-analysis__right_top
+                                            +facesRow()
+                                            p.order-analysis__description Поможем настроить инструменты, ответим на вопросы и поможем найти решение
+                    section.service-layout__cases
+                        .section-cases
+                            p.h2.section-cases__title
+                                | Рассказываем про реализованные внедрения
+                            p.section-cases__description
+                                | Собрали для вас портфолио с кейсами, чтобы вы могли оценить нашу работу и принять решение
+                            .section-cases__content
+                                .section-cases__tags
+                                    +tags(['Все кейсы', 'Медицина', 'B2B', 'Производство и дистрибуция', 'Финансы и страхование', 'Государство', 'Электронная коммерция', 'Сфера услуг', 'Юридические услуги и консалтинг', 'Строительство и недвижимость', 'Логистика'])
+                                .section-cases__list
+                                    +caseCard('ctep.png', 'Внедрение корпоративного портала на Битрикс24 и его интеграция с OPERA для сети отелей «Роза Хутор»', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Автоматизация обучения сотрудников для «BFF»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Разработали единую систему по обработки обращений для 5 млн клиентской базы', ['B2B', 'Электронная коммерция'])
+                                    +caseCard('ctep.png', '«Личный кабинет руководителя HR» на платформе Битрикс24', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Разработка портала и кабинета менеджера для сервиса «Налог 24»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Автоматизация задач строительного холдинга с помощью Битрикс24: кейс ГК «Точно»', ['B2B', 'Электронная коммерция'])
+                                .section-cases__pagination
+                                    +pagination(true)
+                                    a(href="#").section-cases__link-cases Смотреть все кейсы
+                    section.service-layout__news
+                        p.h2
+                            | Делимся экспертизой
+                            |
+                            span про автоматизацию бизнеса
+                        .section-news
+                            .section-news__items
+                                .other-row
+                                    +materialCard('0.jpg', 'Как внедрять Битрикс24 – основные подходы, этапы, рекомендации', ['#CRM Битрикс24', '#Интеграция 1С', '#Автоматизация'])
+                                    +materialCard('1.jpg', 'Тренды найма 2025', ['#Управление персоналом', '#Бизнес-процессы'])
+                                    +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('3.jpg', 'Создание приложений как Airbnb: функциональность, цена, сроки разработки', ['#CRM Битрикс24', '#Интеграция 1С'])
+                            .section-news__footer
+                                +pagination(true)
+                                a(href="#").section-news__link Смотреть все статьи
+                    section.service-layout__stories
+                        .section-stories
+                            .section-stories__header
+                                p.h2.section-stories__title
+                                    | Истории команд,
+                                    |
+                                    span которые сделали бизнес проще и умнее
+                                .section-stories__navigation
+                                    +animateButton("prev").prev
+                                    +animateButton("next").next
+                            .section-stories__content
+                                +stories()
+                    section.service-layout__rating
+                        p.h2
+                            | Лидируем в&nbsp;рейтингах
+                            |
+                            span лучших it&nbsp;компаний
+                        .section-rating
+                            +companyRating()

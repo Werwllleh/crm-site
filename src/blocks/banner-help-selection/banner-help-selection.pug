@@ -1,0 +1,14 @@
+mixin bannerHelpSelection()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //banner-help-selection
+    .banner-help-selection&attributes(attributes)
+        .banner-help-selection__body
+            .banner-help-selection__info
+                p.h3.banner-help-selection__info--title Не знаете, что выбрать?
+                p.banner-help-selection__info--text Бесплатно поможем подобрать оптимальную версию Битрикс24, исходя из ваших потребностей и бюджета
+                button(data-modal="consultation").btn.primary.lg.banner-help-selection__button Получить консультацию
+            .banner-help-selection__image
+                img(src='./images/banners/help-selection.png')

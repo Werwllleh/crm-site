@@ -1,0 +1,30 @@
+mixin formLiveDemo()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('input', true, true)
+    +regComponent('checkbox', true)
+    //form-live-demo
+    .form-demo-request&attributes(attributes)
+        .form-demo-request__body
+            .form-demo-request__top
+                .form-demo-request__description
+                    p.h4.form-demo-request__title Расскажем детали внедрения с Live-демонстрацией готового портала.
+                    p.text.form-demo-request__text Оставьте заявку и наши специалисты с вами свяжется.
+                .form-demo-request__images
+                    img(src="./images/forms/demo-request/gif.jpg", alt="").form-demo-request__images_gif
+                    img(src="./images/forms/demo-request/manager.png", alt="").form-demo-request__images_manager
+            .form-demo-request__bottom
+                form(data-form="form-demo-request").form-demo-request__form
+                    .form-demo-request__form_top
+                        .form-demo-request__form_field
+                            +input('name', 'Ваше имя', 'Некорректное имя', '', '')
+                        .form-demo-request__form_field
+                            +input('phone', 'Телефон', 'Некорректный номер', 'input--phone', 'numeric')
+                        button(type="submit").btn.primary.lg Отправить
+                    .form-demo-request__form_bottom
+                        +checkbox('write-telegram', 'Написать в телеграм')
+                        span.form-demo-request__note Нажимая кнопку отправить, Вы соглашаетесь с
+                            a(href="#", target="_blank")  политикой 
+                            | и даете согласие на обработку своих
+                            a(href="#", target="_blank")  персональных данных

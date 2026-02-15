@@ -1,0 +1,26 @@
+mixin buttonCalypso(icons, text, link, href)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //button-calypso
+    if !link && !href
+        button.btn.calypso&attributes(attributes)
+            span.calypso__inner
+                if icons && icons.length
+                    span.calypso__icon
+                        span
+                            +svg(icons[0])
+                        span
+                            +svg(icons[1])
+                span.calypso__text= text
+    else
+        a(href=href).btn.calypso&attributes(attributes)
+            span.calypso__inner
+                if icons && icons.length
+                    span.calypso__icon
+                        span
+                            +svg(icons[0])
+                        span
+                            +svg(icons[1])
+                span.calypso__text= text

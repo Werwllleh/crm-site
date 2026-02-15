@@ -1,0 +1,71 @@
+mixin modalForm(type, title, description)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regBlock('form-consultation', true, true)
+    //modal-form
+    .modal-form&attributes(attributes)
+        .modal-form__body
+            if title
+                p.modal-form__title= title
+            if description
+                p.text.modal-form__description= description
+        .modal-form__content
+            if type === 'consultation'
+                +formConsultation()
+            else
+                .form-base
+                    form(data-form=type).form-base__form
+                        fieldset.form-base__fieldset
+                            .form-base__top
+                                .form-base__field
+                                    +input('name', 'Ваше имя*', 'Некорректное имя')
+                                if type !== 'live-demo'
+                                    .form-base__field
+                                        +input('company', 'Компания', '')
+                                .form-base__field
+                                    +input('phone', 'Телефон*', 'Некорректный номер', 'input--phone', 'numeric')
+                                if type !== 'live-demo'
+                                    .form-base__field
+                                        +input('email', 'E-mail*', 'Некорректный email', '', 'email')
+                                .form-base__field
+                                    +textarea('description', 'Расскажите о задаче')
+                            if type === 'license'
+                                .form-consultation__form_footer
+                                    button.btn.primary.lg Оставить заявку
+                                    label.form-pin
+                                        input(type="file", name="file")
+                                        span.form-pin__icon
+                                            +svg("pin")
+                                        span.form-pin__label Прикрепить файл
+                            else
+                                .form-base__footer
+                                    if type === 'case'
+                                        button(type="submit").btn.primary.lg.form-base__submit Получить кейсы
+                                    else
+                                        button(type="submit").btn.primary.lg.form-base__submit Оставить заявку
+                        .form-note.form-base__note
+                            label.checkbox
+                                input.checkbox__input(type="checkbox", name="policy", value="agree", required)
+                                if type === 'license'
+                                    span.checkbox__label
+                                        | Даю
+                                        |
+                                        a(href="#", target="_blank") согласие
+                                        |
+                                        | на обработку
+                                        |
+                                        a(href="#", target="_blank") моих персональных данных
+                                else
+                                    span.checkbox__label
+                                        | Даю
+                                        |
+                                        a(href="#", target="_blank") согласие
+                                        |
+                                        | на обработку моих
+                                        |
+                                        a(href="#", target="_blank") персональных данных
+                                        |
+                                        | в соответствии
+                                        |
+                                        a(href="#", target="_blank") с&nbsp;политикой конфиденциальности

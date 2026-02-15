@@ -1,0 +1,29 @@
+@use '../../app/scss/variables.scss' as *;
+
+// see-also
+.see-also {
+
+  &__body {}
+
+  &__title {}
+
+  &__swiper {
+    margin-top: 50px;
+
+    .swiper {
+
+      .swiper-wrapper {
+        align-items: stretch;
+      }
+
+      .swiper-slide {
+        width: auto;
+        height: auto;
+
+        .case-card {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

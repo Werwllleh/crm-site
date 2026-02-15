@@ -1,0 +1,29 @@
+mixin collapseStages(data)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //collapse
+    .collapse-stages.collapse-block&attributes(attributes)
+        .collaps-stages__body
+            if (data && data.length)
+                .collapse-stages__items
+                  for item in data
+                      .collapse-stages__item.collapse-block__item
+                          .collapse-stages__item--index
+                              span= `/${item.index}`
+                          p(href='#').collapse-stages__item--title= item.title
+                          .collapse-stages__item--button
+                              button
+                                  span
+                                      +svg('plus')
+                          if (item.list || item.text)
+                              .collapse-stages__item--info.collapse-block__wrap
+                                  .collapse-block__data
+                                      if (item.list && item.list.length)
+                                          ul.collapse-stages__item--list
+                                            for elem in item.list
+                                                li= elem
+                                      if (item.text)
+                                          .collapse-stages__item--text
+                                              p= item.text

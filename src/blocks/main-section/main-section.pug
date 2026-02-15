@@ -1,0 +1,19 @@
+mixin mainSection()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //main-section
+    .main-section&attributes(attributes)
+        .main-section__body
+            h1.h1.main-section__title Оптимизируем бизнес за счет автоматизированных цифровых решений
+            .main-section__middle
+                .main-section__tags
+                    +buttonCalypso(["circle", "arrow2"], "HR порталы").circle.lg
+                    +buttonCalypso(["circle", "arrow2"], "ERP системы").circle.lg
+                    +buttonCalypso(["circle", "arrow2"], "Личные кабинеты").circle.lg
+                    +buttonCalypso(["circle", "arrow2"], "Документооборот").circle.lg
+                    +buttonCalypso(["circle", "arrow2"], "CRM системы").circle.lg
+                    +buttonCalypso(["circle", "arrow2"], "Корпоративные порталы").circle.lg
+                p.main-section__description Помогаем системно выстраивать автоматизированные процессы с&nbsp;помощью цифровых технологий
+            button(data-modal="consultation").btn.bordered.lg.main-section__button-consultation Подобрать решение

@@ -1,0 +1,98 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "О компании"
+  - description = "Описание О компании"
+
+append content
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regPage('company', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('animate-button', true, true)
+    +regBlock('exp-numbers', true, true)
+    +regBlock('technologies', true, true)
+    +regBlock('company-rating', true, true)
+    +regBlock('animate-steps', true)
+    +regBlock('companies-swipers', true, true)
+    +regBlock('certificates-slider', true, true)
+    +regBlock('stories', true, true)
+
+    .company-page
+        section.company-page__main
+            .company-page__main--left
+                .company-page__breadcrumbs
+                    +breadcrumbs(['Главная', 'О компании'])
+                h1.h1.company-page__title
+                    | Доверьте цифровизацию вашего бизнеса
+                    |
+                    span одним из лучших специалистов в отрасли
+            .company-page__main--right
+                .company-page__main--animate
+                    video(muted, playsinline, autoplay, loop, poster="./images/posters/company-anim-poster.png")
+                        source(src="./images/videos/company-anim.mp4")
+        section.company-page__expirience
+            p.h2 Опыт в цифрах
+            +expNumbers()
+        section.company-page__tech-expertise
+            p.h2 Техническая экспертиза
+            p.description Работаем с широким стеком, подбираем инструменты под задачи проекта, а не наоборот.
+            +technologies()
+        section.company-page__rating
+            p.h2
+                | Лидируем в&nbsp;рейтингах
+                |
+                span лучших it&nbsp;компаний
+            +companyRating()
+        section.company-page__steps
+            .company-page__steps--header
+                span
+                p.h2
+                    | Помогаем бизнесу повышать эффективность
+                    |
+                    span и прозрачность процессов
+            -
+                const steps = [
+                    {
+                      index: '01',
+                      title: 'Предлагаем решения',
+                      description: 'Помогаем решить задачи, даже если нет четкого ТЗ — проанализируем ситуацию со всех сторон, предложим решение.',
+                    },
+                    {
+                        index: '02',
+                        title: 'Кастомизируем IT продукты',
+                        description: 'Делаем решения под Ваш бизнес — используем кастомный, персонализированный подход (более 100 клиентов оценили эффективность персонального подхода)',
+                    },
+                    {
+                        index: '03',
+                        title: 'Делимся экспертизой',
+                        description: 'Делимся кейсами, ведем блог, растим специалистов (60+ специалистов)',
+                    },
+                    {
+                        index: '04',
+                        title: 'Предлагаем комплексные решения',
+                        description: 'Комплексность — от внедрения до постоянной оперативной поддержки - один провайдер',
+                    }
+                ]
+            +animateSteps(steps, './images/animate-logo/logo-base.svg', './images/animate-logo/logo-color.svg')
+        section.company-page__certificates
+            p.h2 Сертифицированные специалисты
+            p.description Небольшое описание про специалистов
+            +certificatesSlider()
+        section.company-page__companies
+            p.h2 Компании, которые сотрудничают с нами
+            +companiesSwipers()
+        section.company-page__history
+            .section-stories
+                .section-stories__header
+                    p.h2.section-stories__title
+                        | Истории команд,
+                        |
+                        span которые сделали бизнес проще и умнее
+                    .section-stories__navigation
+                        +animateButton("prev").prev
+                        +animateButton("next").next
+                .section-stories__content
+                    +stories()

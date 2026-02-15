@@ -1,0 +1,21 @@
+@use '../../app/scss/variables.scss' as *;
+
+// no-time-read
+.no-time-read {
+  padding: 32px 12px 32px 32px;
+  background-color: $background;
+  border-radius: 16px;
+
+  p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.24;
+    color: $black;
+  }
+
+  button {
+    margin-top: 24px;
+    width: 100%;
+    color: $white;
+  }
+}

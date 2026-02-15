@@ -1,0 +1,210 @@
+mixin footer()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('logo', true)
+    +regComponent('modal', true, true)
+    +regBlock('form-consultation', true, true)
+    //footer
+    footer.footer&attributes(attributes)
+        .footer__form
+            .footer__form_container.container
+                .footer__form_grid
+                    .footer__form_left
+                        p.h3.footer__form_title Предложим цифровое решение
+                            span  для улучшения показателей вашего бизнеса
+                        p.footer__form_text Оставьте заявку и получите индивидуальное решение по вашей задаче с этапами и сроками производства
+                    .footer__form_right
+                        .footer-form
+                            +formConsultation(true)
+        .footer__content
+            .footer-block
+                .footer-block__top
+                    .container
+                        .footer-block__top_grid
+                            .footer-block__top_col
+                                span.footer-block__top_category Всегда на связи
+                                .footer-block__top_info
+                                    a(href="tel:+78005054084").contact-link 8 (800) 505-40-84
+                                    a(href="mailto:top@mworx.ru").contact-link top@mworx.ru
+                            .footer-block__top_col
+                                span.footer-block__top_category Адрес
+                                .footer-block__top_info
+                                    a(href="https://yandex.ru/maps/-/CHTFjYl3").address-link Чебоксары, Приволжский бульвар 4, помещение 7
+                                    span.note Посещение офисов только по предварительной записи
+                            .footer-block__top_col
+                                span.footer-block__top_category Мессенджеры
+                                .footer-block__top_info
+                                    a(href="#").messenger-link.telegram
+                                        +svg("telegram_icon")
+                                    a(href="#").messenger-link.whatsapp
+                                        +svg("whatsapp_icon")
+                .footer-block__middle
+                    .container
+                        .footer-block__middle_grid
+                            .footer-block__middle_col
+                                .footer-block__middle_actions
+                                    .footer__logo
+                                        +logo(true)
+                                    .footer-block__buttons
+                                        button(data-modal="tender").btn.primary.medium Пригласить в тендер
+                                        button.btn.download.primary.medium
+                                            +svg("download")
+                                            span Скачать презентацию
+                            .footer-block__middle_col
+                                .footer-block__middle_links-grid
+                                    ul.footer-block__middle_pages
+                                        li
+                                            a(href="#") Кейсы
+                                        li
+                                            a(href="#") Журнал
+                                        li
+                                            a(href="#") Компания
+                                        li
+                                            a(href="#") Контакты
+                                    .footer-block__middle_collapse
+                                        .footer-middle-collapse.collapse
+                                            .footer-middle-collapse__wrap
+                                                .footer-middle-collapse__item.collapse__item
+                                                    .footer-middle-collapse__item_header.collapse__header
+                                                        p Отрасли
+                                                        span
+                                                            +svg("plus")
+                                                    .footer-middle-collapse__item_content.collapse__wrap
+                                                        ul.footer-middle-collapse__item_list.collapse__inner
+                                                            li
+                                                                a(href="#") Медицина
+                                                            li
+                                                                a(href="#") Государство
+                                                            li
+                                                                a(href="#") B2B
+                                                            li
+                                                                a(href="#") IT и Телеком
+                                                            li
+                                                                a(href="#") Производство и дистрибуция
+                                                            li
+                                                                a(href="#") Финансы и страхование
+                                                            li
+                                                                a(href="#") Электронная коммерция
+                                                            li
+                                                                a(href="#") Юридические услуги и консалтинг
+                                                            li
+                                                                a(href="#") Сфера услуг
+                                                            li
+                                                                a(href="#") Строительство и недвижимость
+                                                            li
+                                                                a(href="#") Логистика
+                                                .footer-middle-collapse__item.collapse__item
+                                                    .footer-middle-collapse__item_header.collapse__header
+                                                        p Услуги
+                                                        span
+                                                            +svg("plus")
+                                                    .footer-middle-collapse__item_content.collapse__wrap
+                                                        ul.footer-middle-collapse__item_list.collapse__inner
+                                                            li
+                                                                a(href="#") Внедрение CRM системы
+                                                            li
+                                                                a(href="#") Внедрение корпоративных порталов
+                                                            li
+                                                                a(href="#") Кастомизация Битрикс24
+                                                            li
+                                                                a(href="#") Разработка интеграций
+                                                            li
+                                                                a(href="#") Интеграция с 1С
+                                                            li
+                                                                a(href="#") Битрикс 24
+                                                            li
+                                                                a(href="#") Аудит Битрикс 24
+                                                            li
+                                                                a(href="#") Переезд Битрикс24 из облака в коробку
+                                                            li
+                                                                a(href="#") Переход на php 8.1
+                                                            li
+                                                                a(href="#") Техническая поддержка
+                                                .footer-middle-collapse__item.collapse__item
+                                                    .footer-middle-collapse__item_header.collapse__header
+                                                        p Решения
+                                                        span
+                                                            +svg("plus")
+                                                    .footer-middle-collapse__item_content.collapse__wrap
+                                                        ul.footer-middle-collapse__item_list.collapse__inner
+                                                            li
+                                                                a(href="#") HR порталы и управления персоналом
+                                                            li
+                                                                a(href="#") Система управления онлайн-офисом
+                                                            li
+                                                                a(href="#") Система управления продажами
+                                                            li
+                                                                a(href="#") Система управления заказами в Битрикс24
+                                                            li
+                                                                a(href="#") Система управления маркетингом и PR в Битрикс24
+                                                            li
+                                                                a(href="#") CRM для промышленности
+                        .footer-block__middle_footer
+                            +logo(true)
+                            .footer-block__middle_footer_body
+                                span.note.footer-date © 
+                                    span.footer-date__value 2025
+                                    | , Агентство комплексного интернет-маркетинга MediaWorks
+                                span.note
+                                    a(href="#", target="_blank") Политика конфиденциальности
+                .footer-block__bottom
+                    .container
+                        .footer-block__bottom_grid
+                            .footer-block__bottom_col
+                                .footer-bottom-collapse.collapse.collapse-block
+                                    .footer-bottom-collapse__body
+                                        .footer-bottom-collapse__item.collapse-block__item
+                                            .footer-bottom-collapse__header.collapse__header
+                                                p Основной вид деятельности
+                                                +svg("arrow")
+                                            .footer-bottom-collapse__wrap.collapse-block__wrap
+                                                .footer-bottom-collapse__inner.collapse-block__data
+                                                    p ОКВЭД 62.01 Разработка компьютерного программного обеспечения
+                                        .footer-bottom-collapse__item.collapse-block__item
+                                            .footer-bottom-collapse__header.collapse__header
+                                                p Дополнительные виды деятельности
+                                                +svg("arrow")
+                                            .footer-bottom-collapse__wrap.collapse-block__wrap
+                                                .footer-bottom-collapse__inner.collapse-block__data
+                                                    ul
+                                                        li 62.02 Деятельность консультативная и работы в области компьютерных технологий
+                                                        li 62.09 Деятельность, связанная с использованием вычислительной техники и информационных технологий, прочая
+                                                        li 63.11 Деятельность по обработке данных, предоставление услуг по размещению информации и связанная с этим деятельность
+                                                        li 63.11.1 Деятельность по созданию и использованию баз данных и информационных ресурсов
+                                        .footer-bottom-collapse__item.collapse-block__item
+                                            .footer-bottom-collapse__header.collapse__header
+                                                p Вид деятельности в области информационных технологий
+                                                +svg("arrow")
+                                            .footer-bottom-collapse__wrap.collapse-block__wrap
+                                                .footer-bottom-collapse__inner.collapse-block__data
+                                                    p Код 1.01 1.05, 3.01, 12.01
+                            .footer-block__bottom_col
+                                .footer-block__bottom_contacts
+                                    span
+                                        a(href="tel:+74951277137") Тел: +7(495) 127-71-37
+                                    span
+                                        a(href="https://yandex.ru/maps/-/CHTFjYl3", target="_blank") Адрес: Чебоксары, Приволжский бульвар, 4, помещение 7
+                                            br
+                                            | Юридический адрес совпадает с основным
+                                    span Время работы отдела продаж: с 8:00 до 19:00
+                            .footer-block__bottom_col
+                                .footer-block__bottom_company-info
+                                    span ООО «МЕДИА ВОРКС АЙТИ»
+                                    span ИНН: 2100000872
+                                    span ОГРН 1222100007337
+                                    span КПП 210001001
+        .footer__bg
+            img(src="./images/gradients/footer-gradient.webp", alt="")
+    .overlay
+    +modal('modal1', 'modal1')
+    +modal('modal2', 'modal2')
+    +modal('success', 'success')
+    +modal('consultation', 'consultation')
+    +modal('analysis', 'analysis')
+    +modal('team', 'team')
+    +modal('live-demo', 'live-demo')
+    +modal('tender', 'tender')
+    +modal('case', 'case')
+    +modal('city', 'city')
+    +modal('license', 'license')

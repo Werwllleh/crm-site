@@ -1,0 +1,27 @@
+mixin bannerCost()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //banner-cost
+    .banner-cost&attributes(attributes)
+        .banner-cost__body
+            .banner-cost__image
+                img(src="./images/banners/cost.png", alt="")
+            .banner-cost__header
+                p.h3.banner-cost__title Стоимость
+                p.banner-cost__text Стоимость проекта расчитывается индивидуально после оценки технического задания
+            ul.banner-cost__values
+                li
+                    span от 100 000 ₽
+                    p проектное внедрение корпоративного портала
+                li
+                    span от 2500 ₽/час
+                    p техподдержка
+                li
+                    span от 3 месяцев
+                    p срок разработки
+            .banner-cost__button
+                button(data-modal="consultation").btn.primary.lg Получить расчет
+        .banner-cost__blur
+            img(src="./images/banners/cost-blur.png", alt="")

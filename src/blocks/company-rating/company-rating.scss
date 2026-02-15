@@ -1,0 +1,312 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// company-rating
+.company-rating {
+
+  &__grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+                        "years"
+                        "image"
+                        "text"
+                        "list";
+
+    @include tablet {
+      gap: 30px 20px;
+      justify-content: space-between;
+      grid-template-columns: auto .9fr;
+      grid-template-areas:
+                        "years text"
+                        "image list";
+    }
+
+    @include desktop {
+      gap: 60px 40px;
+    }
+
+    &_left {
+    }
+
+    &_right {
+    }
+  }
+
+  &__years {
+    grid-area: years;
+    display: flex;
+    align-items: flex-end;
+
+    &_items {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      //height: 40px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 350px;
+
+      &::-webkit-scrollbar {
+        height: 2px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $blue;
+      }
+
+      .separate {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        color: $light-grey;
+
+        @include semiDesktop {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  &__button-year {
+    position: relative;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: $light-grey;
+    cursor: pointer;
+    transition: font-size $transition-default;
+
+    @include semiDesktop {
+      font-size: 24px;
+    }
+
+    &.active {
+      font-size: 26px;
+      color: $black;
+
+      @include semiDesktop {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin-top: 20px;
+    grid-area: image;
+    max-width: 340px;
+    max-height: 481px;
+    margin-inline: auto;
+
+    @include mobile {
+      margin-inline: 0;
+    }
+
+    @include semiDesktop {
+      margin-top: 0;
+    }
+
+    img {
+      position: absolute;
+      opacity: 0;
+      left: 0;
+      visibility: hidden;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity $transition-default, visibility $transition-default;
+
+      &.show {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 40px;
+    grid-area: text;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: $black;
+
+    @include tablet {
+      font-size: 28px;
+    }
+
+    @include semiDesktop {
+      margin-top: 0;
+    }
+
+    @include desktop {
+      font-size: 32px;
+    }
+
+    @include laptop {
+      font-size: 44px;
+    }
+  }
+
+  &__values {
+    margin-top: 30px;
+    grid-area: list;
+    position: relative;
+
+    @include semiDesktop {
+      margin-top: 0;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: transform $transition-default, opacity $transition-default, visibility $transition-default, height $transition-default;
+
+    &.active {
+      height: auto;
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &_item {
+      position: relative;
+      padding-block: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+                "place year"
+                "text text";
+      align-items: center;
+      gap: 16px 0;
+      border-bottom: 1px solid $stroke;
+      transition: padding-inline $transition-default, opacity $transition-default, visibility $transition-default;
+
+      @include semiDesktop {
+        gap: 30px;
+        padding-block: 30px;
+        grid-template-columns: 120px 1fr auto;
+        grid-template-areas: "place text year";
+      }
+
+      &.hidden {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+
+        @include semiDesktop {
+          position: relative;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-block: auto;
+        width: 100%;
+        height: 0;
+        background-color: $background;
+        transition: height $transition-default;
+      }
+
+      span {
+        position: relative;
+        z-index: 1;
+        transition: transform $transition-default;
+
+        &:nth-child(1) {
+          grid-area: place;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 1.24;
+          color: $black;
+
+          @include semiDesktop {
+            font-size: 24px;
+          }
+        }
+
+        &:nth-child(2) {
+          grid-area: text;
+          font-weight: 450;
+          font-size: 16px;
+          line-height: 1.26;
+          color: $black;
+
+          @include semiDesktop {
+            font-size: 20px;
+          }
+        }
+
+        &:nth-child(3) {
+          grid-area: year;
+          font-weight: 450;
+          font-size: 14px;
+          line-height: 1.26;
+          text-align: right;
+          color: $light-grey;
+
+          @include semiDesktop {
+            font-size: 20px;
+          }
+
+        }
+      }
+
+      &:hover {
+        &::before {
+          height: 100%;
+        }
+
+        @include semiDesktop {
+          span {
+            &:nth-child(1) {
+              transform: translateX(20px);
+            }
+
+            &:nth-child(3) {
+              transform: translateX(-20px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__show-more {
+    margin-top: 30px;
+
+    @include semiDesktop {
+      display: none;
+    }
+  }
+}

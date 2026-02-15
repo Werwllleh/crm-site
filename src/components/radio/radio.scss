@@ -1,0 +1,42 @@
+@use '../../app/scss/variables.scss' as *;
+
+// radio
+.radio {
+    position: relative;
+    display: inline-flex;
+
+    &__input {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+    }
+
+    &__label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 1.57143;
+        color: $grey-blue;
+        cursor: pointer;
+        user-select: none;
+        padding: 9px 16px;
+        border-radius: 10px;
+        background: $background;
+        border: 1px solid transparent;
+        transition: color $transition-default, background $transition-default, border-color $transition-default;
+
+        &:hover {
+            border-color: $background;
+            color: $color-black;
+        }
+
+        .radio__input:checked+&,
+        .radio__input:checked+&:hover {
+            border-color: $grey-blue;
+            color: $text;
+        }
+    }
+}

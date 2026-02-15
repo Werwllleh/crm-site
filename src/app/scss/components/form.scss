@@ -1,0 +1,106 @@
+@use '../variables.scss' as *;
+@use '../mixins.scss' as *;
+
+
+.form-pin {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__label {
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 1.4;
+    color: $grey-blue;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 26px;
+      height: 26px;
+      color: $grey-blue;
+    }
+  }
+}
+
+.form-note {
+  margin-top: 20px;
+
+  .checkbox {
+
+    &__input {}
+
+    &__label {
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #6c7482;
+
+      a {
+        margin-left: 3px;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.form-base {
+
+  &__form {}
+
+  &__fieldset {}
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+  }
+
+  &__field {
+    &:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__footer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include semiDesktop {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include desktop {
+      margin-top: 40px;
+      gap: 40px;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+  }
+}

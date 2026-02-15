@@ -1,0 +1,246 @@
+mixin header()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('logo', true)
+    +regBlock('header-message', true, true)
+    +regBlock('header-search', true, true)
+    //header
+    header(class="anim animslide animslidehide animdalay200").header&attributes(attributes)
+        .header__container.container
+            .header__body
+                .header__left
+                    .header__logo
+                        +logo()
+                .header__right
+                    .header__top-bar
+                        button(data-modal="city").select-city
+                            span Выберите город
+                            +svg("arrow")
+                        ul.header__top-bar_links
+                            li
+                                a(href="#") Digital-агентство
+                            li
+                                a(href="#").active ИТ-ИНТЕГРАТОР
+                            li
+                                a(href="#") ДИЗАЙН-СТУДИЯ
+                    .header__bottom-bar
+                        .header-multiblock
+                            .header-multiblock__header
+                                .header-multiblock__header_logo
+                                    +logo()
+                                .header-multiblock__header_actions
+                                    button.header-multiblock__search.search-button
+                                        +svg("search")
+                                    button.header-multiblock__burger.burger-button
+                                        span
+                                        span
+                            ul.header__top-bar_links
+                                li
+                                    a(href="#") Digital-агентство
+                                li
+                                    a(href="#").active ИТ-ИНТЕГРАТОР
+                                li
+                                    a(href="#") ДИЗАЙН-СТУДИЯ
+                            nav.header__navbar
+                                ul.header__navbar_list
+                                    li.header__navbar_item
+                                        a.header__navbar_link(href="#") Услуги
+                                        .header-dropdown(data-nav-dropdown="services")
+                                            .header-dropdown__body
+                                                span.header-dropdown__icon-arrow
+                                                    +svg("dropdown-arrow")
+                                                .header-dropdown__left
+                                                    .header-dropdown__info
+                                                        .header-dropdown__category
+                                                            span.header-dropdown__category_arrow.header-dropdown-close
+                                                                +svg("arrow")
+                                                            a(href="#") Услуги
+                                                            span.header-dropdown__close.header-dropdown-close
+                                                                +svg("close")
+                                                        .header-dropdown__promo
+                                                            .header-dropdown__promo_img
+                                                                img.desktop(src="./images/header/promo.jpg", alt="promo")
+                                                                img.mobile(src="./images/header/promo-mobile.jpg", alt="promo")
+                                                            p.header-dropdown__promo_text
+                                                                | Лицензия Битрикс24 со&nbsp;скидкой до&nbsp;20%
+                                                                |
+                                                                span (до&nbsp;31 августа)
+                                                            a(href="#").header-dropdown__promo_link
+                                                        a(href="#").header-dropdown__category-link
+                                                            p Все услуги
+                                                            span.arrow-icon
+                                                                +svg("arrow45")
+                                                                +svg("arrow45")
+                                                .header-dropdown__right
+                                                    .header-dropdown__links
+                                                        .header-dropdown__links_row
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Комплексное внедрение Битрикс24 "под ключ"
+                                                                    li
+                                                                        a(href="#") Внедрение коробочной версии Битрикс24 Enterprise
+                                                                    li
+                                                                        a(href="#") Миграция на Битрикс24 с других CRM-систем
+                                                                    li
+                                                                        a(href="#") Бесшовный переезд с облака Битрикс24 в коробку
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Интеграция Битрикс24 с внешними системами
+                                                                    li
+                                                                        a(href="#") Интеграция Битрикс24 с 1С
+                                                                    li
+                                                                        a(href="#") Интеграция Битрикс24 с IP-телефонией
+                                                                    li
+                                                                        a(href="#") Интеграция с сайтом и интернет-магазином на 1С-Битрикс
+                                                                    li
+                                                                        a(href="#") Интеграция с платежными системами и онлайн-кассами
+                                                                    li
+                                                                        a(href="#") Разработка кастомных приложений для Битрикс24.Маркет
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Автоматизация бизнес-процессов на Low-Code (n8n)
+                                                                    li
+                                                                        a(href="#") Установка и техническая поддержка self-hosted n8n
+                                                                    li
+                                                                        a(href="#") Разработка сценариев (workflow) на n8n для нестандартных задач
+                                                                    li
+                                                                        a(href="#") Интеграция Битрикс24 с любыми системами через n8n
+                                                                    li
+                                                                        a(href="#") Миграция автоматизаций с Zapier и Make на n8n
+                                                        .header-dropdown__links_row
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Аудит и оптимизация портала Битрикс24
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Купить лицензию битрикс24
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Пакетное внедрение Битрикс24
+                                                        .header-dropdown__links_row
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") AI-решения для бизнеса
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Техническая поддержка и обучение
+                                    li.header__navbar_item
+                                        a.header__navbar_link(href="#") Решения
+                                        .header-dropdown(data-nav-dropdown="decisions")
+                                            .header-dropdown__body
+                                                span.header-dropdown__icon-arrow
+                                                    +svg("dropdown-arrow")
+                                                .header-dropdown__left
+                                                    .header-dropdown__info
+                                                        .header-dropdown__category
+                                                            span.header-dropdown__category_arrow.header-dropdown-close
+                                                                +svg("arrow")
+                                                            a(href="#") Решения
+                                                            span.header-dropdown__close.header-dropdown-close
+                                                                +svg("close")
+                                                        a(href="#").header-dropdown__category-link
+                                                            p Все решения
+                                                            span.arrow-icon
+                                                                +svg("arrow45")
+                                                                +svg("arrow45")
+                                                .header-dropdown__right
+                                                    .header-dropdown__links
+                                                        .header-dropdown__links_row
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Внедрение HR порталов  и управления персоналом
+                                                                    li
+                                                                        a(href="#") Внедрение системы управления онлайн-офисом
+                                                                    li
+                                                                        a(href="#") Внедрение системы управления продажами
+                                                                    li
+                                                                        a(href="#") Кастомизация корпоративных порталов
+                                                                    li
+                                                                        a(href="#") Разработка Внедрение системы управления марктингом и PR в Битрикс24
+                                    li.header__navbar_item
+                                        a.header__navbar_link(href="#") Отрасли
+                                        .header-dropdown(data-nav-dropdown="industries")
+                                            .header-dropdown__body
+                                                span.header-dropdown__icon-arrow
+                                                    +svg("dropdown-arrow")
+                                                .header-dropdown__left
+                                                    .header-dropdown__info
+                                                        .header-dropdown__category
+                                                            span.header-dropdown__category_arrow.header-dropdown-close
+                                                                +svg("arrow")
+                                                            a(href="#") Отрасли
+                                                            span.header-dropdown__close.header-dropdown-close
+                                                                +svg("close")
+                                                .header-dropdown__right
+                                                    .header-dropdown__links
+                                                        .header-dropdown__links_row
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Медицина
+                                                                    li
+                                                                        a(href="#") IT и Телеком
+                                                                    li
+                                                                        a(href="#") Электронная коммерция
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") Государство
+                                                                    li
+                                                                        a(href="#") Производство и дистрибуция
+                                                                    li
+                                                                        a(href="#") Юридические услуги и консалтинг
+                                                                    li
+                                                                        a(href="#") Логистика
+                                                            .header-dropdown__links_col
+                                                                ul.header-dropdown__links_group
+                                                                    li
+                                                                        a(href="#") B2B
+                                                                    li
+                                                                        a(href="#") Финансы и страхование
+                                                                    li
+                                                                        a(href="#") Сфера услуг
+                                    li.header__navbar_item
+                                        a.header__navbar_link(href="#") Кейсы
+                                    li.header__navbar_item
+                                        a.header__navbar_link(href="#") Журнал
+                                    li.header__navbar_item
+                                        a.header__navbar_link(href="#") Компания
+                                    li.header__navbar_item
+                                        a.header__navbar_link(href="#") Контакты
+                            .header-multiblock__contacts
+                                p.header-multiblock__contacts_text Всегда на связи
+                                .header-multiblock__contacts_grid
+                                    .header-multiblock__contacts_left
+                                        a(href="tel:+78005054084") 8 (800) 505-40-84
+                                        a(href="mailto:top@mworx.ru") top@mworx.ru
+                                    .header-multiblock__contacts_right
+                                        a(href="#").messenger-link.telegram
+                                            +svg("telegram_icon")
+                                        a(href="#").messenger-link.whatsapp
+                                            +svg("whatsapp_icon")
+                            .header-multiblock__select-city
+                                button(data-modal="city").select-city
+                                    span Выберите город
+                                    +svg("arrow")
+                            .header-multiblock__button-consultation
+                                button(data-modal="consultation").btn.primary.medium Обсудить проект
+                        button.header__search.search-button
+                            +svg("search")
+                        button.header__burger.burger-button
+                            span
+                            span
+                        button(data-modal="consultation").btn.primary.small.header__button-request Оставить заявку
+    +headerSearch()
+    .header__message
+        +headerMessage()

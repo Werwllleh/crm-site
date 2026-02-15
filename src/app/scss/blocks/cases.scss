@@ -1,0 +1,113 @@
+@use '../variables.scss' as *;
+@use '../mixins.scss' as *;
+
+.section-cases {
+
+  &__title {
+    max-width: 1150px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: $black;
+
+    span {
+      color: $light-grey;
+    }
+  }
+
+  &__description {
+    margin-top: 30px;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $text;
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include desktop {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    @include desktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__tags {
+
+  }
+
+  &__list {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+
+    @include tablet {
+      margin-top: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(370px, 3fr));
+    }
+
+    .case-card {
+      width: auto;
+    }
+  }
+
+  &__pagination {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    @include tablet {
+      margin-top: 60px;
+    }
+  }
+
+  &__link-cases {
+    position: relative;
+    display: inline-flex;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 1.375;
+    text-align: center;
+    color: $grey-blue;
+    padding-block: 6px;
+    transition: color $transition-default;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: $blue;
+      transition: width $transition-default;
+    }
+
+    &:hover {
+      color: $blue;
+
+      &::before {
+        width: 100%;
+      }
+    }
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+}

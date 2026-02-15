@@ -1,0 +1,157 @@
+extends ../../app/pug/layouts/service-layout
+
+append vars
+  - title = "Отрасль"
+  - description = "Описание Отрасль"
+
+append content
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regPage('service-detail', true, true)
+    +regComponent('header', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('case-card', true, true)
+    +regComponent('material-card', true, true)
+    +regComponent('pagination', true, true)
+    +regComponent('animate-button', true, true)
+    +regBlock('cloud-box-compare', true, true)
+    +regBlock('collapse-stages', true, true)
+    +regBlock('services-showcase', true, true)
+    +regBlock('about-steps', true, true)
+    +regBlock('order-analysis', true, true)
+    +regBlock('seo-block', true, true)
+
+    +header()
+    .service-layout
+        .service-layout__main.sector
+            .container
+                .service-layout__main--body
+                    .service-layout__breadcrumbs
+                        +breadcrumbs(['Главная', 'Медицина'])
+                    .service-layout__main--content
+                        .service-layout__main--info
+                            h1.h1.service-layout__main--title Кейсы в медицинской сфере
+                            p.service-layout__main--description Комплексные решения для цифровой трансформации компаний медицинской отрасли.
+                            button(data-modal="consultation").btn.primary.lg Подобрать решение
+                        span.service-layout__main--icon
+                            +svg("medicine")
+                    .service-layout__companies
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    img(src="./images/companies/vodohod.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/sberstrahovane.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/x5.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/robokassa.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/ekra.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/poliklinika.svg", alt="")
+        .service-layout__content.service--sector
+            .service-layout__content--bg
+            .service-layout__content--inner
+                .service-layout__container.container
+                    section.service-layout__cases
+                        .section-cases
+                            p.h2.section-cases__title
+                            p.section-cases__description
+                            .section-cases__content
+                                .section-cases__tags
+                                    +tags(['Все кейсы', 'Медицина', 'B2B', 'Производство и дистрибуция', 'Финансы и страхование', 'Государство', 'Электронная коммерция', 'Сфера услуг', 'Юридические услуги и консалтинг', 'Строительство и недвижимость', 'Логистика'])
+                                .section-cases__list
+                                    +caseCard('ctep.png', 'Внедрение корпоративного портала на Битрикс24 и его интеграция с OPERA для сети отелей «Роза Хутор»', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Автоматизация обучения сотрудников для «BFF»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Разработали единую систему по обработки обращений для 5 млн клиентской базы', ['B2B', 'Электронная коммерция'])
+                                    +caseCard('ctep.png', '«Личный кабинет руководителя HR» на платформе Битрикс24', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Разработка портала и кабинета менеджера для сервиса «Налог 24»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Автоматизация задач строительного холдинга с помощью Битрикс24: кейс ГК «Точно»', ['B2B', 'Электронная коммерция'])
+                                .section-cases__pagination
+                                    +pagination(true)
+                                    a(href="#").section-cases__link-cases Смотреть все кейсы
+                    section.service-layout__about-steps
+                        .about-steps
+                            p.h2.about-steps__title
+                                | Знаем особенности сферы
+                                |
+                                span и&nbsp;умеем с&nbsp;ними работать
+                            ul.about-steps__list
+                                li.about-steps__item
+                                    p.about-steps__item--title Защищаем чувствительные персональные данные
+                                    span.about-steps__item--index 01
+                                    p.about-steps__item--text Мы настраиваем CRM с учётом требований к защите персональных данных ФЗ-152 и еще ФЗ-323 «Об основах охраны здоровья граждан в РФ»: реализуем разграничение доступа, защищённое хранение и безопасную передачу медицинской информации.
+                                li.about-steps__item
+                                    p.about-steps__item--title Интегрируем с медицинскими платформами
+                                    span.about-steps__item--index 02
+                                    p.about-steps__item--text Опыт сложных интеграций позволяет нам объединять CRM с любыми медицинскими платформами для синхронизации приёмов, диагнозов, расписаний и результатов: МИС, ЛИС, 1С:Медицина
+                                li.about-steps__item
+                                    p.about-steps__item--title Внедряем автоматизированные воронки
+                                    span.about-steps__item--index 03
+                                    p.about-steps__item--text Настраиваем цепочки взаимодействия с пациентами — от первого обращения до повторных визитов. Уведомления приходят в нужное время и в нужный канал: SMS, мессенджер, email.
+                                li.about-steps__item
+                                    p.about-steps__item--title Создаем экосистему для управления данными
+                                    span.about-steps__item--index 04
+                                    p.about-steps__item--text Строим гибкую структуру учёта клиентской базы: пациенты, сопровождающие, врачи, страховые компании — CRM учитывает все типы контактов и отношения между ними.
+                                li.about-steps__item
+                                    p.about-steps__item--title Объединяем все каналы в единую систему
+                                    span.about-steps__item--index 05
+                                    p.about-steps__item--text Мы интегрируем телефонию, онлайн-запись, чат-боты и мессенджеры в единую систему — чтобы все обращения шли в одну воронку и не терялись.
+                                li.about-steps__item
+                                    p.about-steps__item--title Настраиваем сквозную аналитику
+                                    span.about-steps__item--index 06
+                                    p.about-steps__item--text Помогаем выстроить аналитику: от рекламной кампании до конкретного приёма. Вы точно знаете, какой канал привёл пациента и сколько он принес прибыли.
+                    section.service-layout__order-analysis
+                        +orderAnalysis()
+                    section.service-layout__advantages
+                        p.h2 Почему мы
+                        .advantages-block
+                            ul.advantages-block__list
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("flag")
+                                    p.advantages-block__item--title 10 лет опыта
+                                    p.advantages-block__item--text Помогаем запускать проекты и маштабировать бизнес
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("user-group")
+                                    p.advantages-block__item--title 65+ сотрудников
+                                    p.advantages-block__item--text Над вашим проектом работают штатные сертифицированные специалисты с опытом
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("chip")
+                                    p.advantages-block__item--title Актуальные решения
+                                    p.advantages-block__item--text Всегда в курсе новых технологий и предлагаем актуальные инструменты и AI-решения
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("shield-text")
+                                    p.advantages-block__item--title Аккредитованная IT компания
+                                    p.advantages-block__item--text Имеем государственную аккредитацию и создаем it-продукты
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("case")
+                                    p.advantages-block__item--title Отраслевая экспертиза
+                                    p.advantages-block__item--text Знаем как цифровизировать бизнес-процессы в&nbsp;медицинской отрасли
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("trophy")
+                                    p.advantages-block__item--title Золотой партнер Битрикс
+                                    p.advantages-block__item--text Лидируем в&nbsp;рейтингах партнеров Битрикс24
+                    section.service-layout__news
+                        p.h2
+                            | Делимся экспертизой
+                            |
+                            span про автоматизацию бизнеса
+                        .section-news
+                            .section-news__items
+                                .other-row
+                                    +materialCard('0.jpg', 'Как внедрять Битрикс24 – основные подходы, этапы, рекомендации', ['#CRM Битрикс24', '#Интеграция 1С', '#Автоматизация'])
+                                    +materialCard('1.jpg', 'Тренды найма 2025', ['#Управление персоналом', '#Бизнес-процессы'])
+                                    +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('3.jpg', 'Создание приложений как Airbnb: функциональность, цена, сроки разработки', ['#CRM Битрикс24', '#Интеграция 1С'])
+                            .section-news__footer
+                                +pagination(true)
+                                a(href="#").section-news__link Смотреть все статьи
+                    section.service-layout__seo
+                        p.h2 Автоматизированные решения для медицины
+                        +seoBlock()

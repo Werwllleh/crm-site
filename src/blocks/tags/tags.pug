@@ -1,0 +1,35 @@
+mixin tags(list)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //tags
+    .tags&attributes(attributes)
+        ul.tags__list
+            if list && list.length
+              each tag, index in list
+                  li
+                      span(data-tag=tag, class=`${index === 0 ? 'active' : ''}`).tags__item= tag
+            else
+                li
+                    span(data-tag="Все статьи").tags__item.active Все статьи
+                li
+                    span(data-tag="#CRM Битрикс24").tags__item #CRM Битрикс24
+                li
+                    span(data-tag="#Интеграция 1С").tags__item #Интеграция 1С
+                li
+                    span(data-tag="#Бизнес-процессы").tags__item #Бизнес-процессы
+                li
+                    span(data-tag="#CRM маркетинг").tags__item #CRM маркетинг
+                li
+                    span(data-tag="#Автоматизация").tags__item #Автоматизация
+                li
+                    span(data-tag="#Отчеты").tags__item #Отчеты
+                li
+                    span(data-tag="#Управление персоналом").tags__item #Управление персоналом
+                li
+                    span(data-tag="#Управление продажами").tags__item #Управление продажами
+                li
+                    span(data-tag="#Управление закупками").tags__item #Управление закупками
+                li
+                    span(data-tag="#Управление складом").tags__item #Управление складом

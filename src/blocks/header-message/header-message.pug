@@ -1,0 +1,25 @@
+mixin headerMessage()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //header-message
+    .header-message&attributes(attributes)
+        .header-message__body
+            .header-message__marquee
+                .header-message__marquee_inner
+                    .live-demo
+                        button.live-demo__button-bg(data-modal="live-demo")
+                        .container
+                            .live-demo__inner
+                                p.live-demo__text
+                                    | Запишитесь на
+                                    |
+                                    span.live-demo__animate
+                                        span.circle-triangle
+                                            span
+                                        |
+                                        | Live-демонстрацию
+                                    |
+                                    | портала по вашей тематике
+                                button(data-modal="live-demo").btn.medium.bordered.live-demo__button Хочу посмотреть демо

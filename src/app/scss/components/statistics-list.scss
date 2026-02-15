@@ -1,0 +1,56 @@
+@use '../variables.scss' as *;
+@use '../mixins.scss' as *;
+
+.statistics-list {
+
+  .swiper {
+    overflow: unset;
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+    .swiper-slide {
+      height: auto;
+    }
+  }
+
+  &__card {
+    border-radius: 16px;
+    padding: 20px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 26px 0;
+    height: 100%;
+
+    @include tablet {
+      padding: 40px;
+      gap: 60px 0;
+    }
+
+    &--value {
+      color: $blue;
+
+      &:not(span) {
+        font-size: 30px;
+
+        @include tablet {
+          font-size: 40px;
+        }
+      }
+    }
+
+    &--text {
+      max-width: 370px;
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 1.4;
+      color: #3f4162;
+
+      @include tablet {
+        font-size: 20px;
+      }
+    }
+  }
+}

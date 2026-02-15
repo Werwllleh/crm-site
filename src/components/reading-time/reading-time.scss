@@ -1,0 +1,29 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// reading-time
+.reading-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    color: $grey-blue;
+  }
+
+  &__value {
+    font-weight: 450;
+    font-size: 13px;
+    line-height: 1;
+    color: $grey-blue;
+    white-space: nowrap;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+  }
+
+}

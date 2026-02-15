@@ -1,0 +1,132 @@
+extends ../../app/pug/layouts/base-main.pug
+
+append vars
+  - title = "Main"
+  - description = "Описание Main"
+
+append content
+    +regPage('main', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regLibrary(false, 'spline-viewer/spline-viewer.js')
+    +regComponent('header', true, true)
+    +regComponent('case-card', true, true)
+    +regComponent('pagination', true, true)
+    +regComponent('animate-button', true, true)
+    +regComponent('material-card', true, true)
+    +regBlock('main-section', true, true)
+    +regBlock('solutions', true, true)
+    +regBlock('industries-block', true, true)
+    +regBlock('tags', true, true)
+    +regBlock('company-rating', true, true)
+    +regBlock('order-analysis', true, true)
+    +regBlock('companies-swipers', true, true)
+    +regBlock('stories', true, true)
+    +regBlock('seo-block', true, true)
+
+
+    main.page.page-main
+        section.page-main__main
+            .page-main__header
+                +header().light
+            .page-main__main_content
+                .container
+                    +mainSection()
+            .page-main__main_spline.spline-block
+                //spline-viewer(data-url="https://prod.spline.design/Gl2hcjxtCmYG5ylv/scene.splinecode")
+        .page-main__content
+            .page-main__container.container
+                section.page-main__section.section-business-process
+                    .page-main__section_container.container
+                        .page-main__section_header
+                            p.h2.page-main__section_title
+                                | Помогаем делать бизнес процессы
+                                |
+                                span удобнее&nbsp;и&nbsp;прозрачнее
+                        .page-main__section_content
+                            +solutions()
+                section.page-main__section.section-industries
+                    .page-main__section_container.container
+                        .page-main__section_header
+                            p.h2.page-main__section_title
+                                | Экспертиза в отраслях
+                            p.page-main__section_description
+                                | Собрали наши кейсы по внедрению корп. порталов в разных отраслях экономики
+                        .page-main__section_content
+                            +industriesBlock()
+                section.page-main__section.section-cases
+                    .page-main__section_container.container
+                        p.h2.page-main__section_title
+                            | Читайте про реализованные внедрения
+                        p.page-main__section_description
+                            | Собрали для вас портфолио с кейсами, чтобы вы могли оценить нашу работу и принять решение
+                        .page-main__section_content
+                            .section-cases__tags
+                                +tags(['Все кейсы', 'Медицина', 'B2B', 'Производство и дистрибуция', 'Финансы и страхование', 'Государство', 'Электронная коммерция', 'Сфера услуг', 'Юридические услуги и консалтинг', 'Строительство и недвижимость', 'Логистика'])
+                            .section-cases__list
+                                +caseCard('ctep.png', 'Внедрение корпоративного портала на Битрикс24 и его интеграция с OPERA для сети отелей «Роза Хутор»', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                +caseCard('bff.png', 'Автоматизация обучения сотрудников для «BFF»', ['Сфера услуг', 'Электронная коммерция'])
+                                +caseCard('iva.png', 'Разработали единую систему по обработки обращений для 5 млн клиентской базы', ['B2B', 'Электронная коммерция'])
+                                +caseCard('ctep.png', '«Личный кабинет руководителя HR» на платформе Битрикс24', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                +caseCard('bff.png', 'Разработка портала и кабинета менеджера для сервиса «Налог 24»', ['Сфера услуг', 'Электронная коммерция'])
+                                +caseCard('iva.png', 'Автоматизация задач строительного холдинга с помощью Битрикс24: кейс ГК «Точно»', ['B2B', 'Электронная коммерция'])
+                            .section-cases__pagination
+                                +pagination(true)
+                                a(href="#").section-cases__link-cases Смотреть все кейсы
+                section.page-main__section.section-rating
+                    .page-main__section_container.container
+                        .page-main__section_header
+                            p.h2.page-main__section_title
+                                | Лидируем в рейтингах
+                                |
+                                span лучших it компаний
+                        .page-main__section_content
+                            +companyRating()
+                section.page-main__section.section-order-analusis
+                    +orderAnalysis()
+                section.page-main__section.section-stories
+                    .section-stories__header
+                        p.h2.section-stories__title
+                            | Истории команд,
+                            |
+                            span которые сделали бизнес проще и умнее
+                        .section-stories__navigation
+                            +animateButton("prev").prev
+                            +animateButton("next").next
+                    .section-stories__content
+                        +stories()
+                section.page-main__section.section-companies
+                    .page-main__section_header
+                        p.h2.page-main__section_title
+                            | Компании, которые сотрудничают с нами
+                    .page-main__section_content
+                        +companiesSwipers()
+                section.page-main__section.section-news
+                    .page-main__section_header
+                        p.h2.page-main__section_title
+                            | Делимся экспертизой
+                            |
+                            span про автоматизацию бизнеса
+                    .page-main__section_content
+                        .section-news__tags
+                            +tags()
+                        .section-news__items
+                            .first-row
+                                +materialCard('0.jpg', 'Как внедрять Битрикс24 – основные подходы, этапы, рекомендации', ['#CRM Битрикс24', '#Интеграция 1С', '#Автоматизация'], 'тема недели').compact
+                                +materialCard('1.jpg', 'Тренды найма 2025', ['#Управление персоналом', '#Бизнес-процессы'])
+                                +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                            .other-row
+                                +materialCard('0.jpg', 'Как внедрять Битрикс24 – основные подходы, этапы, рекомендации', ['#CRM Битрикс24', '#Интеграция 1С', '#Автоматизация'])
+                                +materialCard('1.jpg', 'Тренды найма 2025', ['#Управление персоналом', '#Бизнес-процессы'])
+                                +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                                +materialCard('3.jpg', 'Создание приложений как Airbnb: функциональность, цена, сроки разработки', ['#CRM Битрикс24', '#Интеграция 1С'])
+                        .section-news__footer
+                            +pagination(true)
+                            a(href="#").section-news__link Смотреть все статьи
+                section.page-main__section.section-seo
+                    p.h3.section-seo__title
+                        | Оптимизируйте свой бизнес с&nbsp;помощью профессионального внедрения CRM
+                    .section-seo__content
+                        +seoBlock()

@@ -1,0 +1,240 @@
+extends ../../app/pug/layouts/service-layout
+
+append vars
+  - title = "Лицензия"
+  - description = "Описание Лицензия"
+
+append content
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regPage('service-detail', true, true)
+    +regComponent('header', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('case-card', true, true)
+    +regComponent('material-card', true, true)
+    +regComponent('pagination', true, true)
+    +regComponent('animate-button', true, true)
+    +regBlock('cloud-box-compare', true, true)
+    +regBlock('collapse-stages', true, true)
+    +regBlock('services-showcase', true, true)
+    +regBlock('tags', true, true)
+    +regBlock('company-rating', true, true)
+    +regBlock('banner-tariff-selection', true, true)
+    +regBlock('banner-help-selection', true, true)
+    +regBlock('pricing-plans', true, true)
+    +regBlock('about-steps', true, true)
+    +regBlock('stories', true, true)
+    +regBlock('tariff', true, true)
+
+    +header().light
+    .service-layout
+        .service-layout__main
+            .container
+                .service-layout__main--body
+                    .service-layout__breadcrumbs
+                        +breadcrumbs(['Главная', 'Услуги', 'Купить лицензию Битрикс24'])
+                    .service-layout__main--content
+                        .service-layout__main--info
+                            h1.h1.service-layout__main--title Лицензия Битрикс24
+                            p.service-layout__main--description Всё, чтобы автоматизация окупилась уже на старте: внедрение, поддержка, обучение и AI-помощник для роста продаж в подарок
+                            button(data-modal="consultation").btn.primary.lg Подобрать тариф
+                        .service-layout__main--image
+                            img(src="./images/services-detail/2.png", alt="")
+                    .service-layout__companies
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    img(src="./images/companies/vodohod.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/sberstrahovane.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/x5.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/robokassa.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/ekra.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/poliklinika.svg", alt="")
+        .service-layout__content.service--license
+            .service-layout__content--inner
+                .service-layout__container.container
+                    .service-layout__content--bg
+                        section.service-layout__statistics
+                            .statistics-list
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    | c
+                                                    |
+                                                    span.h1 2017
+                                                    |
+                                                    | года
+                                                p.statistics-list__card--text
+                                                    | успешно внедряем продукты 1С-Битрикс в компаниях с оборотом от 10 млн до 2,5 млрд рублей
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    span.h1 300+
+                                                p.statistics-list__card--text
+                                                    | проектов по&nbsp;внедрению и&nbsp;развитию Битрикс24&nbsp;в портфолио
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    span.h1 65+
+                                                p.statistics-list__card--text
+                                                    | сертифицированных специалистов команде
+                        section.service-layout__tariff
+                            +tariff('Тарифы на покупку лицензии Битрикс24')
+                    section.service-layout__compare
+                        +cloudBoxCompare('В чем разница между облаком или коробкой', 'Битрикс24 доступен в двух основных версиях, каждая из которых имеет свои преимущества')
+                    section.service-layout__help-selection
+                        +bannerHelpSelection()
+                    section.service-layout__pricing-plans
+                        +pricingPlans("Тарифы на внедрение Битрикс24")
+                    section.service-layout__tariff-selection
+                        +bannerTariffSelection()
+                    section.service-layout__about-steps
+                        -
+                          const list = [
+                              {
+                                index: '01',
+                                title: 'Проводим аудит и подбираем тариф',
+                                text: 'Так вы не переплатите за ненужные опции и получите прозрачную смету на внедрение',
+                              },
+                              {
+                                index: '02',
+                                title: 'Разворачиваем  Битрикс24',
+                                text: 'Вашим IT-специалистам не придется разбираться в технических нюансах, мы всё сделаем сами',
+                              },
+                              {
+                                index: '03',
+                                title: 'Настраиваем интеграцию с сервисами и ресурсами:',
+                                text: 'телефонией, сайтом, интернет-магазином, другими продуктами 1С — сотрудникам больше не надо тратить время на ввод данных вручную',
+                              },
+                              {
+                                index: '04',
+                                title: 'Обучаем персонал работе на платформе',
+                                text: 'За 5 дней вся команда научится работать в CRM',
+                              },
+                              {
+                                index: '05',
+                                title: 'Выполняем техподдержку',
+                                text: 'Мы на связи с вашей командой в чате и мессенджерах, чтобы быстро помочь',
+                              }
+                          ]
+                        +aboutSteps('Что дает внедрение портала', list, {
+                          title: 'Бесплатная демонстрация портала',
+                          modal: 'analysis',
+                          buttonText: 'Подобрать тариф'
+                        })
+                    section.service-layout__cases
+                        .section-cases
+                            p.h2.section-cases__title
+                                | Читайте про реализованные внедрения
+                            p.section-cases__description
+                                | Собрали для вас портфолио с кейсами, чтобы вы могли оценить нашу работу и принять решение
+                            .section-cases__content
+                                .section-cases__tags
+                                    +tags(['Все кейсы', 'Медицина', 'B2B', 'Производство и дистрибуция', 'Финансы и страхование', 'Государство', 'Электронная коммерция', 'Сфера услуг', 'Юридические услуги и консалтинг', 'Строительство и недвижимость', 'Логистика'])
+                                .section-cases__list
+                                    +caseCard('ctep.png', 'Внедрение корпоративного портала на Битрикс24 и его интеграция с OPERA для сети отелей «Роза Хутор»', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Автоматизация обучения сотрудников для «BFF»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Разработали единую систему по обработки обращений для 5 млн клиентской базы', ['B2B', 'Электронная коммерция'])
+                                    +caseCard('ctep.png', '«Личный кабинет руководителя HR» на платформе Битрикс24', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Разработка портала и кабинета менеджера для сервиса «Налог 24»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Автоматизация задач строительного холдинга с помощью Битрикс24: кейс ГК «Точно»', ['B2B', 'Электронная коммерция'])
+                                .section-cases__pagination
+                                    +pagination(true)
+                                    a(href="#").section-cases__link-cases Смотреть все кейсы
+                    section.service-layout__stories
+                        .section-stories
+                            .section-stories__header
+                                p.h2.section-stories__title
+                                    | Истории команд,
+                                    |
+                                    span которые сделали бизнес проще и умнее
+                                .section-stories__navigation
+                                    +animateButton("prev").prev
+                                    +animateButton("next").next
+                            .section-stories__content
+                                +stories()
+                    section.service-layout__news
+                        p.h2
+                            | Делимся экспертизой
+                            |
+                            span про автоматизацию бизнеса
+                        .section-news
+                            .section-news__items
+                                .other-row
+                                    +materialCard('0.jpg', 'Как внедрять Битрикс24 – основные подходы, этапы, рекомендации', ['#CRM Битрикс24', '#Интеграция 1С', '#Автоматизация'])
+                                    +materialCard('1.jpg', 'Тренды найма 2025', ['#Управление персоналом', '#Бизнес-процессы'])
+                                    +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('3.jpg', 'Создание приложений как Airbnb: функциональность, цена, сроки разработки', ['#CRM Битрикс24', '#Интеграция 1С'])
+                            .section-news__footer
+                                +pagination(true)
+                                a(href="#").section-news__link Смотреть все статьи
+                    section.service-layout__tasks
+                      -
+                          const dataServices = {
+                              title: 'Какие услуги мы оказываем',
+                              text: 'Вот что мы делаем, чтобы ваш Битрикс24 работал безупречно и соответствовал задачам бизнеса',
+                              items: [
+                                  {
+                                      index: '01',
+                                      category: 'Внедрение коробочной версии Битрикс24 Enterprise',
+                                      text: 'Устанавливаем и настраиваем систему на сервере вашей компании или у провайдера для большего контроля и безопасности данных',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '02',
+                                      category: 'Миграция на Битрикс24 с других CRM-систем',
+                                      text: 'Обеспечиваем безопасный перенос ваших данных с amoCRM, Salesforce, самописных CRM и других систем',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '03',
+                                      category: 'Бесшовный переезд с облака Битрикс24 в коробку',
+                                      text: 'Сводим к минимуму перерывы в работе и потерю данных при переходе с облачной на коробочную версию',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '04',
+                                      category: 'Интеграция Битрикс24 с 1С',
+                                      text: 'Настраиваем полноценный обмен данными с 1С: Управление торговлей, УНФ, Бухгалтерия для автоматизации процессов',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '05',
+                                      category: 'Интеграция с IP-телефонией',
+                                      text: 'Подключаем вашу телефонию: Asterisk, Mango Office, Zadarma и другие — для эффективной обработки звонков и записи разговоров',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '06',
+                                      category: 'Интеграция с сайтом и интернет-магазином на 1С-Битрикс',
+                                      text: 'Налаживаем синхронизацию данных между CRM, сайтом и интернет-магазином, включая выгрузку товаров, цен и статусов заказов',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '07',
+                                      category: 'Интеграция с платежными системами и онлайн-кассами',
+                                      text: 'Автоматизируем прием и обработку платежей, печать фискальных чеков',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '08',
+                                      category: 'Разработка кастомных приложений для Битрикс24 Маркет',
+                                      text: 'Создаем приложения под ваши задачи, используем REST API',
+                                      subItems: []
+                                  }
+                              ]
+                          }
+                      + servicesShowcase(dataServices)
+                    section.service-layout__rating
+                        p.h2
+                            | Лидируем в&nbsp;рейтингах
+                            |
+                            span лучших it&nbsp;компаний
+                        .section-rating
+                            +companyRating()

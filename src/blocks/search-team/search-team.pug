@@ -1,0 +1,11 @@
+mixin searchTeam()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('faces-row', true, true)
+    //search-team
+    .search-team&attributes(attributes)
+        +facesRow()
+        p.search-team__title Ищите опытную команду интеграторов?
+        p.search-team__text Проанализируем задачи, составим тех. задание и предложим решение.
+        button(data-modal="consultation").btn.primary.medium Обсудить проект

@@ -1,0 +1,49 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Index"
+  - description = "Описание Index"
+
+append content
+    +regPage('index', true, true)
+    //- регистрация
+    //- +regLib('lib-name/lib.js', 'lib-name/lib.css')
+
+
+    main.page.page-index
+        .page__container.container
+            .page__content
+                h1.h1 Список страниц
+                ul.page-index__list
+                    li
+                        a(href="./ui.html", target="_blank") UI
+                    li
+                        a(href="./main.html", target="_blank") Главная
+                    li
+                        a(href="./blog.html", target="_blank") Блог
+                    li
+                        a(href="./article.html", target="_blank") Статья
+                    li
+                        a(href="./case.html", target="_blank") Кейс
+                    li
+                        a(href="./services.html", target="_blank") Услуги (разводящая)
+                    li
+                        a(href="./service-detail.html", target="_blank") Услуга первого уровня
+                    li
+                        a(href="./service-detail2.html", target="_blank") Услуга второго уровня
+                    li
+                        a(href="./service-license.html", target="_blank") Лицензия
+                    li
+                        a(href="./service-sector.html", target="_blank") Отрасль
+                    li
+                        a(href="./company.html", target="_blank") О компании
+                    li
+                        a(href="./technical-support.html", target="_blank") Техподдержка
+                    li
+                        a(href="./package-integration.html", target="_blank") Пакетное внедрение
+                    li
+                        a(href="./404.html", target="_blank") 404
+                    li
+                        a(href="./ai.html", target="_blank") AI
+                    li
+                        a(href="./policy.html", target="_blank") Пользовательское соглашение

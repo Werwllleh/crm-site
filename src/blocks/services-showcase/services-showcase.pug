@@ -1,0 +1,28 @@
+mixin servicesShowcase(data)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //services-showcase
+    .services-showcase&attributes(attributes)
+        p.h2.services-showcase__title= data.title
+        if (data.items && data.items.length)
+            .services-showcase__items
+                for item in data.items
+                    .services-showcase__item
+                        .services-showcase__item--index
+                            span= `/${item.index}`
+                        a(href='#').services-showcase__item--link= item.category
+                        span.services-showcase__item--icon
+                            +svg("arrow45")
+                            +svg("arrow45")
+                        if (item.text)
+                          p.services-showcase__item--text= item.text
+                        if (item.subItems && item.subItems.length)
+                            ul.services-showcase__item--list
+                              for subItem in item.subItems
+                                li
+                                    a(href='#').services-showcase__item--sublink
+                                        span
+                                            +svg('arrow-right')
+                                        p= subItem

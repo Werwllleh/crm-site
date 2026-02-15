@@ -1,0 +1,153 @@
+@use '../variables.scss' as *;
+@use '../mixins.scss' as *;
+
+.section-news {
+
+  &__tags {
+  }
+
+  &__items {
+    margin-top: 30px;
+
+    @include semiDesktop {
+      margin-top: 60px;
+    }
+
+    .first-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: stretch;
+      grid-template-areas:  "a"
+                              "b"
+                              "c";
+      gap: 20px;
+
+      @include mobile {
+        gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+                              "a a"
+                              "b c";
+      }
+
+      @include semiDesktop {
+        gap: 60px 40px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "a b c";
+      }
+
+      @include w1250 {
+        gap: 80px 40px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "a a b c";
+      }
+
+      .material-card {
+        &:nth-child(1) {
+          grid-area: a;
+        }
+
+        &:nth-child(2) {
+          grid-area: b;
+        }
+
+        &:nth-child(3) {
+          grid-area: c;
+        }
+      }
+    }
+
+    .other-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: stretch;
+      gap: 20px;
+
+      @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+
+      @include semiDesktop {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px 40px;
+      }
+
+      @include w1250 {
+        gap: 80px 40px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @include laptop {
+
+      }
+    }
+
+    .first-row + .other-row {
+      margin-top: 20px;
+
+      @include mobile {
+        margin-top: 40px;
+      }
+
+      @include semiDesktop {
+        margin-top: 60px;
+      }
+
+      @include w1250 {
+        margin-top: 80px;
+      }
+    }
+
+    .material-card {
+
+    }
+  }
+
+  &__footer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include semiDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    padding-block: 6px;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.375;
+    text-align: center;
+    color: $grey-blue;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      transform: scale(0);
+      background-color: $blue;
+      transform-origin: left bottom;
+      transition: transform $transition-default;
+    }
+
+    &:hover {
+      color: $blue;
+
+      &::before {
+        transform: scale(1);
+      }
+
+    }
+  }
+}

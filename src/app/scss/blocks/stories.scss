@@ -1,0 +1,41 @@
+@use '../variables.scss' as *;
+@use '../mixins.scss' as *;
+
+.section-stories {
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+    gap: 0 20px;
+  }
+
+  &__title {
+    max-width: 980px;
+
+    span {
+      color: $light-grey;
+    }
+  }
+
+  &__navigation {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    @include desktop {
+      margin-top: 60px;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+mixin techExp(title, description)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //tech-exp
+    .tech-exp&attributes(attributes)
+        if title
+            p.h2.tech-exp__title= title
+        if description
+            p.tech-exp__description= description
+        ul.tech-exp__list
+          -
+              const list = [
+                  {
+                    image: 'bitrix',
+                    name: '1C-Битрикс',
+                  },
+                  {
+                    image: 'node-js',
+                    name: 'Node.js',
+                  },
+                  {
+                    image: 'js',
+                    name: 'JavaScript',
+                  },
+                  {
+                    image: 'ts',
+                    name: 'TypeScript',
+                  },
+                  {
+                    image: 'react',
+                    name: 'ReactJS',
+                  },
+                  {
+                    image: 'redux',
+                    name: 'Redux',
+                  },
+                  {
+                    image: 'laravel',
+                    name: 'Laravel',
+                  },
+                  {
+                    image: 'my-sql',
+                    name: 'MySQL',
+                  },
+                  {
+                    image: 'php',
+                    name: 'PHP',
+                  },
+                  {
+                    image: 'redis',
+                    name: 'Redis',
+                  },
+                  {
+                    image: 'postgre',
+                    name: 'PostgreSQL',
+                  },
+                  {
+                    image: 'clickhouse',
+                    name: 'ClickHouse',
+                  },
+                  {
+                    image: 's3',
+                    name: 'S3',
+                  },
+                  {
+                    image: 'b24',
+                    name: 'Битрикс24.Сайты',
+                  },
+                  {
+                    image: 'tilda',
+                    name: 'Tilda',
+                  },
+                  {
+                    image: 'zapier',
+                    name: 'Zapier/Albato',
+                  },
+                  {
+                    image: 'n8n',
+                    name: 'n8n',
+                  },
+                  {
+                    image: 'make',
+                    name: 'make',
+                  }
+              ]
+          for item in list
+            li
+                img(src=`./images/technologies/${item.image}.png`, alt=item.name)
+                span= item.name
+

@@ -1,0 +1,13 @@
+mixin chapters(items)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //chapters
+    .chapters&attributes(attributes)
+        p.chapters__title Содержание
+        if items && items.length
+            ul.chapters__list
+              each item, index in items
+                  li.chapters__item
+                    a(href=`${item.link}`, class=`${index === 0 ? 'active' : ''}`).chapters__link= item.title

@@ -1,0 +1,145 @@
+extends ../../app/pug/layouts/base.pug
+
+
+
+append vars
+  - title = "Услуги (разводящая)"
+  - description = "Описание Services"
+
+append content
+    +regPage('services', true, true)
+    +regBlock('tags', true, true)
+    +regBlock('stories', true, true)
+    +regBlock('services-showcase', true, true)
+    +regComponent('case-card', true, true)
+    +regComponent('pagination', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('animate-button', true, true)
+    +regComponent('animate-button', true, true)
+
+
+    .page-services
+        .page__breadcrumbs
+            +breadcrumbs(['Главная', 'Услуги и решения'])
+        .page-services__content
+            section.page-services__main
+                h1.h1.page-services__main--title Услуги и решения
+                p.page-services__main--description Оказываем полный комплекс услуг внедрению CRM систем. Наша команда возьмет на себя автоматизацию ваших бизнес-процессов, начиная с предпроектной аналитики, поставки программного обеспечения и разработки сложных индивидуальных решений, заканчивая поддержкой и развитием IT-систем.
+            section.page-services__services
+                -
+                  const dataServices = {
+                              title: 'Услуги',
+                              items: [
+                                  {
+                                      index: '01',
+                                      category: 'Комплексное внедрение Битрикс24 "под ключ"',
+                                      subItems: [
+                                          'Внедрение коробочной версии Битрикс24 Enterprise', 'Миграция на Битрикс24 с других CRM-систем', 'Бесшовный переезд с облака Битрикс24 в коробку'
+                                      ]
+                                  },
+                                  {
+                                      index: '02',
+                                      category: 'Интеграция Битрикс24 с внешними системами',
+                                      subItems: [
+                                          'Интеграция Битрикс24 с 1С', 'Интеграция Битрикс24 с IP-телефонией', 'Интеграция с сайтом и интернет-магазином на 1С-Битрикс', 'Интеграция с платежными системами и онлайн-кассами', 'Интеграция с платежными системами и онлайн-кассами'
+                                      ]
+                                  },
+                                  {
+                                      index: '03',
+                                      category: 'Автоматизация бизнес-процессов на Low-Code (n8n)',
+                                      subItems: [
+                                          'Установка и техническая поддержка self-hosted n8n', 'Разработка сценариев (workflow) на n8n для нестандартных задач', 'Интеграция Битрикс24 с любыми системами через n8n', 'Интеграция Битрикс24 с любыми системами через n8n', 'Миграция автоматизаций с Zapier и Make на n8n'
+                                      ]
+                                  },
+                                  {
+                                      index: '04',
+                                      category: 'Аудит и оптимизация портала Битрикс24',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '05',
+                                      category: 'Купить лицензию Битрикс24',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '06',
+                                      category: 'Пакетное внедрение Битрикс24',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '07',
+                                      category: 'AI-решения для бизнеса',
+                                      subItems: []
+                                  },
+                                  {
+                                      index: '08',
+                                      category: 'Техническая поддержка и обучение',
+                                      subItems: []
+                                  },
+                              ]
+                          }
+                + servicesShowcase(dataServices)
+            section.page-services__solutions
+                -
+                    const dataSolutions = {
+                        title: 'Решения',
+                        items: [
+                            {
+                                index: '01',
+                                category: 'Внедрение HR порталов и управления персоналом',
+                                subItems: []
+                            },
+                            {
+                                index: '02',
+                                category: 'Внедрение системы управления онлайн-офисом',
+                                subItems: []
+                            },
+                            {
+                                index: '03',
+                                category: 'Внедрение системы управления продажами',
+                                subItems: []
+                            },
+                            {
+                                index: '04',
+                                category: 'Кастомизация корпоративных порталов',
+                                subItems: []
+                            },
+                            {
+                                index: '05',
+                                category: 'Разработка Внедрение системы управления марктингом и PR в Битрикс24',
+                                subItems: []
+                            },
+                        ]
+                    }
+                +servicesShowcase(dataSolutions)
+            section.page-services__cases
+                .section-cases
+                    p.h2.section-cases__title
+                        | Читайте про реализованные внедрения
+                    p.section-cases__description
+                        | Собрали для вас портфолио с кейсами, чтобы вы могли оценить нашу работу и принять решение
+                    .section-cases__content
+                        .section-cases__tags
+                            +tags(['Все кейсы', 'Медицина', 'B2B', 'Производство и дистрибуция', 'Финансы и страхование', 'Государство', 'Электронная коммерция', 'Сфера услуг', 'Юридические услуги и консалтинг', 'Строительство и недвижимость', 'Логистика'])
+                        .section-cases__list
+                            +caseCard('ctep.png', 'Внедрение корпоративного портала на Битрикс24 и его интеграция с OPERA для сети отелей «Роза Хутор»', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                            +caseCard('bff.png', 'Автоматизация обучения сотрудников для «BFF»', ['Сфера услуг', 'Электронная коммерция'])
+                            +caseCard('iva.png', 'Разработали единую систему по обработки обращений для 5 млн клиентской базы', ['B2B', 'Электронная коммерция'])
+                            +caseCard('ctep.png', '«Личный кабинет руководителя HR» на платформе Битрикс24', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                            +caseCard('bff.png', 'Разработка портала и кабинета менеджера для сервиса «Налог 24»', ['Сфера услуг', 'Электронная коммерция'])
+                            +caseCard('iva.png', 'Автоматизация задач строительного холдинга с помощью Битрикс24: кейс ГК «Точно»', ['B2B', 'Электронная коммерция'])
+                        .section-cases__pagination
+                            +pagination(true)
+                            a(href="#").section-cases__link-cases Смотреть все кейсы
+            section.page-services__stories
+                .section-stories
+                    .section-stories__header
+                        p.h2.section-stories__title
+                            | Истории команд,
+                            |
+                            span которые сделали бизнес проще и умнее
+                        .section-stories__navigation
+                            +animateButton("prev").prev
+                            +animateButton("next").next
+                    .section-stories__content
+                        +stories()

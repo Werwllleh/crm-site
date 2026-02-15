@@ -1,0 +1,369 @@
+@use '../variables.scss' as *;
+@use '../mixins' as *;
+
+/*
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 1rem 1.25rem;
+    border-radius: $radius-md;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: .25s;
+}
+
+.btn:hover {
+    opacity: .85;
+}
+
+.btn--primary {
+    background: $blue-600;
+    color: $white;
+}
+
+.btn--outline {
+    background: transparent;
+    border: 1.5px solid $white;
+    color: $white;
+}
+
+.btn--outline.button--calypso {
+    font-family: $font-family;
+}
+
+.btn--outline.button--calypso:hover {
+    border-color: #ff6600;
+}
+
+.btn--outline.button--calypso:hover span {
+    !*color: #000;*!
+    mix-blend-mode: normal;
+}
+
+.btn--outline.button--calypso::before {
+    background: #ff6600;
+}
+
+.btn--outline.button--calypso::after {
+    background: #ff6600;
+}
+
+.btn--ghost {
+    background: transparent;
+    border: 1.5px solid $white;
+    color: $white;
+    padding: .5rem 1.5rem;
+    font-size: .75rem;
+}
+
+.btn--ghost.button--calypso {
+    font-family: $font-family;
+}
+
+.btn--ghost.button--calypso:hover {
+    border-color: $red-600;
+}
+
+.btn--ghost.button--calypso span {
+    mix-blend-mode: normal;
+}
+
+.btn--ghost.button--calypso:hover span {
+    !*color: #000;*!
+    mix-blend-mode: normal;
+}
+
+.btn--ghost.button--calypso::before {
+    border-color: $red-600;
+    background: $red-600;
+}
+
+.btn--ghost.button--calypso::after {
+    border-color: $red-600;
+    background: $red-600;
+}
+
+.btn--lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+}
+
+.btn--light {
+    background: #EBEEF5;
+    color: #3F4162;
+    padding: 14px 40px;
+    border: none;
+    font-weight: 500;
+}
+
+.btn--light::after {
+    width: 1.8rem;
+    height: 1.8rem;
+    background: url(images/re.svg) no-repeat center center;
+    background-size: 1.8rem 1.8rem;
+    border-radius: 0;
+    left: -10px;
+    transition: all 0.3s;
+}
+*/
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: background-color $transition-default, color $transition-default, border-color $transition-default;
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1px solid transparent;
+
+    &.primary {
+        background-color: $blue;
+        color: $white;
+        font-weight: 500;
+
+        &:not(.download):not(.bordered):not(.calypso):hover {
+            border-color: $orange;
+            background-color: $orange;
+        }
+    }
+
+    &.lg {
+        padding: 15px 20px;
+        font-size: 16px;
+        line-height: 1.375;
+
+        @include tablet {
+            padding: 17px 40px;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+    }
+
+    &.medium {
+        padding: 11px 40px;
+        font-size: 15px;
+        line-height: 1.46667;
+
+        @include tablet {
+            padding: 12px 40px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+    &.small {
+        padding: 11px 24px;
+        font-size: 16px;
+        line-height: 1.375;
+    }
+
+    &.calypso {
+        position: relative;
+        overflow: hidden;
+
+        &::before,
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &::before {
+            content: '';
+            background: #000;
+            width: 120%;
+            height: 0;
+            padding-bottom: 120%;
+            top: -110%;
+            left: -10%;
+            border-radius: 50%;
+            transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+        }
+
+        &::after {
+            content: '';
+            background: #000;
+            transform: translate3d(0, -120%, 0);
+            transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+        }
+
+        .calypso__inner {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            mix-blend-mode: difference;
+            z-index: 10;
+        }
+
+        .calypso__icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: opacity $transition-default, visibility $transition-default;
+
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    color: $white;
+                }
+
+                &:nth-child(1) {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                &:nth-child(2) {
+                    position: absolute;
+                    inset: 0;
+                    margin: auto;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        }
+
+        .calypso__text {
+            font-family: $font-family;
+            font-weight: 450;
+            font-size: 18px;
+            line-height: 1.2;
+            color: $white;
+            white-space: nowrap;
+        }
+
+        &.circle {
+            .calypso__icon {
+                span {
+
+                    &:nth-child(1) {
+                        svg {
+                            width: 6px;
+                            height: 6px;
+                            color: $white;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        &:hover {
+            &::before {
+                transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+                transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+            }
+
+            &::after {
+                transform: translate3d(0, 0, 0);
+                transition-duration: 0.05s;
+                transition-delay: 0.4s;
+                transition-timing-function: linear;
+            }
+
+            .calypso__inner {
+                animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+            }
+
+            .calypso__icon {
+
+                span {
+
+                    &:nth-child(1) {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+    &.bordered {
+        background-color: transparent;
+        border: 1px solid $white;
+        color: $white;
+        font-weight: 500;
+
+        &:hover {
+            border-color: $orange;
+            background-color: $orange;
+        }
+    }
+
+    &.download {
+        margin-top: 20px;
+        gap: 20px;
+        border-color: $white;
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        .icon {
+            flex: 0 0 auto;
+            width: 22px;
+            height: 22px;
+            color: $white;
+        }
+
+        span {
+            font-weight: 450;
+            font-size: inherit;
+            line-height: inherit;
+            color: $white;
+        }
+    }
+}
+
+@keyframes MoveScaleUpInitial {
+    100% {
+        transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+        opacity: 0;
+    }
+}
+
+@keyframes MoveScaleUpEnd {
+    0% {
+        transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+.circle-icon {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: $white;
+}

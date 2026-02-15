@@ -1,0 +1,56 @@
+mixin training()
+    //- регистрация
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //training
+    .training&attributes(attributes)
+        .training__body
+            p.h2.training__title Кто может пройти обучение
+            .training-swiper
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            .training-swiper__card
+                                .training-swiper__card--body
+                                    p.training-swiper__card--title Линейные сотрудники из отделов продаж, маркетинга и других
+                                    img(src="./images/training/1.webp").training-swiper__card--img
+                        .swiper-slide
+                            .training-swiper__card
+                                .training-swiper__card--body
+                                    p.training-swiper__card--title Руководители отделов
+                                    img(src="./images/training/2.webp").training-swiper__card--img
+                        .swiper-slide
+                            .training-swiper__card
+                                .training-swiper__card--body
+                                    p.training-swiper__card--title Администраторы портала
+                                    img(src="./images/training/3.webp").training-swiper__card--img
+            .training-features
+                .training-features__body
+                    .training-features__left
+                        p.training-features__title Какое обучение мы предлагаем
+                        .training-features__types
+                            .training-features__type.collapse-block__item.active(data-feature-item="1")
+                                p.training-features__type--title Базовое обучение для новичков
+                                .collapse-block__wrap
+                                    .training-features__type--info.collapse-block__data
+                                        p Вводный урок по интерфейсу, задачам, коммуникации, CRM-инструментам
+                            .training-features__type.collapse-block__item(data-feature-item="2")
+                                p.training-features__type--title Продвинутые модули для руководителей
+                                .collapse-block__wrap
+                                    .training-features__type--info.collapse-block__data
+                                        p Вводный урок по интерфейсу, задачам, коммуникации, CRM-инструментам
+                            .training-features__type.collapse-block__item(data-feature-item="3")
+                                p.training-features__type--title Специальная программа для администраторов портала
+                                .collapse-block__wrap
+                                    .training-features__type--info.collapse-block__data
+                                        p Вводный урок по интерфейсу, задачам, коммуникации, CRM-инструментам
+                    .training-features__right
+                        .training-features__images
+                            .training-features__content(data-feature-content="1")
+                                img(src="./images/training/content1.png")
+                            .training-features__content(data-feature-content="2")
+                                img(src="./images/training/content2.jpg")
+                            .training-features__content(data-feature-content="3")
+                                img(src="./images/training/content3.png")

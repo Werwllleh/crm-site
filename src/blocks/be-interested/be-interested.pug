@@ -1,0 +1,19 @@
+mixin beInterested()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regComponent('material-card', true, true)
+    //be-interested
+    .be-interested&attributes(attributes)
+        .be-interested__body
+            p.h3.be-interested__title Вам также может быть интересно
+            .be-interested__swiper
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                        .swiper-slide
+                            +materialCard('3.jpg', 'Создание приложений как Airbnb: функциональность, цена, сроки разработки', ['#CRM Битрикс24', '#Автоматизация'])
+                        .swiper-slide
+                            +materialCard('4.jpg', 'Битрикс24 Невесомость: Полный обзор новых инструментов', ['#CRM Битрикс24', '#Автоматизация'])

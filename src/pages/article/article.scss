@@ -1,0 +1,801 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// article
+.article {
+}
+
+.page-material {
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 40px;
+
+    @include semiDesktop {
+      grid-template-columns: 340px calc(100% - 380px);
+    }
+  }
+
+  &__chapters {
+    display: none;
+    margin-top: 40px;
+
+    @include semiDesktop {
+      display: block;
+    }
+  }
+
+  &__no-time-read {
+    margin-top: 55px;
+    display: none;
+
+    @include semiDesktop {
+      display: block;
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  &__search-team {
+    margin-top: 100px;
+    display: none;
+
+    @include semiDesktop {
+      display: block;
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  &__see-also {
+    margin-top: 40px;
+
+    @include tablet {
+      margin-top: 60px;
+    }
+
+    @include semiDesktop {
+      margin-top: 100px;
+    }
+  }
+}
+
+.material-content {
+
+  &__preview-image {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    max-height: 260px;
+
+    @include tablet {
+      max-height: 550px;
+
+    }
+
+  }
+
+  &__inner {
+    max-width: 850px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  &__header {
+    margin-top: 40px;
+
+    &_description {
+      font-weight: 450;
+      font-size: 18px;
+      line-height: 1.4;
+      color: $text;
+
+      @include tablet {
+        font-size: 20px;
+      }
+
+      @include semiDesktop {
+        font-size: 24px;
+      }
+
+    }
+  }
+
+  &__information {
+    margin-block: 40px;
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+
+    @include tablet {
+      gap: 0 25px;
+    }
+
+    @include semiDesktop {
+      gap: 0 40px;
+    }
+  }
+
+  &__chapter {
+    margin-top: 40px;
+
+    @include semiDesktop {
+      margin-top: 60px;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    .text {
+
+      &.highlight {
+        margin-block: 60px;
+        position: relative;
+        font-size: 18px;
+        padding-left: 20px;
+
+        @include tablet {
+          font-size: 20px;
+        }
+
+        @include semiDesktop {
+          font-size: 24px;
+          padding-left: 40px;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 4px;
+          background-color: $blue;
+        }
+      }
+
+      b {
+        font-weight: 500;
+      }
+    }
+
+    p + p {
+      margin-top: 20px;
+    }
+
+    ul, ol {
+
+      li + li {
+        margin-top: 18px;
+      }
+    }
+
+    figure {
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        max-height: 500px;
+      }
+
+      figcaption {
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 1.5;
+        color: $light-grey;
+      }
+    }
+
+    ul {
+      margin-top: 18px;
+      list-style: none;
+
+      li {
+        padding: 0 0 0 30px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 14px;
+          left: 12px;
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          background-color: $blue;
+        }
+
+        p + p {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    ol {
+      margin-top: 18px;
+      counter-reset: num;
+      list-style-type: none;
+
+      li {
+        padding: 0 0 0 30px;
+        position: relative;
+        counter-increment: num;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 1.4;
+          color: $blue;
+          content: counter(num) ". ";
+        }
+
+        p + p {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    @include w1250 {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &_text {
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 1.57143;
+      color: $grey-blue;
+    }
+
+    &_items {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        padding: 9px 16px;
+        background-color: $background;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 1.57143;
+        color: $grey-blue;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 40px;
+    border-top: 3px solid $stroke;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include semiDesktop {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &__form {
+    margin-block: 60px;
+  }
+
+  .banner {
+    margin-block: 60px;
+  }
+
+  .material-content-video {
+    position: relative;
+    margin-block: 30px;
+    height: 180px;
+
+    @include tablet {
+      height: 437px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+
+    .material-content-video__play-button {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+
+  .blockquote {
+    margin-top: 60px;
+    border: 8px solid $background;
+    border-radius: 16px;
+    padding: 22px;
+    background-color: $white;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+
+    @include tablet {
+      padding: 40px 40px 40px 30px;
+    }
+
+    svg {
+      width: 52px;
+      height: 40px;
+      color: $blue;
+    }
+
+    &__text {
+
+    }
+
+    blockquote {
+      font-weight: 450;
+      font-size: 18px;
+      line-height: 1.4;
+      color: $text;
+
+      @include tablet {
+        font-size: 20px;
+      }
+
+      @include semiDesktop {
+        font-size: 24px;
+      }
+    }
+
+    cite {
+      margin-top: 24px;
+      display: block;
+
+      span {
+        display: block;
+
+        &:nth-child(1) {
+          font-weight: 450;
+          font-size: 24px;
+          line-height: 1.26;
+          color: $text;
+        }
+
+        &:nth-child(2) {
+          margin-top: 8px;
+          font-weight: 450;
+          font-size: 16px;
+          line-height: 1.26;
+          color: $grey-blue;
+        }
+      }
+    }
+  }
+
+  .material-link {
+    margin-block: 60px;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: $background;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px 50px;
+
+    @include tablet {
+      gap: 30px;
+      grid-template-columns: 1fr auto;
+    }
+
+    p {
+      font-weight: 450;
+      font-size: 18px;
+      line-height: 1.4;
+      color: $text;
+
+      @include tablet {
+        font-size: 24px;
+      }
+
+      a {
+        font-weight: 500;
+        color: $blue;
+      }
+    }
+
+    .btn {
+      max-width: max-content;
+    }
+  }
+
+  .material-swiper {
+    position: relative;
+    margin-block: 60px;
+
+
+    .swiper {
+
+      .swiper-wrapper {
+        align-items: stretch;
+        max-height: 388px;
+        min-height: 220px;
+
+        .swiper-slide {
+          height: auto;
+
+          img {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            overflow: hidden;
+          }
+        }
+      }
+
+      .swiper-pagination {
+        margin-top: 12px;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        top: auto;
+
+        .swiper-pagination-bullet {
+          width: 10px;
+          height: 10px;
+
+          &.swiper-pagination-bullet-active {
+            background: $blue;
+          }
+        }
+      }
+
+      .swiper-button-prev, .swiper-button-next {
+
+        width: auto;
+        height: auto;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .table {
+    margin-block: 60px;
+    max-width: 100%;
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.05);
+
+    table {
+      max-width: 100%;
+      background: var(--white);
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      border-spacing: 0;
+      height: auto;
+      border-radius: 16px;
+      overflow: hidden;
+
+      tbody {
+
+      }
+
+      th, td {
+        padding: 14px 14px 14px 20px;
+        width: 2%;
+
+        @media (max-width: 768px) {
+          padding: 12px;
+        }
+      }
+
+      th {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.24;
+        color: $white;
+        background: #102340;
+
+        &:not(:last-child) {
+          border-right: 1px solid $stroke;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+
+      td {
+        font-weight: 450;
+        font-size: 15px;
+        line-height: 1.24;
+        color: $text;
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+
+      tr {
+        td {
+          &:not(:first-child) {
+            text-align: center;
+          }
+
+          &:not(:last-child) {
+            border-right: 1px solid $stroke;
+          }
+
+        }
+
+        th {
+          &:first-child {
+            text-align: left;
+          }
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $stroke;
+        }
+      }
+
+    }
+  }
+
+  .material-collapse {
+
+    &__body {
+
+    }
+
+    &__item {
+      border: 8px solid $background;
+      border-radius: 16px;
+      background: $background;
+      transition: background-color $transition-default;
+
+      &.active {
+        background: $white;
+
+        .material-collapse__item_icon {
+          &::before {
+            transform: scale(1);
+          }
+
+          span {
+            max-height: 2px;
+
+            svg {
+              color: $white;
+            }
+          }
+        }
+
+        .material-collapse__item_data {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .material-collapse__item_header {
+          .material-collapse__item_title {
+            span, p {
+              color: $blue;
+            }
+          }
+
+          &:hover {
+            .material-collapse__item_icon {
+
+              span {
+                &:nth-child(2) {
+                  height: 2px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &_header {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        padding: 16px 6px 16px 12px;
+        gap: 0 14px;
+
+        @include tablet {
+          padding: 22px 12px;
+          gap: 0 30px;
+        }
+
+        @media (max-width: 768px) {
+
+        }
+
+        &:hover {
+          .material-collapse__item_title {
+            span, p {
+              color: $blue;
+            }
+          }
+
+          .material-collapse__item_icon {
+            &::before {
+              transform: scale(1);
+            }
+
+            span {
+              svg {
+                color: $white;
+              }
+
+            }
+          }
+        }
+      }
+
+      &_title {
+        display: flex;
+        align-items: flex-start;
+        gap: 0 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.24;
+        color: $black;
+        max-width: 710px;
+
+        @include tablet {
+          font-size: 24px;
+        }
+
+        span {
+          color: $black;
+          transition: color $transition-default;
+        }
+
+        p {
+          color: $black;
+          font-weight: 500;
+          transition: color $transition-default;
+        }
+      }
+
+      &_icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        overflow: hidden;
+        border: none;
+        outline: none;
+        background-color: $white;
+        cursor: pointer;
+
+        @include tablet {
+          width: 46px;
+          height: 46px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          margin: auto;
+          width: 100%;
+          height: 100%;
+          background-color: $blue;
+          border-radius: 100%;
+          transform: scale(0);
+          transition: transform $transition-default, width $transition-default, height $transition-default;
+        }
+
+        span {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 14px;
+          height: 14px;
+          max-height: 100%;
+          transition: max-height $transition-default;
+          overflow: hidden;
+
+          svg {
+            width: 14px;
+            height: 14px;
+            color: $grey-blue;
+            transition: color $transition-default;
+          }
+        }
+      }
+
+      &_data {
+        overflow: hidden;
+        max-height: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: max-height $transition-default, opacity $transition-default, visibility $transition-default;
+      }
+
+      &_content {
+        padding: 5px 12px 16px 22px;
+        gap: 0 14px;
+
+        @include tablet {
+          padding: 12px 32px 32px 52px;
+        }
+
+        ul, ol {
+          margin-top: 0;
+        }
+
+        p + p,
+        ul + p,
+        ol + p {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    .material-collapse__item + .material-collapse__item {
+      margin-top: 16px;
+    }
+  }
+}

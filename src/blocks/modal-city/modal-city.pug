@@ -1,0 +1,238 @@
+mixin modalCity()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //modal-city
+    .modal-city&attributes(attributes)
+        .modal-city__body
+            .modal-city__header
+                p.h3.modal-city__title Выберите свой город
+            .modal-city__field
+                input(placeholder="Поиск").modal-city__input
+            .modal-city__presets
+                a(href="#") Москва
+                a(href="#") Санкт-Петербург
+                a(href="#") Казань
+                a(href="#") Чебоксары
+            .modal-city__list
+                .modal-city__list_col
+                    a(href="#", data-city="Белгород").city-select
+                        span.city-select__word Б
+                        span.city-select__text Белгород
+                    a(href="#", data-city="Брянск").city-select
+                        span.city-select__word
+                        span.city-select__text Брянск
+                    a(href="#", data-city="Владимир").city-select
+                        span.city-select__word В
+                        span.city-select__text Владимир
+                    a(href="#", data-city="Воронеж").city-select
+                        span.city-select__word
+                        span.city-select__text Воронеж
+                    a(href="#", data-city="Иваново").city-select
+                        span.city-select__word И
+                        span.city-select__text Иваново
+                    a(href="#", data-city="Ижевск").city-select
+                        span.city-select__word
+                        span.city-select__text Ижевск
+                    a(href="#", data-city="Йошкар-Ола").city-select
+                        span.city-select__word Й
+                        span.city-select__text Йошкар-Ола
+                    a(href="#", data-city="Казань").city-select
+                        span.city-select__word К
+                        span.city-select__text Казань
+                    a(href="#", data-city="Калуга").city-select
+                        span.city-select__word
+                        span.city-select__text Калуга
+                    a(href="#", data-city="Киров").city-select
+                        span.city-select__word
+                        span.city-select__text Киров
+                    a(href="#", data-city="Кострома").city-select
+                        span.city-select__word
+                        span.city-select__text Кострома
+                    a(href="#", data-city="Курск").city-select
+                        span.city-select__word
+                        span.city-select__text Курск
+                    a(href="#", data-city="Липецк").city-select
+                        span.city-select__word Л
+                        span.city-select__text Липецк
+                .modal-city__list_col
+                    a(href="#", data-city="Москва").city-select
+                        span.city-select__word М
+                        span.city-select__text Москва
+                    a(href="#", data-city="Набережные Челны").city-select
+                        span.city-select__word Н
+                        span.city-select__text Набережные Челны
+                    a(href="#", data-city="Нижний Новгород").city-select
+                        span.city-select__word
+                        span.city-select__text Нижний Новгород
+                    a(href="#", data-city="Орёл").city-select
+                        span.city-select__word О
+                        span.city-select__text Орёл
+                    a(href="#", data-city="Оренбург").city-select
+                        span.city-select__word О
+                        span.city-select__text Оренбург
+                    a(href="#", data-city="Пенза").city-select
+                        span.city-select__word П
+                        span.city-select__text Пенза
+                    a(href="#", data-city="Пермь").city-select
+                        span.city-select__word
+                        span.city-select__text Пермь
+                    a(href="#", data-city="Рязань").city-select
+                        span.city-select__word Р
+                        span.city-select__text Рязань
+                    a(href="#", data-city="Самара").city-select
+                        span.city-select__word С
+                        span.city-select__text Самара
+                    a(href="#", data-city="Санкт-Петербург").city-select
+                        span.city-select__word
+                        span.city-select__text Санкт-Петербург
+                    a(href="#", data-city="Саранск").city-select
+                        span.city-select__word
+                        span.city-select__text Саранск
+                    a(href="#", data-city="Саратов").city-select
+                        span.city-select__word
+                        span.city-select__text Саратов
+                    a(href="#", data-city="Смоленск").city-select
+                        span.city-select__word
+                        span.city-select__text Смоленск
+                .modal-city__list_col
+                    a(href="#", data-city="Стерлитамак").city-select
+                        span.city-select__word
+                        span.city-select__text Стерлитамак
+                    a(href="#", data-city="Тамбов").city-select
+                        span.city-select__word Т
+                        span.city-select__text Тамбов
+                    a(href="#", data-city="Тверь").city-select
+                        span.city-select__word
+                        span.city-select__text Тверь
+                    a(href="#", data-city="Тольятти").city-select
+                        span.city-select__word
+                        span.city-select__text Тольятти
+                    a(href="#", data-city="").city-select
+                        span.city-select__word
+                        span.city-select__text
+                    a(href="#", data-city="Тула").city-select
+                        span.city-select__word
+                        span.city-select__text Тула
+                    a(href="#", data-city="Ульяновск").city-select
+                        span.city-select__word У
+                        span.city-select__text Ульяновск
+                    a(href="#", data-city="Уфа").city-select
+                        span.city-select__word
+                        span.city-select__text Уфа
+                    a(href="#", data-city="Чебоксары").city-select
+                        span.city-select__word Ч
+                        span.city-select__text Чебоксары
+                    a(href="#", data-city="Ярославль").city-select
+                        span.city-select__word Я
+                        span.city-select__text Ярославль
+            .modal-city__filter.hide
+                a(href="#", data-city="Белгород").city-select
+                    span.city-select__word Б
+                    span.city-select__text Белгород
+                a(href="#", data-city="Брянск").city-select
+                    span.city-select__word
+                    span.city-select__text Брянск
+                a(href="#", data-city="Владимир").city-select
+                    span.city-select__word В
+                    span.city-select__text Владимир
+                a(href="#", data-city="Воронеж").city-select
+                    span.city-select__word
+                    span.city-select__text Воронеж
+                a(href="#", data-city="Иваново").city-select
+                    span.city-select__word И
+                    span.city-select__text Иваново
+                a(href="#", data-city="Ижевск").city-select
+                    span.city-select__word
+                    span.city-select__text Ижевск
+                a(href="#", data-city="Йошкар-Ола").city-select
+                    span.city-select__word Й
+                    span.city-select__text Йошкар-Ола
+                a(href="#", data-city="Казань").city-select
+                    span.city-select__word К
+                    span.city-select__text Казань
+                a(href="#", data-city="Калуга").city-select
+                    span.city-select__word
+                    span.city-select__text Калуга
+                a(href="#", data-city="Киров").city-select
+                    span.city-select__word
+                    span.city-select__text Киров
+                a(href="#", data-city="Кострома").city-select
+                    span.city-select__word
+                    span.city-select__text Кострома
+                a(href="#", data-city="Курск").city-select
+                    span.city-select__word
+                    span.city-select__text Курск
+                a(href="#", data-city="Липецк").city-select
+                    span.city-select__word Л
+                    span.city-select__text Липецк
+                a(href="#", data-city="Москва").city-select
+                    span.city-select__word М
+                    span.city-select__text Москва
+                a(href="#", data-city="Набережные Челны").city-select
+                    span.city-select__word Н
+                    span.city-select__text Набережные Челны
+                a(href="#", data-city="Нижний Новгород").city-select
+                    span.city-select__word
+                    span.city-select__text Нижний Новгород
+                a(href="#", data-city="Орёл").city-select
+                    span.city-select__word О
+                    span.city-select__text Орёл
+                a(href="#", data-city="Оренбург").city-select
+                    span.city-select__word О
+                    span.city-select__text Оренбург
+                a(href="#", data-city="Пенза").city-select
+                    span.city-select__word П
+                    span.city-select__text Пенза
+                a(href="#", data-city="Пермь").city-select
+                    span.city-select__word
+                    span.city-select__text Пермь
+                a(href="#", data-city="Рязань").city-select
+                    span.city-select__word Р
+                    span.city-select__text Рязань
+                a(href="#", data-city="Самара").city-select
+                    span.city-select__word С
+                    span.city-select__text Самара
+                a(href="#", data-city="Санкт-Петербург").city-select
+                    span.city-select__word
+                    span.city-select__text Санкт-Петербург
+                a(href="#", data-city="Саранск").city-select
+                    span.city-select__word
+                    span.city-select__text Саранск
+                a(href="#", data-city="Саратов").city-select
+                    span.city-select__word
+                    span.city-select__text Саратов
+                a(href="#", data-city="Смоленск").city-select
+                    span.city-select__word
+                    span.city-select__text Смоленск
+                a(href="#", data-city="Стерлитамак").city-select
+                    span.city-select__word
+                    span.city-select__text Стерлитамак
+                a(href="#", data-city="Тамбов").city-select
+                    span.city-select__word Т
+                    span.city-select__text Тамбов
+                a(href="#", data-city="Тверь").city-select
+                    span.city-select__word
+                    span.city-select__text Тверь
+                a(href="#", data-city="Тольятти").city-select
+                    span.city-select__word
+                    span.city-select__text Тольятти
+                a(href="#", data-city="").city-select
+                    span.city-select__word
+                    span.city-select__text
+                a(href="#", data-city="Тула").city-select
+                    span.city-select__word
+                    span.city-select__text Тула
+                a(href="#", data-city="Ульяновск").city-select
+                    span.city-select__word У
+                    span.city-select__text Ульяновск
+                a(href="#", data-city="Уфа").city-select
+                    span.city-select__word
+                    span.city-select__text Уфа
+                a(href="#", data-city="Чебоксары").city-select
+                    span.city-select__word Ч
+                    span.city-select__text Чебоксары
+                a(href="#", data-city="Ярославль").city-select
+                    span.city-select__word Я
+                    span.city-select__text Ярославль

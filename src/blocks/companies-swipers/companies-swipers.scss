@@ -1,0 +1,34 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// companies-swipers
+.companies-swipers {
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include semiDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__swiper {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    .swiper {
+
+      .swiper-wrapper {
+        align-items: stretch;
+        transition-timing-function: linear;
+      }
+
+      .swiper-slide {
+        width: auto;
+      }
+    }
+  }
+}

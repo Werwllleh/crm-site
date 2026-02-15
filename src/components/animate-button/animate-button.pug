@@ -1,0 +1,13 @@
+mixin animateButton(vector)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //animate-button
+    button.animate-button&attributes(attributes)
+        if vector === 'prev'
+            +svg("swiper-arrow-prev")
+            +svg("swiper-arrow-prev")
+        if vector === 'next'
+            +svg("swiper-arrow-next")
+            +svg("swiper-arrow-next")

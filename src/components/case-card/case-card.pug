@@ -1,0 +1,20 @@
+mixin caseCard(image, title, tags)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //case-card
+    .case-card&attributes(attributes)
+        .case-card__body
+            .case-card__logo
+                img(src=`./images/case/${image}`, alt="")
+            p.case-card__title= title
+            if tags && tags.length
+                .case-card__tags
+                    .case-card__tags_list
+                      each tag in tags
+                          span= tag
+        a(href="#").case-card__link
+        span.case-card__icon
+            +svg("arrow45")
+            +svg("arrow45")

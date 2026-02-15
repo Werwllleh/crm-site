@@ -1,0 +1,165 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// banner-cost
+.banner-cost {
+  position: relative;
+  background: #0c1323;
+  border-radius: 20px;
+  padding: 30px 22px;
+  overflow: hidden;
+
+  @include tablet {
+    padding: 40px 40px 50px;
+  }
+
+  @include desktop {
+    padding: 44px 110px 50px 40px;
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "header"
+                          "values"
+                          "button";
+    gap: 30px 0;
+
+    @include tablet {
+      gap: 60px 50px;
+      grid-template-columns: auto auto;
+      grid-template-areas: "header header"
+                          "values button";
+    }
+
+    @include semiDesktop {
+      grid-template-columns: auto auto auto;
+      grid-template-areas: "image header header"
+                          "image values button";
+      gap: 80px 50px;
+    }
+  }
+
+  &__image {
+    display: none;
+    grid-area: image;
+    max-width: 213px;
+    height: auto;
+
+    @include semiDesktop {
+      display: block;
+    }
+
+    img {
+      pointer-events: none;
+    }
+  }
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 30px;
+
+    @include tablet {
+      font-size: 34px;
+    }
+
+    @include desktop {
+      font-size: 44px;
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 1.24;
+    color: rgba(255, 255, 255, 0.7);
+
+    @include tablet {
+      font-size: 18px;
+    }
+  }
+
+  &__values {
+    grid-area: values;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 0;
+    }
+
+    @include semiDesktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    li {
+      flex: 1 1 calc(33% - 20px);
+
+      span {
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 1.24;
+        color: #fff;
+      }
+
+      p {
+        margin-top: 8px;
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 1.24;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+    }
+  }
+
+  &__button {
+    grid-area: button;
+    margin-top: auto;
+
+    @include tablet {
+      button {
+
+      }
+    }
+
+    @include semiDesktop {
+      margin-top: 0;
+      button {
+        width: auto;
+      }
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  &__blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

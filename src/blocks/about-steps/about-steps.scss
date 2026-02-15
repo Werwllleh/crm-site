@@ -1,0 +1,139 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// about-steps
+.about-steps {
+
+  &__title {}
+
+  &__list {
+    margin-top: 30px;
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    align-items: stretch;
+    gap: 20px;
+
+    @include mobile {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+    }
+
+    @include desktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 40px 0;
+    border: 8px solid $background;
+    background-color: $white;
+    padding: 22px;
+    border-radius: 16px;
+    min-height: 260px;
+
+    @include tablet {
+      padding: 30px;
+    }
+
+    @include desktop {
+      padding: 40px;
+      min-height: 360px;
+    }
+
+    &:not(.plug) {
+      grid-template-areas: "title index"
+                          "text text";
+      grid-template-columns: 1fr auto;
+      gap: 50px 20px;
+      background-color: $background;
+
+      @include desktop {
+        gap: 60px 20px;
+      }
+
+      .about-steps__item--title {
+        grid-area: title;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.24;
+        color: $black;
+        max-width: 320px;
+
+        @include tablet {
+          font-size: 22px;
+        }
+
+        @include desktop {
+          font-size: 26px;
+        }
+      }
+
+      .about-steps__item--index {
+        grid-area: index;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        text-align: right;
+        color: $blue;
+        margin-top: -10px;
+        margin-right: -10px;
+
+        @include tablet {
+          font-size: 38px;
+        }
+
+        @include desktop {
+          font-size: 54px;
+        }
+      }
+
+      .about-steps__item--text {
+        grid-area: text;
+        margin-top: auto;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 1.4;
+        color: $text;
+        max-width: 360px;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include desktop {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &.plug {
+      .about-steps__item--title {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: $blue;
+
+        @include tablet {
+          font-size: 26px;
+        }
+
+        @include desktop {
+          font-size: 30px;
+        }
+      }
+
+      .about-steps__item--footer {
+        margin-top: auto;
+
+        button {
+
+        }
+      }
+    }
+
+  }
+}

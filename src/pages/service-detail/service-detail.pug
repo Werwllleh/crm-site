@@ -1,0 +1,309 @@
+extends ../../app/pug/layouts/service-layout
+
+append vars
+  - title = "Услуга первого уровня"
+  - description = "Описание Service-detail"
+
+append content
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regPage('service-detail', true, true)
+    +regComponent('header', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('case-card', true, true)
+    +regComponent('material-card', true, true)
+    +regComponent('pagination', true, true)
+    +regBlock('banner-cost', true, true)
+    +regBlock('collapse-stages', true, true)
+    +regBlock('order-analysis', true, true)
+    +regBlock('services-showcase', true, true)
+    +regBlock('tags', true, true)
+    +regBlock('company-rating', true, true)
+    +regBlock('tech-exp', true, true)
+    +regBlock('about-steps', true, true)
+
+    +header().light
+    .service-layout(class="anim animslide animslidehide animdalay200")
+        .service-layout__main
+            .container
+                .service-layout__main--body
+                    .service-layout__breadcrumbs
+                        +breadcrumbs(['Главная', 'Услуги', 'Комплексное внедрение Битрикс24 "под ключ"'])
+                    .service-layout__main--content
+                        .service-layout__main--info
+                            h1.h1.service-layout__main--title Комплексное внедрение Битрикс24 "под ключ"
+                            p.service-layout__main--description Обеспечьте автоматизацию, интеграцию и эффективное управление бизнес-процессами компании.
+                            button(data-modal="consultation").btn.primary.lg Заказать услугу
+                        .service-layout__main--image
+                            img(src="./images/services-detail/1.png", alt="")
+                    .service-layout__companies
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    img(src="./images/companies/vodohod.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/sberstrahovane.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/x5.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/robokassa.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/ekra.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/poliklinika.svg", alt="")
+        .service-layout__content.service--detail
+            .service-layout__content--inner
+                .service-layout__container.container
+                    .service-layout__content--bg
+                        section.service-layout__statistics
+                            .statistics-list
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    span.h1 3
+                                                    |
+                                                    | место
+                                                p.statistics-list__card--text
+                                                    | в&nbsp;рейтинге интеграция CRM&nbsp;Битрикс24 2025 год
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    span.h1 355
+                                                p.statistics-list__card--text
+                                                    | реализованных проектов по&nbsp;внедрению
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    span.h1 48
+                                                    |
+                                                    | дней
+                                                p.statistics-list__card--text
+                                                    | средний срок внедрения сложных проектов
+                        section.service-layout__implementations
+                            p.h2 Реализованные внедрения
+                            .service-layout__implementations--list
+                                .implementation-cards
+                                    .implementation-card
+                                        .implementation-card__body
+                                            .implementation-card__header
+                                                .implementation-card__logo
+                                                    img(src="/images/logos/xca.svg", alt="")
+                                                .implementation-card__title Внедрение корпоративного портала  на&nbsp;Битрикс24 и&nbsp;его интеграция с&nbsp;OPERA для сети отелей &laquo;LIXCA&raquo;
+                                            .implementation-card__info
+                                                .implementation-card__info--list
+                                                    p Решение
+                                                    ul
+                                                        li Внедрение коробочной версии Битрикс24 для централизованного управления клиентами.
+                                                        li Из amoCRM будут перенесены данные по компаниям, контактам и сделкам.
+                                                        li Настроены две воронки продаж — для покупки и аренды помещений — с автоматизацией задач и уведомлений.
+                                                        li Интегрирация с телефонией Mango, сайтами и сервисом DaData для автоматического обогащения данных.
+                                                .implementation-card__info--list
+                                                    p Результат
+                                                    ul
+                                                        li Управляемая гибкая CRM
+                                                        li Повышение продаж на 20%
+                                                        li Сегментация ЦА по типам клиентов
+                                                        li Внедрение автоворонок для отдела продаж
+                                            .implementation-card__footer
+                                                span От начала проекта, до внедрения - 28 дней
+                                                ul.implementation-card__tags
+                                                    li
+                                                        span B2B
+                                                    li
+                                                        span Строительство
+                                                    li
+                                                        span Электронная коммерция
+                                    .implementation-card
+                                        .implementation-card__body
+                                            .implementation-card__header
+                                                .implementation-card__logo
+                                                    img(src="/images/logos/x5.svg", alt="")
+                                                .implementation-card__title Автоматизация обучения сотрудников для «X5Group»
+                                            .implementation-card__info
+                                                .implementation-card__info--description
+                                                    p По усреднённым данным Яндекса расходы на рекламу выросли на 20%, при этом компания стала получать в 3,5 раза больше трафика, чем у компаний в той же сфере. В итоге мы выстроили отчётность до денег и наладили системный запуск рекламы.
+                                                .implementation-card__info--list
+                                                    p Результат
+                                                    ul
+                                                        li Управляемая гибкая CRM
+                                                        li Повышение продаж на 20%
+                                                        li Сегментация ЦА по типам клиентов
+                                                        li Внедрение автоворонок для отдела продаж
+                                            .implementation-card__footer
+                                                span От начала проекта, до внедрения - 28 дней
+                                                ul.implementation-card__tags
+                                                    li
+                                                        span B2B
+                                                    li
+                                                        span Строительство
+                                                    li
+                                                        span Электронная коммерция
+                                    .implementation-card
+                                        .implementation-card__body
+                                            .implementation-card__header
+                                                .implementation-card__logo
+                                                    img(src="/images/logos/nda.svg", alt="")
+                                                .implementation-card__title Автоматизация задач строительного холдинга с помощью Битрикс24: кейс ГК «Точно»
+                                            .implementation-card__info
+                                                .implementation-card__info--description
+                                                    p По усреднённым данным Яндекса расходы на рекламу выросли на 20%, при этом компания стала получать в 3,5 раза больше трафика, чем у компаний в той же сфере. В итоге мы выстроили отчётность до денег и наладили системный запуск рекламы.
+                                                .implementation-card__info--list
+                                                    p Результат
+                                                    ul
+                                                        li Управляемая гибкая CRM
+                                                        li Повышение продаж на 20%
+                                                        li Сегментация ЦА по типам клиентов
+                                            .implementation-card__footer
+                                                span От начала проекта, до внедрения - 28 дней
+                                                ul.implementation-card__tags
+                                                    li
+                                                        span B2B
+                                                    li
+                                                        span Строительство
+                                                    li
+                                                        span Электронная коммерция
+                        section.service-layout__banner-cost
+                            +bannerCost()
+                    section.service-layout__work-stages
+                        p.h2.service-layout__work-stages--title Этапы работы
+                        -
+                          const workStagesData = [
+                              {
+                                index: '01',
+                                title: 'Аналитика и проектирование',
+                                list: [
+                                  'Аудит существующей инфраструктуры клиента и проектной среды (состав и версии продуктов, интеграции, модификации, статус данных) для предложения оптимального решения.', 'Разработка и согласование технического задания (ТЗ) перед началом работ', 'Создание "дорожной карты" проекта с ключевыми этапами (итерациями) для поэтапной реализации.', 'Разделение проектов на итерации, начиная с базовой версии или MVP', '(Minimum Viable Product), для скорейшей поставки ценности.'
+                                ]
+                              },
+                              {
+                                  index: '02',
+                                  title: 'Интеграция с IT-системами',
+                                  list: [
+                                      'Аудит существующей инфраструктуры клиента и проектной среды (состав и версии продуктов, интеграции, модификации, статус данных) для предложения оптимального решения.', 'Разработка и согласование технического задания (ТЗ) перед началом работ', 'Создание "дорожной карты" проекта с ключевыми этапами (итерациями) для поэтапной реализации.', 'Разделение проектов на итерации, начиная с базовой версии или MVP', '(Minimum Viable Product), для скорейшей поставки ценности.'
+                                  ]
+                              },
+                              {
+                                  index: '03',
+                                  title: 'Автоматизация бизнес-процессов компании',
+                                  list: [
+                                      'Аудит существующей инфраструктуры клиента и проектной среды (состав и версии продуктов, интеграции, модификации, статус данных) для предложения оптимального решения.', 'Разработка и согласование технического задания (ТЗ) перед началом работ', 'Создание "дорожной карты" проекта с ключевыми этапами (итерациями) для поэтапной реализации.', 'Разделение проектов на итерации, начиная с базовой версии или MVP', '(Minimum Viable Product), для скорейшей поставки ценности.'
+                                  ]
+                              },
+                              {
+                                  index: '04',
+                                  title: 'Кастомизация и доработки',
+                                  list: [
+                                      'Аудит существующей инфраструктуры клиента и проектной среды (состав и версии продуктов, интеграции, модификации, статус данных) для предложения оптимального решения.', 'Разработка и согласование технического задания (ТЗ) перед началом работ', 'Создание "дорожной карты" проекта с ключевыми этапами (итерациями) для поэтапной реализации.', 'Разделение проектов на итерации, начиная с базовой версии или MVP', '(Minimum Viable Product), для скорейшей поставки ценности.'
+                                  ]
+                              },
+                              {
+                                  index: '05',
+                                  title: 'Обучение и поддержка',
+                                  list: [
+                                      'Аудит существующей инфраструктуры клиента и проектной среды (состав и версии продуктов, интеграции, модификации, статус данных) для предложения оптимального решения.', 'Разработка и согласование технического задания (ТЗ) перед началом работ', 'Создание "дорожной карты" проекта с ключевыми этапами (итерациями) для поэтапной реализации.', 'Разделение проектов на итерации, начиная с базовой версии или MVP', '(Minimum Viable Product), для скорейшей поставки ценности.'
+                                  ]
+                              }
+                          ]
+                        +collapseStages(workStagesData)
+                    section.service-layout__tech-exp
+                        +techExp('Техническая экспертиза', 'Работаем с широким стеком, подбираем инструменты под задачи проекта, а не наоборот.')
+                    section.service-layout__order-analysis
+                        +orderAnalysis()
+                    section.service-layout__about-steps
+                        -
+                          const list = [
+                              {
+                                index: '01',
+                                title: 'Автоматизация бизнес-процессов',
+                                text: 'До 30% сокращает ручной труд и бумажный документооборот. Автоматизирует процессы подачи заявок на больничные и отпуска...',
+                              },
+                              {
+                                index: '02',
+                                title: 'Интеграция с другими системами',
+                                text: 'Обеспечивает бесшовный обмен данными между различными платформами, улучшая согласованность и эффективность работы.',
+                              },
+                              {
+                                index: '03',
+                                title: 'Контроль и удобство удаленной работы',
+                                text: 'Позволяют сотрудникам эффективно работать из любой точки мира, обеспечивая гибкость и непрерывность бизнес-процессов, контроль работыи отчетность о выполненных задачах',
+                              },
+                              {
+                                index: '04',
+                                title: 'Мониторинг и аналитика',
+                                text: 'Предоставляют руководству актуальный срез данных о показателях бизнеса, отчеты по проектам в удобном виде дашбордов, графиков и таблиц.',
+                              },
+                              {
+                                index: '05',
+                                title: 'Модули для обучения и адаптации персонала',
+                                text: 'Упрощают процесс ввода в должность новых сотрудников и повышают квалификацию текущих, вся информация хранится централизовано в одном месте, упрощает работу старших сотрудников (менторов, наставников)',
+                              }
+                          ]
+                        +aboutSteps('Что дает внедрение портала', list)
+                    section.service-layout__tasks
+                      -
+                          const dataServices = {
+                                      title: 'Решаем задачи под любой запрос',
+                                      items: [
+                                          {
+                                              index: '01',
+                                              category: 'Внедрение коробочной версии Битрикс24 Enterprise',
+                                              text: 'Устанавливаем и настраиваем систему на сервере вашей компании или у провайдера для большего контроля и безопасности данных',
+                                              subItems: []
+                                          },
+                                          {
+                                              index: '02',
+                                              category: 'Миграция на Битрикс24 с других CRM-систем',
+                                              text: 'Обеспечиваем безопасный перенос ваших данных с amoCRM, Salesforce, самописных CRM и других систем',
+                                              subItems: []
+                                          },
+                                          {
+                                              index: '03',
+                                              category: 'Бесшовный переезд с облака Битрикс24 в коробку',
+                                              text: 'Сводим к минимуму перерывы в работе и потерю данных при переходе с облачной на коробочную версию',
+                                              subItems: []
+                                          }
+                                      ]
+                                  }
+                      + servicesShowcase(dataServices)
+                    section.service-layout__cases
+                        .section-cases
+                            p.h2.section-cases__title
+                                | Читайте про реализованные внедрения
+                            p.section-cases__description
+                                | Собрали для вас портфолио с кейсами, чтобы вы могли оценить нашу работу и принять решение
+                            .section-cases__content
+                                .section-cases__tags
+                                    +tags(['Все кейсы', 'Медицина', 'B2B', 'Производство и дистрибуция', 'Финансы и страхование', 'Государство', 'Электронная коммерция', 'Сфера услуг', 'Юридические услуги и консалтинг', 'Строительство и недвижимость', 'Логистика'])
+                                .section-cases__list
+                                    +caseCard('ctep.png', 'Внедрение корпоративного портала на Битрикс24 и его интеграция с OPERA для сети отелей «Роза Хутор»', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Автоматизация обучения сотрудников для «BFF»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Разработали единую систему по обработки обращений для 5 млн клиентской базы', ['B2B', 'Электронная коммерция'])
+                                    +caseCard('ctep.png', '«Личный кабинет руководителя HR» на платформе Битрикс24', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Разработка портала и кабинета менеджера для сервиса «Налог 24»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Автоматизация задач строительного холдинга с помощью Битрикс24: кейс ГК «Точно»', ['B2B', 'Электронная коммерция'])
+                                .section-cases__pagination
+                                    +pagination(true)
+                                    a(href="#").section-cases__link-cases Смотреть все кейсы
+                    section.service-layout__news
+                        p.h2
+                            | Делимся экспертизой
+                            |
+                            span про автоматизацию бизнеса
+                        .section-news
+                            .section-news__items
+                                .other-row
+                                    +materialCard('0.jpg', 'Как внедрять Битрикс24 – основные подходы, этапы, рекомендации', ['#CRM Битрикс24', '#Интеграция 1С', '#Автоматизация'])
+                                    +materialCard('1.jpg', 'Тренды найма 2025', ['#Управление персоналом', '#Бизнес-процессы'])
+                                    +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('3.jpg', 'Создание приложений как Airbnb: функциональность, цена, сроки разработки', ['#CRM Битрикс24', '#Интеграция 1С'])
+                            .section-news__footer
+                                +pagination(true)
+                                a(href="#").section-news__link Смотреть все статьи
+                    section.service-layout__rating
+                        p.h2
+                            | Лидируем в&nbsp;рейтингах
+                            |
+                            span лучших it&nbsp;компаний
+                        .section-rating
+                            +companyRating()

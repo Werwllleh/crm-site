@@ -1,0 +1,9 @@
+mixin textarea(name, placeholder)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('input', false, true)
+    //textarea
+    label.textarea&attributes(attributes)
+        textarea(name=name, autocomplete="on")
+        span.textarea__placeholder= placeholder

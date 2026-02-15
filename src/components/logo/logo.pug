@@ -1,0 +1,17 @@
+mixin logo(simple)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //logo
+    span.logo(class=simple ? 'simple' : '')&attributes(attributes)
+        span.logo__text
+            span.logo__label
+                span MEDIA
+                span WORKS
+            if !simple
+                span.logo__slogan IT WORKS ON YOUR BUSINESS
+        if !simple
+            span.logo__bg
+                +svg("mw_bg")
+        a(href="./").logo__link

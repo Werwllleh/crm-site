@@ -1,0 +1,103 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// blog
+.page-blog {
+
+  .breadcrumbs {
+    margin-bottom: 20px;
+  }
+
+  &__content {
+  }
+
+  &__title {
+  }
+
+  &__grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: auto;
+
+    @include semiDesktop {
+      grid-template-columns: 250px calc(100% - 280px);
+      gap: 0 30px;
+    }
+
+    @include w1250 {
+      grid-template-columns: 340px calc(100% - 400px);
+      gap: 0 60px;
+    }
+
+    &_left {
+      display: none;
+
+      @include semiDesktop {
+        display: block;
+      }
+    }
+
+    &_right {}
+  }
+
+  &__tags {
+    &_title {
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 1.24;
+      color: $black;
+    }
+
+    .tags {
+      margin-top: 20px;
+    }
+  }
+
+  &__materials {
+  }
+
+  &__quickly-consultation {
+    margin-top: 60px;
+    position: sticky;
+    top: 100px;
+  }
+
+}
+
+.blog-materials {
+
+  &__wrap {
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 3fr));
+    gap: 30px 20px;
+
+    .material-card.horizontal {
+
+      @include tablet {
+        grid-column: 1 / -1;
+      }
+
+    }
+
+    @include w1250 {
+      gap: 60px 40px;
+    }
+  }
+
+  &__banner {
+    margin-block: 40px;
+
+    @include desktop {
+      margin-block: 100px;
+    }
+  }
+
+  &__pagination {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+  }
+}

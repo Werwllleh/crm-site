@@ -1,0 +1,103 @@
+mixin solutions()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //solutions
+    .solutions&attributes(attributes)
+        .solutions__grid
+            nav.solutions__nav
+                ul.solutions__list
+                    li.solutions__item
+                        a(href="#").solutions__link.active
+                            p Внедрение HR порталов и управления персоналом
+                            span
+                                +svg("arrow2")
+                    li.solutions__item
+                        a(href="#").solutions__link
+                            p Внедрение системы управления онлайн-офисом
+                            span
+                                +svg("arrow2")
+                    li.solutions__item
+                        a(href="#").solutions__link
+                            p Внедрение системы управления продажами
+                            span
+                                +svg("arrow2")
+                    li.solutions__item
+                        a(href="#").solutions__link
+                            p Разработка Внедрение системы управления маркетингом и PR в Битрикс24
+                            span
+                                +svg("arrow2")
+                    li.solutions__item
+                        a(href="#").solutions__link
+                            p Кастомизация корпоративных порталов
+                            span
+                                +svg("arrow2")
+                    li.solutions__item
+                        a(href="#").solutions__link
+                            p Техническая поддержка
+                            span
+                                +svg("arrow2")
+            .solutions__cards
+                img(src='./images/banner-blur2.svg').solutions__cards_bg
+                .solutions__card.active
+                    .solutions__card_body
+                        p.h3.solutions__card_title Внедрение HR порталов и&nbsp;управления персоналом
+                        ul.solutions__card_list
+                            li Создание и размещение вакансий
+                            li Воронка и подбор персонала
+                            li Стажировка и обучение
+                            li Управление персоналом
+                            li Обучение персонала
+                        img(src='./images/solutions/1.png').solutions__card_image
+                .solutions__card
+                    .solutions__card_body
+                        p.h3.solutions__card_title Внедрение системы управления онлайн-офисом
+                        ul.solutions__card_list
+                            li Планирование задач
+                            li Календарное бронирование
+                            li HR аналитика
+                            li Документооборот
+                            li Доступ к данным 24/7
+                        img(src='./images/solutions/2.png').solutions__card_image
+                .solutions__card
+                    .solutions__card_body
+                        p.h3.solutions__card_title Внедрение системы управления продажами
+                        ul.solutions__card_list
+                            li Сбор лидов
+                            li Автоматизация сделок
+                            li Встроенный звонок
+                            li Согласование договоров
+                            li Аналитика продаж
+                        img(src='./images/solutions/1.png').solutions__card_image
+                .solutions__card
+                    .solutions__card_body
+                        p.h3.solutions__card_title Внедрение системы управления маркетингом и&nbsp;PR в&nbsp;Битрикс24
+                        ul.solutions__card_list
+                            li Email-кампании
+                            li Сегментация базы
+                            li Цифровые воронки
+                            li Финансовый анализ
+                            li Прогнозирование
+                        img(src='./images/solutions/2.png').solutions__card_image
+                .solutions__card
+                    .solutions__card_body
+                        p.h3.solutions__card_title Кастомизация корпоративных порталов
+                        ul.solutions__card_list
+                            li Меню под бизнес-процессы
+                            li Единый UI-кит
+                            li Интеграции со сторонними сервисами
+                            li Модульная архитектура
+                            li Любые сценарии
+                        img(src='./images/solutions/1.png').solutions__card_image
+                .solutions__card
+                    .solutions__card_body
+                        p.h3.solutions__card_title Техническая поддержка
+                        ul.solutions__card_list
+                            li Горячая линия 24/7
+                            li SLA-контроль
+                            li Оптимизация лицензий
+                            li Обучение команды
+                            li Аналитика ошибок
+                        img(src='./images/solutions/2.png').solutions__card_image
+

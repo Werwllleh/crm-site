@@ -1,0 +1,220 @@
+mixin companyRating()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('pagination', true, true)
+    //company-rating
+    .company-rating&attributes(attributes)
+        .company-rating__grid
+            .company-rating__years
+                .company-rating__years_items
+                    buton(data-filter-year="2025").company-rating__button-year.active 2025
+                    span.separate /
+                    buton(data-filter-year="2024").company-rating__button-year 2024
+                    span.separate /
+                    buton(data-filter-year="2023").company-rating__button-year 2023
+                    span.separate /
+                    buton(data-filter-year="2022").company-rating__button-year 2022
+            .company-rating__image
+                img(src="./images/rating/1.jpg", alt="1 место — Рейтинг Рунета", data-rating-img="a").show
+                img(src="./images/rating/2.jpg", alt="1 место — Рейтинг Рунета 2", data-rating-img="b")
+            p.company-rating__text 45+ наград от ведущего Рейтинга в Рунете
+            .company-rating__values
+                ul(data-rating-year="2025").company-rating__list.active
+                    li(data-rating="a").company-rating__list_item
+                        span 1 место
+                        span Разработка простых сайтов и веб-сервисов
+                        span 2025
+                    li(data-rating="b").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция корп. решений “Управление знаниями (КМ)”
+                        span 2025
+                    li(data-rating="a").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция CRM в Чебоксарах
+                        span 2025
+                    li(data-rating="b").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция в сфере Сельское хозяйство
+                        span 2025
+                    li(data-rating="a").company-rating__list_item
+                        span 2 место
+                        span Разработка и интеграция корп. решений “Поддержка корп. программы/веб-сервиса
+                        span 2025
+                    li(data-rating="b").company-rating__list_item
+                        span 3 место
+                        span CRM Битрикс24
+                        span 2025
+                    li(data-rating="a").company-rating__list_item
+                        span 3 место
+                        span Разработка и интеграция корпоративных решений / HRM
+                        span 2025
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 4 место
+                        span Интеграторы CRM Битрикс24
+                        span 2025
+                    li(data-rating="a").company-rating__list_item.hidden
+                        span 4 место
+                        span Разработка и интеграция CRM в сфере Производственный инжиниринг 
+                        span 2025
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 13 место
+                        span Разработка и интеграция CRM
+                        span 2025
+                    li(data-rating="a").company-rating__list_item.hidden
+                        span 10 место
+                        span Разработка и интеграция CRM в Санкт-Петербурге
+                        span 2025
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 13 место
+                        span Разработка и интеграция CRM Россия
+                        span 2025
+                ul(data-rating-year="2024").company-rating__list
+                    li(data-rating="a").company-rating__list_item
+                        span 1 место
+                        span Разработка простых сайтов и веб-сервисов
+                        span 2024
+                    li(data-rating="b").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция корп. решений “Управление знаниями (КМ)”
+                        span 2024
+                    li(data-rating="a").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция CRM в Чебоксарах
+                        span 2024
+                    li(data-rating="b").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция в сфере Сельское хозяйство
+                        span 2024
+                    li(data-rating="a").company-rating__list_item
+                        span 2 место
+                        span Разработка и интеграция корп. решений “Поддержка корп. программы/веб-сервиса
+                        span 2024
+                    li(data-rating="b").company-rating__list_item
+                        span 3 место
+                        span CRM Битрикс24
+                        span 2024
+                    li(data-rating="a").company-rating__list_item
+                        span 3 место
+                        span Разработка и интеграция корпоративных решений / HRM
+                        span 2024
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 4 место
+                        span Интеграторы CRM Битрикс24
+                        span 2024
+                    li(data-rating="a").company-rating__list_item.hidden
+                        span 4 место
+                        span Разработка и интеграция CRM в сфере Производственный инжиниринг 
+                        span 2024
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 13 место
+                        span Разработка и интеграция CRM
+                        span 2024
+                    li(data-rating="a").company-rating__list_item.hidden
+                        span 10 место
+                        span Разработка и интеграция CRM в Санкт-Петербурге
+                        span 2024
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 13 место
+                        span Разработка и интеграция CRM Россия
+                        span 2024
+                ul(data-rating-year="2023").company-rating__list
+                    li(data-rating="a").company-rating__list_item
+                        span 1 место
+                        span Разработка простых сайтов и веб-сервисов
+                        span 2023
+                    li(data-rating="b").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция корп. решений “Управление знаниями (КМ)”
+                        span 2023
+                    li(data-rating="a").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция CRM в Чебоксарах
+                        span 2023
+                    li(data-rating="b").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция в сфере Сельское хозяйство
+                        span 2023
+                    li(data-rating="a").company-rating__list_item
+                        span 2 место
+                        span Разработка и интеграция корп. решений “Поддержка корп. программы/веб-сервиса
+                        span 2023
+                    li(data-rating="b").company-rating__list_item
+                        span 3 место
+                        span CRM Битрикс24
+                        span 2023
+                    li(data-rating="a").company-rating__list_item
+                        span 3 место
+                        span Разработка и интеграция корпоративных решений / HRM
+                        span 2023
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 4 место
+                        span Интеграторы CRM Битрикс24
+                        span 2023
+                    li(data-rating="a").company-rating__list_item.hidden
+                        span 4 место
+                        span Разработка и интеграция CRM в сфере Производственный инжиниринг 
+                        span 2023
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 13 место
+                        span Разработка и интеграция CRM
+                        span 2023
+                    li(data-rating="a").company-rating__list_item.hidden
+                        span 10 место
+                        span Разработка и интеграция CRM в Санкт-Петербурге
+                        span 2023
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 13 место
+                        span Разработка и интеграция CRM Россия
+                        span 2023
+                ul(data-rating-year="2022").company-rating__list
+                    li(data-rating="a").company-rating__list_item
+                        span 1 место
+                        span Разработка простых сайтов и веб-сервисов
+                        span 2022
+                    li(data-rating="b").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция корп. решений “Управление знаниями (КМ)”
+                        span 2022
+                    li(data-rating="a").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция CRM в Чебоксарах
+                        span 2022
+                    li(data-rating="b").company-rating__list_item
+                        span 1 место
+                        span Разработка и интеграция в сфере Сельское хозяйство
+                        span 2022
+                    li(data-rating="a").company-rating__list_item
+                        span 2 место
+                        span Разработка и интеграция корп. решений “Поддержка корп. программы/веб-сервиса
+                        span 2022
+                    li(data-rating="b").company-rating__list_item
+                        span 3 место
+                        span CRM Битрикс24
+                        span 2022
+                    li(data-rating="a").company-rating__list_item
+                        span 3 место
+                        span Разработка и интеграция корпоративных решений / HRM
+                        span 2022
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 4 место
+                        span Интеграторы CRM Битрикс24
+                        span 2022
+                    li(data-rating="a").company-rating__list_item.hidden
+                        span 4 место
+                        span Разработка и интеграция CRM в сфере Производственный инжиниринг 
+                        span 2022
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 13 место
+                        span Разработка и интеграция CRM
+                        span 2022
+                    li(data-rating="a").company-rating__list_item.hidden
+                        span 10 место
+                        span Разработка и интеграция CRM в Санкт-Петербурге
+                        span 2022
+                    li(data-rating="b").company-rating__list_item.hidden
+                        span 13 место
+                        span Разработка и интеграция CRM Россия
+                        span 2022
+        .company-rating__show-more
+            +pagination(true)

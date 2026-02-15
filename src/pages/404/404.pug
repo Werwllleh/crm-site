@@ -1,0 +1,31 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "404"
+  - description = "Описание 404"
+
+append content
+    +regPage('404')
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    .page-404
+        .page-404__body
+            .page-404__left
+                .page-404__anim
+                    h1.page-404__anim--code 404
+                    .page-404__anim--video
+                        video(playsinline, loop, muted, autoplay)
+                            source(src="./images/404.webm", type="video/webm")
+
+            .page-404__right
+                .page-404__description
+                    p.page-404__title Ого, похоже такой страницы нет
+                    p.page-404__text Возможно она была удалена или в запросе был указан неверный адрес. Попробуйте поискать информацию в этих разделах:
+                ul.page-404__links
+                    li
+                        a(href='./services/').btn.bordered.medium Услуги
+                    li
+                        a(href='./cases/').btn.bordered.medium Кейсы
+                    li
+                        a(href='./blog/').btn.bordered.medium Журнал

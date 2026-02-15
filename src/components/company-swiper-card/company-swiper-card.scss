@@ -1,0 +1,168 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// company-swiper-card
+.company-swiper-card {
+  position: relative;
+  border: 6px solid $background;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  min-height: 135px;
+
+  @include semiDesktop {
+    border-width: 8px;
+    width: 340px;
+    min-height: 230px;
+  }
+
+  &:hover {
+
+    .company-swiper-card__arrow {
+
+      .company-swiper-card__arrow-icon {
+        svg {
+          &:nth-child(1) {
+            transform: rotate(-45deg) translate(200%, 0);
+          }
+
+          &:nth-child(2) {
+            transform: rotate(-45deg) translate(0);
+          }
+        }
+      }
+
+      .company-swiper-card__arrow-text {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+
+    .company-swiper-card__bg {
+      transform: scaleY(1);
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 1;
+    pointer-events: none;
+
+    @include semiDesktop {
+      top: 20px;
+      right: 20px;
+      gap: 10px;
+    }
+
+    .company-swiper-card__arrow-text {
+      font-weight: 450;
+      font-size: 13px;
+      line-height: 1.125;
+      color: $blue;
+      transform: translateX(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition-default, visibility $transition-default, transform $transition-default;
+
+      @include semiDesktop {
+        font-size: 16px;
+      }
+    }
+
+    .company-swiper-card__arrow-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      overflow: hidden;
+
+      svg {
+        position: absolute;
+        width: 19px;
+        height: 19px;
+        transition: color $transition-default, transform $transition-default;
+
+        &:nth-child(1) {
+          color: $line-grey;
+          transform: rotate(-45deg) translate(0);
+        }
+
+        &:nth-child(2) {
+          color: $blue;
+          transform: rotate(-45deg) translate(-200%, 0);
+        }
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 70px;
+      max-width: 80%;
+      object-fit: contain;
+
+      @include semiDesktop {
+        height: 100px;
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $background;
+    transform: scaleY(0);
+    transform-origin: left bottom;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px 10px;
+    transition: transform $transition-default;
+
+    @include semiDesktop {
+      padding: 30px 15px;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.26;
+    color: $black;
+
+    @include semiDesktop {
+      font-size: 18px;
+    }
+  }
+}

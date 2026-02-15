@@ -1,0 +1,79 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// exp-numbers
+.exp-numbers {
+
+  &__body {}
+
+  &__items {}
+
+  .swiper {
+    overflow: unset;
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      width: auto;
+    }
+  }
+
+  &__card {
+    position: relative;
+    border: 8px solid $background;
+    background-color: $white;
+    border-radius: 16px;
+    padding: 20px;
+    min-height: 330px;
+    width: 305px;
+
+    @include tablet {
+      min-height: 410px;
+      width: 355px;
+      padding: 24px;
+    }
+
+    &--top {}
+
+    &--bottom {}
+
+    &--title {
+      font-weight: 500;
+      font-size: 50px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: $blue;
+
+      @include tablet {
+        font-size: 70px;
+      }
+    }
+
+    &--text {
+      margin-top: 10px;
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 1.24;
+      color: $text;
+
+      @include tablet {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+    }
+
+    &--img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 200px;
+      width: 100%;
+
+      @include tablet {
+        max-width: 250px;
+      }
+    }
+  }
+}

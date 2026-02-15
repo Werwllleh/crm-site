@@ -1,0 +1,42 @@
+mixin certificatesSlider()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regComponent('animate-button', true, true)
+
+    //certificates-slider
+    .certificates-slider&attributes(attributes)
+        .certificates-slider__body
+            .certificates-slider__swiper
+                .swiper
+                    .swiper-wrapper(data-lightgallery)
+                        .swiper-slide(data-src="./images/certificates/1.webp")
+                            .certificates-slider__item
+                                a(href="./images/certificates/1.webp")
+                                    img(src="./images/certificates/1.webp")
+                        .swiper-slide(data-src="./images/certificates/2.webp")
+                            .certificates-slider__item
+                                a(href="./images/certificates/2.webp")
+                                    img(src="./images/certificates/2.webp")
+                        .swiper-slide(data-src="./images/certificates/3.webp")
+                            .certificates-slider__item
+                                a(href="./images/certificates/3.webp")
+                                    img(src="./images/certificates/3.webp")
+                        .swiper-slide(data-src="./images/certificates/1.webp")
+                            .certificates-slider__item
+                                a(href="./images/certificates/1.webp")
+                                    img(src="./images/certificates/1.webp")
+                        .swiper-slide(data-src="./images/certificates/2.webp")
+                            .certificates-slider__item
+                                a(href="./images/certificates/2.webp")
+                                    img(src="./images/certificates/2.webp")
+                        .swiper-slide(data-src="./images/certificates/3.webp")
+                            .certificates-slider__item
+                                a(href="./images/certificates/3.webp")
+                                    img(src="./images/certificates/3.webp")
+                +animateButton("prev").prev
+                +animateButton("next").next
+                .certificates-slider__swiper--pagination
+                    .swiper-pagination
+

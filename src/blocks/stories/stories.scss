@@ -1,0 +1,292 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// stories
+.stories {
+
+  &__wrapper {
+  }
+
+  &__swiper {
+    overflow: unset;
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      width: 90%;
+
+      @include semiDesktop {
+        width: auto;
+        max-width: 720px;
+      }
+    }
+
+    &_footer {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &_pagination {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: auto !important;
+      left: auto !important;
+      bottom: auto !important;
+      right: auto !important;
+      width: auto !important;
+
+      .swiper-pagination-bullet {
+        display: block;
+        width: 7px;
+        height: 4px;
+        border-radius: 16px;
+        margin-inline: 6px;
+        transition: background-color $transition-default, width $transition-default;
+      }
+
+      .swiper-pagination-bullet-active {
+        width: 65px;
+      }
+    }
+  }
+
+  .story-card {
+    position: relative;
+    display: flex;
+    min-height: 460px;
+    background: $white;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow $transition-default;
+
+    @include semiDesktop {
+      min-height: 470px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      bottom: -200px;
+      right: -200px;
+      background: #F6F8FF;
+      border-radius: 100%;
+      transition: transform $transition-default6;
+      z-index: 1;
+
+      @include tablet {
+        width: 500px;
+        height: 500px;
+        bottom: -340px;
+        right: -340px;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      bottom: -8px;
+      right: -8px;
+      transform: translate(100%, 100%);
+      background: $white;
+      border-radius: 100%;
+      opacity: 0;
+      transition: opacity $transition-default6, transform $transition-default6;
+      pointer-events: none;
+      z-index: 1;
+
+      @include tablet {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    &__body {
+      border: 8px solid $background;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 22px 22px 40px 22px;
+      border-radius: 16px;
+      overflow: hidden;
+
+      @include semiDesktop {
+        padding: 30px 40px 40px 40px;
+      }
+    }
+
+    &__logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+
+      @include semiDesktop {
+        height: 60px;
+      }
+    }
+
+    &__text {
+      flex: 1;
+      margin-top: 20px;
+      font-weight: 450;
+      font-size: 15px;
+      line-height: 1.4;
+      color: $grey-blue;
+
+      @include semiDesktop {
+        margin-top: 30px;
+        font-size: 20px;
+      }
+    }
+
+    &__author {
+      max-width: 425px;
+      margin-top: auto;
+    }
+
+    &__name {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.4;
+      color: $text;
+
+      @include semiDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &__post {
+      margin-top: 6px;
+      font-weight: 450;
+      font-size: 12px;
+      line-height: 1.4;
+      color: $light-grey;
+      max-width: 80%;
+
+      @include semiDesktop {
+        font-size: 15px;
+      }
+    }
+
+    &__more {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      background-color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $blue-600;
+      cursor: pointer;
+      z-index: 3;
+      transform: rotate(0);
+      transition: opacity $transition-default6, color $transition-default6, background-color $transition-default6, transform $transition-default6;
+
+      .icon {
+        width: 14px;
+        height: 14px;
+        color: $grey-blue;
+      }
+    }
+
+    &__overlay-img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      transform: translate(-50%, 0) scale(.5) rotate(15deg);
+      opacity: 0;
+      transition: opacity $transition-default6, transform $transition-default6;
+      z-index: 1;
+      overflow: hidden;
+
+      @include tablet {
+        top: 65%;
+        transform: translate(-50%, -50%) scale(.5) rotate(15deg);
+      }
+
+
+      a {
+        position: relative;
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          height: 100%;
+          width: 100%;
+          box-shadow: 0 4px 20px 0 rgba(0, 20, 60, 0.03);
+          background: linear-gradient(180deg, rgba(246, 248, 254, 0) 55%, #f6f8fe 90%);
+        }
+      }
+
+      img {
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+        max-width: 230px;
+        object-fit: contain;
+
+        @include tablet {
+          max-width: 600px;
+          max-height: 100%;
+        }
+      }
+    }
+
+    &.show {
+      box-shadow: 0 18px 40px rgba(15, 23, 58, .16);
+
+      &::before {
+        transform: scale(25);
+      }
+
+      &::after {
+        opacity: 1;
+        transform: translate(65%, 65%);
+      }
+
+      .story-card__more {
+        transform: rotate(90deg);
+        background-color: $background;
+
+        .icon {
+          color: $blue;
+        }
+      }
+
+      .story-card__overlay-img {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1) rotate(0deg);
+
+        @include tablet {
+          transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        }
+      }
+    }
+  }
+
+}

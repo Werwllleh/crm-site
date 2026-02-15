@@ -1,0 +1,156 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// form-live-demo
+.form-demo-request {
+  border: 8px solid $background;
+  border-radius: 20px;
+  padding: 22px;
+
+  @include tablet {
+    padding: 30px;
+  }
+
+  @include semiDesktop {
+    padding: 40px;
+  }
+
+  &__body {}
+
+  &__top {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "images"
+                          "description";
+    align-items: flex-start;
+    gap: 10px;
+
+    @include semiDesktop {
+      grid-template-columns: 1fr auto;
+      grid-template-areas: "description images";
+    }
+  }
+
+  &__description {
+    grid-area: description;
+  }
+
+  &__title {
+
+  }
+
+  &__text {
+    margin-top: 30px;
+  }
+
+  &__images {
+    grid-area: images;
+    position: relative;
+    max-width: 150px;
+    max-height: 150px;
+    width: 100%;
+    height: 100%;
+
+    @include semiDesktop {
+      max-width: 170px;
+      max-height: 170px;
+    }
+
+    img {}
+
+    &_gif {
+      border-radius: 100%;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &_manager {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 100%;
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  &__bottom {
+    margin-top: 30px;
+
+    @include semiDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__form {
+
+    &_top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      @include w1250 {
+        grid-template-columns: 1fr 1fr auto;
+      }
+    }
+
+    &_bottom {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 16px;
+      align-items: flex-start;
+
+      @include tablet {
+        grid-template-columns: .55fr 1fr;
+        gap: 20px;
+      }
+
+      .checkbox {
+        .checkbox__label {
+          white-space: nowrap;
+          font-size: 15px;
+
+          &::before {
+            width: 18px;
+            height: 18px;
+          }
+
+          @include tablet {
+            &::before {
+              width: 20px;
+              height: 20px;
+            }
+            font-size: 18px;
+          }
+        }
+      }
+
+    }
+
+    &_field {}
+  }
+
+  &__note {
+    font-size: 11px;
+    text-align: left;
+    color: $light-grey;
+
+    a {
+      color: $grey-blue;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+
+    @include tablet {
+      font-size: 14px;
+      text-align: right;
+    }
+
+  }
+}

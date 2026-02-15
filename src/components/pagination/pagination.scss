@@ -1,0 +1,139 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// pagination
+.pagination {
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__show-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 13px 40px;
+    gap: 0 10px;
+    background-color: $stroke;
+    transition: background-color $transition-default;
+
+    @include tablet {
+      padding: 14px 40px;
+    }
+
+    span {
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 1;
+      color: $text;
+
+      @include tablet {
+        font-size: 18px;
+      }
+    }
+
+    .icon {
+      flex: 0 0 20px;
+      width: 20px;
+      height: 16px;
+      color: #3F4162;
+      transition: transform $transition-default;
+    }
+
+    &:hover {
+      background-color: $background;
+
+      .icon {
+        animation: rotate-forward .3s linear forwards;
+      }
+    }
+
+    &:not(:hover) .icon {
+      animation: rotate-back .3s linear forwards;
+    }
+  }
+
+  &__pages {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0 4px;
+
+    @include tablet {
+      margin-top: 30px;
+    }
+  }
+
+  &__page {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px;
+    width: 42px;
+    height: 40px;
+    transition: background-color $transition-default;
+
+    @include tablet {
+      width: 44px;
+      height: 44px;
+    }
+
+    &:not(.active):hover {
+      background: $background;
+
+      span {
+        color: $text;
+      }
+    }
+
+    &.active {
+      span {
+        color: $white;
+      }
+      background-color: $blue;
+    }
+
+    span {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 1.375;
+      color: $light-grey;
+      transition: color $transition-default;
+    }
+
+    &.disable {
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes rotate-forward {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-back {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,118 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// logo
+.logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 25px 25px;
+  overflow: hidden;
+  max-height: 90px;
+  transition: max-height $transition-default;
+
+  &.simple {
+    padding-block: 0;
+    padding-inline: 0;
+
+    .logo__label {
+      span {
+        color: $white;
+      }
+    }
+
+    .logo__slogan,
+    .logo__bg {
+      display: none;
+    }
+  }
+
+  @include desktop {
+    padding-inline: 15px;
+    padding-block: 18px 38px;
+  }
+
+  @include laptop {
+    padding-block: 64px;
+    max-height: 180px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px 0;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+
+    span {
+      font-size: 20px;
+      color: $black;
+      transition: color $transition-default;
+
+      @include desktop {
+        font-size: 24px;
+      }
+
+      @include w1250 {
+        font-size: 26px;
+      }
+
+      @include laptop {
+        font-size: 29px;
+      }
+
+      &:nth-child(1) {
+        font-weight: 400;
+      }
+
+      &:nth-child(2) {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__slogan {
+    font-weight: 500;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: $light-grey;
+    white-space: nowrap;
+    transition: color $transition-default;
+
+    @include desktop {
+      font-size: 10px;
+    }
+
+    @include w1250 {
+      font-size: 12px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+      color: $black;
+      opacity: 0.04;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+}

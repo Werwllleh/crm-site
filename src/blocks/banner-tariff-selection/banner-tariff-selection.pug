@@ -1,0 +1,14 @@
+mixin bannerTariffSelection()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //banner-tariff-selection
+    .banner-tariff-selection&attributes(attributes)
+        .banner-tariff-selection__body
+            .banner-tariff-selection__info
+                p.h3.banner-tariff-selection__info--title Не знаете, какой тариф подойдет?
+                p.banner-tariff-selection__info--text Заполните короткую форму, и мы сделаем аудит ваших задач и процессов. Подберем оптимальный тариф и дадим рекомендации по внедрению.
+                button(data-modal="consultation").btn.primary.lg.banner-tariff-selection__button Получить консультацию
+            .banner-tariff-selection__image
+                img(src="./images/banners/tariff-selection.png")

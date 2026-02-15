@@ -1,0 +1,29 @@
+mixin instructionSet()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //instruction-set
+    .instruction-set&attributes(attributes)
+        .instruction-set__body
+            .instruction-set__left
+                p.instruction-set__title Скачайте набор инструкций по&nbsp;работе в&nbsp;CRM (пакет файлов)
+                p.instruction-set__text Этот пакет инструкций поможет вам самостоятельно разобраться в части задач и получить ответы на вопросы, которые возникают в  процессе работы в портале
+                a(href="#", download).btn.lg.download.instruction-set__download
+                    +svg("download")
+                    span Скачать все файлы
+            .instruction-set__right
+                .instruction-set__docs
+                    .instruction-set__doc
+                        .instruction-set__doc_info
+                            p Инструкция по настройке того сего, пятого десятого
+                            span Скачать (PDF 850кб)
+                        +svg("pdf")
+                        a(href="#", download)
+                    .instruction-set__doc
+                        .instruction-set__doc_info
+                            p Инструкция по настройке того сего, пятого десятого
+                            span Скачать (PDF 850кб)
+                        +svg("pdf")
+                        a(href="#", download)
+        img(src='./images/banner-blur.svg', alt="").instruction-set__bg

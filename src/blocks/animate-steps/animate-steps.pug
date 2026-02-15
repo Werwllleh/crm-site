@@ -1,0 +1,19 @@
+mixin animateSteps(steps, logoBase, logoColor)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //animate-steps
+    .animate-steps&attributes(attributes)
+        .animate-steps__body
+            if logoBase && logoColor
+                .animate-steps__image
+                    img(src=logoBase).base
+                    img(src=logoColor).colored
+            if steps
+              ul.animate-steps__cards
+                for step in steps
+                  li.animate-steps__card
+                      span.animate-steps__card--index= step.index
+                      p.animate-steps__card--title= step.title
+                      p.animate-steps__card--text= step.description

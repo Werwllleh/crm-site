@@ -1,0 +1,59 @@
+mixin cloudBoxCompare(title, text)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //cloud-box-compare
+    .cloud-box-compare&attributes(attributes)
+        p.h2.cloud-box-compare__title= title
+        p.cloud-box-compare__text= text
+        .cloud-box-compare__swiper.swiper
+            .cloud-box-compare__body.swiper-wrapper
+                .cloud-box-compare__type.swiper-slide
+                    p.h3.cloud-box-compare__type--title Коробочная версия
+                    p.cloud-box-compare__type--text
+                        | Для компаний с высокими требованиями к безопасности данных, кастомизации и интеграциям с внутренними системами.
+                        br
+                        br
+                        | Специалисты устанавливают Битрикс24 на собственные серверы организации.
+                    ul.cloud-box-compare__type--advantages
+                        li
+                            span
+                                +svg("cup")
+                            p Полный контроль над данными
+                        li
+                            span
+                                +svg("cup")
+                            p Интеграция с&nbsp;любыми сторонними системами
+                        li
+                            span
+                                +svg("cup")
+                            p Глубокая кастомизация функций
+                        li
+                            span
+                                +svg("cup")
+                            p Автономная работа
+                .cloud-box-compare__type.swiper-slide
+                    p.h3.cloud-box-compare__type--title Облачная версия
+                    p.cloud-box-compare__type--text
+                        | Для быстрого старта и компаний, которые не хотят тратить ресурсы на поддержку собственной IT-инфраструктуры.
+                        br
+                        br
+                        | Все данные хранятся на серверах Битрикс24, а доступ к системе происходит через браузер.
+                    ul.cloud-box-compare__type--advantages
+                        li
+                            span
+                                +svg("cup")
+                            p Быстрое развертывание
+                        li
+                            span
+                                +svg("cup")
+                            p Доступ из&nbsp;любой точки мира
+                        li
+                            span
+                                +svg("cup")
+                            p Не&nbsp;нужно тратить деньги на серверы и их обслуживание
+                        li
+                            span
+                                +svg("cup")
+                            p Автоматическое обновление

@@ -1,0 +1,339 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// main
+.page-main {
+
+  &__header {
+
+    .header {
+      .header__body {
+        position: relative;
+        pointer-events: none;
+
+        @media (max-width: 767px) {
+          z-index: 2;
+        }
+      }
+
+      .header__logo,
+      .select-city,
+      .header__top-bar_links a,
+      .header__navbar_item,
+      .header__navbar_link,
+      .header__search,
+      .header__burger,
+      .header__button-request {
+        position: relative;
+        pointer-events: all;
+
+        @include tablet {
+          z-index: 1;
+        }
+      }
+
+
+      .header-multiblock {
+
+        @media (max-width: 991.9px) {
+          .header__navbar_link {
+            color: $black !important;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__main {
+    position: relative;
+    min-height: 100vh;
+    background-color: rgb(16, 26, 48);
+    overflow: hidden;
+
+    @include semiDesktop {
+      min-height: 100vh;
+    }
+
+    @include w1250 {
+      padding-bottom: 200px;
+
+      @media (min-height: 800px) {
+        padding-bottom: 400px;
+      }
+    }
+
+    &_content {
+
+      @include semiDesktop {
+        margin-top: 50px;
+      }
+    }
+
+    &_spline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      z-index: 0;
+      animation: showSplineAnim 1s ease-in-out;
+
+      spline-viewer {
+        width: 100%;
+        height: 100%;
+      }
+
+      @include desktop {
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__content {
+    padding-block: 150px;
+  }
+
+  &__section {
+
+    &_container {
+    }
+
+    &_header {
+
+    }
+
+    &_title {
+      max-width: 1150px;
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: $black;
+
+      span {
+        color: $light-grey;
+      }
+    }
+
+    &_description {
+      margin-top: 30px;
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 1.4;
+      color: $text;
+
+      @include tablet {
+        font-size: 20px;
+      }
+
+      @include desktop {
+        margin-top: 20px;
+        font-size: 24px;
+      }
+    }
+
+    &_content {
+      margin-top: 30px;
+
+      @include tablet {
+        margin-top: 40px;
+      }
+
+      @include desktop {
+        margin-top: 60px;
+      }
+    }
+
+    & + & {
+      margin-top: 60px;
+
+      @include tablet {
+        margin-top: 100px;
+      }
+
+      @include desktop {
+        margin-top: 200px;
+      }
+    }
+
+    &.section-stories {
+
+    }
+
+    &.section-seo {
+      max-width: 973px;
+      margin-inline: auto;
+    }
+  }
+
+  .section-industries {
+    .page-main__section_description {
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  .section-companies {
+
+  }
+
+  .section-news {
+    .page-main__section_title {
+      max-width: 850px;
+    }
+
+    /*&__tags {
+    }
+
+    &__items {
+      margin-top: 30px;
+
+      @include semiDesktop {
+        margin-top: 60px;
+      }
+
+      .first-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        grid-template-areas:  "a"
+                              "b"
+                              "c";
+        gap: 20px;
+
+        @include mobile {
+          gap: 40px;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-areas:
+                              "a a"
+                              "b c";
+        }
+
+        @include semiDesktop {
+          gap: 60px 40px;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-areas: "a b c";
+        }
+
+        @include w1250 {
+          gap: 80px 40px;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-areas: "a a b c";
+        }
+
+        .material-card {
+          &:nth-child(1) {
+            grid-area: a;
+          }
+
+          &:nth-child(2) {
+            grid-area: b;
+          }
+
+          &:nth-child(3) {
+            grid-area: c;
+          }
+        }
+      }
+
+      .other-row {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        gap: 20px;
+
+        @include mobile {
+          margin-top: 40px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+
+        @include semiDesktop {
+          margin-top: 60px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 60px 40px;
+        }
+
+        @include w1250 {
+          margin-top: 80px;
+          gap: 80px 40px;
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include laptop {
+
+        }
+      }
+
+      .material-card {
+
+      }
+    }
+
+    &__footer {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include semiDesktop {
+        margin-top: 60px;
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+      padding-block: 6px;
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 1.375;
+      text-align: center;
+      color: $grey-blue;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        transform: scale(0);
+        background-color: $blue;
+        transform-origin: left bottom;
+        transition: transform $transition-default;
+      }
+
+      &:hover {
+        color: $blue;
+
+        &::before {
+          transform: scale(1);
+        }
+
+      }
+    }*/
+  }
+}
+
+@keyframes showSplineAnim {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+spline-viewer {
+  transition: opacity $transition-default6, visibility $transition-default6;
+}

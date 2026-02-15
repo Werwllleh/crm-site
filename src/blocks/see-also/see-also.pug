@@ -1,0 +1,18 @@
+mixin seeAlso()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('case-card', true, true)
+    //see-also
+    .see-also&attributes(attributes)
+        .see-also__body
+            p.h2.see-also__title Смотрите также
+            .see-also__swiper
+                .swiper
+                    .swiper-wrapper
+                        .swiper-slide
+                            +caseCard('ctep.png', 'Внедрение корпоративного портала на Битрикс24 и его интеграция с OPERA для сети отелей «Роза Хутор»', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                        .swiper-slide
+                            +caseCard('bff.png', 'Автоматизация обучения сотрудников для «BFF»', ['Сфера услуг', 'Электронная коммерция'])
+                        .swiper-slide
+                            +caseCard('iva.png', 'Разработали единую систему по обработки обращений для 5 млн клиентской базы', ['B2B', 'Электронная коммерция'])

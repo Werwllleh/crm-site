@@ -1,0 +1,36 @@
+mixin buttonShare(text)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //button-share
+    .button-share
+        button.button-share__button&attributes(attributes)
+            span.button-share__button--icon
+                +svg("share")
+            if text
+                span.button-share__button--text= text
+        .button-share-tooltip
+            .button-share-tooltip__body
+                ul.button-share-tooltip__socials
+                    li
+                        a(href="").button-share-tooltip__item
+                            +svg("vk")
+                            | Вконтакте
+                    li
+                        a(href="").button-share-tooltip__item
+                            +svg("ok")
+                            | Одноклассники
+                    li
+                        a(href="").button-share-tooltip__item
+                            +svg("telegram_icon")
+                            | Telegram
+                    li
+                        a(href="").button-share-tooltip__item
+                            +svg("whatsapp_icon")
+                            | WhatsApp
+                .button-share-tooltip__footer
+                    button(type="button", data-share="link").button-share-tooltip__item.button-share-tooltip__copy-link
+                        +svg("link-copy")
+                        | Скопировать ссылку
+

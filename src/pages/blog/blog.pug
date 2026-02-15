@@ -1,0 +1,59 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Blog"
+  - description = "Описание Blog"
+
+append content
+    +regPage('blog', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    +regBlock('quickly-consultation', false, true)
+    +regBlock('tags', true, true)
+    +regBlock('banner-subscribe', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('material-card', true, true)
+    +regComponent('pagination', true, true)
+
+    .page-blog
+        .page__breadcrumbs
+            +breadcrumbs(['Главная', 'Журнал'])
+        .page-blog__content
+            h1.h1.page-blog__title Журнал
+            .page-blog__grid
+                .page-blog__grid_left
+                    .page-blog__tags
+                        p.page-blog__tags_title Рубрика
+                        +tags()
+                    .page-blog__quickly-consultation
+                        +quicklyConsultation()
+                .page-blog__grid_right
+                    .page-blog__materials.blog-materials
+                        .blog-materials__wrap
+                            .blog-materials__content
+                                .blog-materials__list
+                                    +materialCard('0.jpg', 'Как внедрять Битрикс24 – основные подходы, этапы, рекомендации', ['#CRM Битрикс24', '#Интеграция 1С', '#Автоматизация'], 'тема недели').horizontal
+                                    +materialCard('1.jpg', 'Тренды найма 2025', ['#Управление персоналом', '#Бизнес-процессы'])
+                                    +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('3.jpg', 'Создание приложений как Airbnb: функциональность, цена, сроки разработки', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('4.jpg', 'Битрикс24 Невесомость: Полный обзор новых инструментов', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('5.jpg', 'Какой тариф Битрикс24 выбрать?', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('6.jpg', 'Как ставить задачи правильно?', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('7.jpg', 'ТОП – 6 ошибок при внедрении CRM', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('8.jpg', 'Как CRM повышает качество клиентского сервиса и объем продаж', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('9.jpg', 'Развеем мифы: Как правильно внедрить CRM-систему?', ['#CRM Битрикс24', '#Автоматизация'])
+                                .blog-materials__banner
+                                    +bannerSubscribe()
+                                .blog-materials__list
+                                    +materialCard('1.jpg', 'Тренды найма 2025', ['#Управление персоналом', '#Бизнес-процессы'])
+                                    +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('3.jpg', 'Создание приложений как Airbnb: функциональность, цена, сроки разработки', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('4.jpg', 'Битрикс24 Невесомость: Полный обзор новых инструментов', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('5.jpg', 'Какой тариф Битрикс24 выбрать?', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('6.jpg', 'Как ставить задачи правильно?', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('7.jpg', 'ТОП – 6 ошибок при внедрении CRM', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('8.jpg', 'Как CRM повышает качество клиентского сервиса и объем продаж', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('9.jpg', 'Развеем мифы: Как правильно внедрить CRM-систему?', ['#CRM Битрикс24', '#Автоматизация'])
+                            .blog-materials__pagination
+                                +pagination()

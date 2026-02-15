@@ -1,0 +1,152 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins' as *;
+
+// input
+.input-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &.borderless {
+    input {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      border-bottom: 1px solid $line-grey;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .input-field__placeholder {
+      left: 0;
+    }
+  }
+
+  input {
+    position: relative;
+    z-index: 1;
+    border: 1px solid $line-grey;
+    border-radius: 10px;
+    padding: 16px 12px;
+    outline: none;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 1.375;
+    color: $text;
+    background-color: $white;
+    transition: color $transition-default, border-color $transition-default;
+
+    @include tablet {
+      padding: 20px 16px 15px 16px;
+      font-size: 16px;
+    }
+
+    &:focus {
+      border-color: $text;
+    }
+
+    &.focus + .input-field__placeholder,
+    &:focus + .input-field__placeholder {
+      transform: translateY(-18px);
+      font-weight: 450;
+      font-size: 13px;
+      line-height: 1.69231;
+      color: $grey-blue;
+    }
+
+    &.error {
+      border-color: #e34132;
+      color: #e34132;
+    }
+
+    &.error ~ .input-field__error {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(20px);
+    }
+
+    &.verified {
+      padding-right: 25px;
+
+      @include tablet {
+        padding-right: 30px;
+      }
+    }
+
+    &.verified ~ .input-field__verified {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.focus.verified {
+      border-color: $light-grey;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 12px;
+    bottom: 0;
+    height: max-content;
+    margin: auto 0;
+    font-weight: 450;
+    font-size: 15px;
+    line-height: 1.2;
+    color: $light-grey;
+    pointer-events: none;
+    user-select: none;
+    transform: translateY(0);
+    transition: font-size $transition-default, transform $transition-default, color $transition-default;
+
+    @include tablet {
+      left: 16px;
+      font-size: 18px;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    font-weight: 450;
+    font-size: 13px;
+    line-height: 1.7;
+    letter-spacing: 0;
+    color: #e34132;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+    transition: visibility $transition-default, opacity $transition-default, transform $transition-default;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(16px);
+    }
+  }
+
+  &__verified {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 12px;
+    bottom: 0;
+    height: max-content;
+    margin: auto 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility $transition-default, opacity $transition-default, transform $transition-default;
+
+    svg {
+      width: 13px;
+      height: 8px;
+      color: $blue;
+    }
+  }
+}

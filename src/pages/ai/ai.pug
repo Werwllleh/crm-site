@@ -1,0 +1,1723 @@
+extends ../../app/pug/layouts/service-layout.pug
+
+append vars
+  - title = "Ai"
+  - description = "Описание Ai"
+
+append content
+    +regPage('ai')
+    +regComponent('header', true, true)
+    +regBlock('collapse-stages', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    +header().light
+    main.page
+        .page__container
+            .page__content
+                .ai
+                    .ai-main
+                        .ai-main__bool.ai-bool
+                            video(autoplay, playsinline, loop, muted, poster="./images/ai/bool-poster.jpg")
+                                source(src="./images/ai/bool.mp4" type="video/mp4")
+                        .ai-main__wave.ai-wave
+                            img(src="./images/ai/ai-wave2.png", alt="").mobile
+                            img(src="./images/ai/ai-wave.png", alt="")
+                        .ai-main__container.container
+                            .ai-main__body
+                                .ai-main__descritption
+                                    h1.h1 Разработка и&nbsp;интеграция AI-решений
+                                    p
+                                        | Автоматизируем бизнес-процессы, внедряя In-house AI-архитектуру.
+                                        br
+                                        | Снижаем операционные расходы и&nbsp;преодолеваем ограничения.
+                                    button(data-modal="consultation").btn.primary.medium Обсудить проект
+                                ul.ai-main__adv
+                                    li
+                                        span
+                                            | до
+                                            |
+                                            span 55%
+                                        p выполнение задач быстрее
+                                    li
+                                        span
+                                            | на
+                                            |
+                                            span 29%
+                                        p поиск информации быстрее
+                                    li
+                                        span
+                                            | до
+                                            |
+                                            span 35%
+                                        p повышение продуктивности
+                                    li
+                                        span
+                                            | на
+                                            |
+                                            span 12%
+                                        p увеличение конверсии
+
+
+
+                    .ai-examples
+                        .ai-examples__container.container
+                            .ai-examples__body
+                                .ai-examples__header
+                                    p.h2 Примеры внедрений AI-ассистентов, которые помогли расширить возможности бизнеса и команды
+                                    p.description AI обрабатывает массивы данных, которые невозможно охватить вручную. Создаем гибридные рабочие процессы: алгоритмы обеспечивают скорость и режим 24/7, а люди — экспертность, эмпатию и гибкость
+                                .ai-examples__grid
+                                    .ai-examples__types
+                                        ul
+                                            li
+                                                button(type="button", data-type="realty").ai-examples__type.active
+                                                    span
+                                                        +svg("crane")
+                                                    p Недвижимость
+                                            li
+                                                button(type="button", data-type="e-com").ai-examples__type
+                                                    span
+                                                        +svg("cart")
+                                                    p E-com
+                                            li
+                                                button(type="button", data-type="factory").ai-examples__type
+                                                    span
+                                                        +svg("factory2")
+                                                    p Производство
+                                            li
+                                                button(type="button", data-type="b2b").ai-examples__type
+                                                    span
+                                                        +svg("case2")
+                                                    p B2B
+                                            li
+                                                button(type="button", data-type="medicine").ai-examples__type
+                                                    span
+                                                        +svg("heartbeat")
+                                                    p Медицина
+                                            li
+                                                button(type="button", data-type="logistics").ai-examples__type
+                                                    span
+                                                        +svg("box-arrow")
+                                                    p Логистика
+                                            li
+                                                button(type="button", data-type="services").ai-examples__type
+                                                    span
+                                                        +svg("service-bell")
+                                                    p Услуги
+                                            li
+                                                button(type="button", data-type="consulting").ai-examples__type
+                                                    span
+                                                        +svg("compare")
+                                                    p Консалтинг
+                                            li
+                                                button(type="button", data-type="it-telecom").ai-examples__type
+                                                    span
+                                                        +svg("broadcust")
+                                                    p IT и Телеком
+
+                                    .ai-examples__cards
+                                        .ai-examples__category(data-category="realty", style="display:block;").active
+                                            .ai-examples__category--inner
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                            button.show-more
+                                                span Показать еще
+                                                +svg('update')
+                                        .ai-examples__category(data-category="e-com")
+                                            .ai-examples__category--inner
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                            button.show-more
+                                                span Показать еще
+                                                +svg('update')
+                                        .ai-examples__category(data-category="factory")
+                                            .ai-examples__category--inner
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                            button.show-more
+                                                span Показать еще
+                                                +svg('update')
+                                        .ai-examples__category(data-category="b2b")
+                                            .ai-examples__category--inner
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                            button.show-more
+                                                span Показать еще
+                                                +svg('update')
+                                        .ai-examples__category(data-category="medicine")
+                                            .ai-examples__category--inner
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                            button.show-more
+                                                span Показать еще
+                                                +svg('update')
+                                        .ai-examples__category(data-category="logistics")
+                                            .ai-examples__category--inner
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                            button.show-more
+                                                span Показать еще
+                                                +svg('update')
+                                        .ai-examples__category(data-category="services")
+                                            .ai-examples__category--inner
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                            button.show-more
+                                                span Показать еще
+                                                +svg('update')
+                                        .ai-examples__category(data-category="consulting")
+                                            .ai-examples__category--inner
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                            button.show-more
+                                                span Показать еще
+                                                +svg('update')
+                                        .ai-examples__category(data-category="it-telecom")
+                                            .ai-examples__category--inner
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/case/iva.png", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                                .ai-case
+                                                    .ai-case__body
+                                                        .ai-case__top
+                                                            .ai-case__logo
+                                                                img(src="./images/nda.svg", alt="")
+                                                            p.ai-case__title
+                                                                | Чат-бот для техподдержки, рассчитанный на&nbsp;100000 звонков в&nbsp;неделю и&nbsp;еще может быть четвертая строка
+                                                            ul.ai-case__list
+                                                                li
+                                                                    span Клиент
+                                                                    p Логистическая компания: 500 сотрудников, 1800 шт - парк машин
+                                                                li
+                                                                    span Ситуация
+                                                                    p Клиент терял до 10% клиентов в год из-за недовольства работой службы поддержи и долгого ожидания ответа при обращении на горячую линию
+                                                                li
+                                                                    span Решение
+                                                                    p Голосовой бот, работающий с помощтю RAG технологии интегрированный в CRM-систему и считывающий статус, трек номер и что-то еще
+                                                        .ai-case__bottom
+                                                            .ai-case__results
+                                                                p.ai-case__results--text Результат:
+                                                                ul.ai-case__results--list
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span 30%
+                                                                        p рост NPS
+                                                                    li
+                                                                        span
+                                                                            | на
+                                                                            |
+                                                                            span - 8%
+                                                                        p оттока клиентов
+                                            button.show-more
+                                                span Показать еще
+                                                +svg('update')
+                    .ai-solutions
+                        .ai-solutions__container.container
+                            .ai-solutions__body
+                                .ai-solutions__header
+                                    p.h2 Готовые Решения, которые окупаются за 3-6 месяцев
+                                .ai-solutions__grid
+                                    .ai-solutions__tabs
+                                        ul
+                                            li
+                                                button(type="button", data-solution="speech-analytics").ai-solutions__tab AI-Контроль качества (Speech Analytics)
+                                            li
+                                                button(type="button", data-solution="sales-roleplay").ai-solutions__tab AI-Тренер (Sales Roleplay)
+                                            li
+                                                button(type="button", data-solution="custom-dev").ai-solutions__tab Кастомная автоматизация (Custom Dev)
+                                    .ai-solutions__content
+                                        .ai-solutions-type(data-category="speech-analytics")
+                                            .ai-solutions-type__body
+                                                .ai-solutions-type__info
+                                                    p.ai-solutions-type__title AI-Контроль качества (Speech&nbsp;Analytics)
+                                                    span.ai-solutions-type__price от&nbsp;30&nbsp;000&nbsp;₽
+                                                    ul.ai-solutions-type__list
+                                                        li
+                                                            span Для кого:
+                                                            p Колл-центры, Отделы продаж.
+                                                        li
+                                                            span Что делает:
+                                                            p Транскрибация 100% звонков, чек-листы, автозаполнение CRM, скоринг менеджеров.
+                                                        li
+                                                            span Результат:
+                                                            p Вы&nbsp;видите реальную картину продаж без участия супервайзеров.
+                                                    button(data-modal="consultation").btn.primary.medium.ai-solutions-type__button Попробовать решение
+                                                .ai-solutions-type__image
+                                                    img(src="./images/solution-img.jpg", alt="")
+                                        .ai-solutions-type(data-category="sales-roleplay")
+                                            .ai-solutions-type__body
+                                                .ai-solutions-type__info
+                                                    p.ai-solutions-type__title AI-Контроль качества (Speech&nbsp;Analytics)
+                                                    span.ai-solutions-type__price от&nbsp;30&nbsp;000&nbsp;₽
+                                                    ul.ai-solutions-type__list
+                                                        li
+                                                            span Для кого:
+                                                            p Колл-центры, Отделы продаж.
+                                                        li
+                                                            span Что делает:
+                                                            p Транскрибация 100% звонков, чек-листы, автозаполнение CRM, скоринг менеджеров.
+                                                        li
+                                                            span Результат:
+                                                            p Вы&nbsp;видите реальную картину продаж без участия супервайзеров.
+                                                    button(data-modal="consultation").btn.primary.medium.ai-solutions-type__button Попробовать решение
+                                                .ai-solutions-type__image
+                                                    img(src="./images/solution-img.jpg", alt="")
+                                        .ai-solutions-type(data-category="custom-dev")
+                                            .ai-solutions-type__body
+                                                .ai-solutions-type__info
+                                                    p.ai-solutions-type__title AI-Контроль качества (Speech&nbsp;Analytics)
+                                                    span.ai-solutions-type__price от&nbsp;30&nbsp;000&nbsp;₽
+                                                    ul.ai-solutions-type__list
+                                                        li
+                                                            span Для кого:
+                                                            p Колл-центры, Отделы продаж.
+                                                        li
+                                                            span Что делает:
+                                                            p Транскрибация 100% звонков, чек-листы, автозаполнение CRM, скоринг менеджеров.
+                                                        li
+                                                            span Результат:
+                                                            p Вы&nbsp;видите реальную картину продаж без участия супервайзеров.
+                                                    button(data-modal="consultation").btn.primary.medium.ai-solutions-type__button Попробовать решение
+                                                .ai-solutions-type__image
+                                                    img(src="./images/solution-img.jpg", alt="")
+                    .ai-safety
+                        .ai-safety__container.container
+                            .ai-safety__body
+                                .ai-safety__title
+                                    p.h2 Enterprise-подход: Ваши коммерческие и&nbsp;персональные данные в&nbsp;безопасности
+                                .ai-safety__grid
+                                    .ai-safety-card
+                                        .ai-safety-card__image
+                                            img(src="./images/ai/1.webp", alt="")
+                                        .ai-safety-card__body
+                                            .ai-safety-card__top
+                                                p.ai-safety-card__title Работаем в&nbsp;вашем контуре
+                                                p.ai-safety-card__text Данные не&nbsp;покидают сервер компании. Мы&nbsp;настраиваем локальные LLM, если это требование&nbsp;СБ.
+                                            .ai-safety-card__bottom
+                                                .ai-safety-card__tags
+                                                    span.ai-safety-card__tag ФЗ №&nbsp;152-ФЗ
+                                                    span.ai-safety-card__tag ФЗ №&nbsp;187-ФЗ
+                                    .ai-safety-card
+                                        .ai-safety-card__image
+                                            img(src="./images/ai/2.webp", alt="")
+                                        .ai-safety-card__body
+                                            .ai-safety-card__top
+                                                p.ai-safety-card__title Обезличивание данных
+                                                p.ai-safety-card__text Система автоматически скрывает ФИО и&nbsp;телефоны перед обработкой. ИИ&nbsp;работает со&nbsp;смыслами, а&nbsp;не&nbsp;с&nbsp;персоналиями.
+                                            .ai-safety-card__bottom
+                                                .ai-safety-card__tags
+                                                    span Приказ РКН №&nbsp;140
+                    .ai-mvp
+                        .ai-mvp__container.container
+                            .ai-mvp__body
+                                .ai-mvp__header
+                                    p.h2 MVP за&nbsp;3&nbsp;недели: проверьте гипотезу быстро.
+                                    p.description Мы&nbsp;разрабатываем прототип решения на&nbsp;ваших данных, чтобы вы&nbsp;увидели пользу в&nbsp;реальности.
+                                ul.ai-mvp__list
+                                    li От вас — только описание задачи.
+                                    li От нас — работающий пилот.
+                                .ai-mvp-table
+                                    table
+                                        thead
+                                            tr
+                                                th
+                                                    span.ai-mvp-table__week 1 неделя
+                                                th
+                                                    span.ai-mvp-table__week 2 неделя
+                                                th
+                                                    span.ai-mvp-table__week 3 неделя
+                                                th
+                                                    span.ai-mvp-table__week Финал
+                                        tbody
+                                            tr
+                                                td
+                                                    span.ai-mvp-table__card
+                                                        | Аудит процессов, изучение данных, регламентов и it-систем
+                                                td
+                                                td
+                                                td
+                                            tr
+                                                td
+                                                td
+                                                    span.ai-mvp-table__card
+                                                        | Сборка, составление промпта, настройка workflow
+                                                td
+                                                td
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                    span.ai-mvp-table__card
+                                                        | Тестирование и доработка AI-решения
+                                                td
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                    span.ai-mvp-table__card
+                                                        | Релиз ассистента и передача прав
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                    span.ai-mvp-table__card
+                                                        | Техподдержка и развитие
+
+                                .ai-mvp-list
+                                    .ai-mvp-list__items
+                                        .ai-mvp-list__card.card1
+                                            .ai-mvp-list__card--body
+                                                span.ai-mvp-list__card--week 1 неделя
+                                                p.ai-mvp-list__card--text
+                                                    | Аудит процессов, изучение данных, регламентов и&nbsp;it-систем
+                                        .ai-mvp-list__card.card2
+                                            .ai-mvp-list__card--body
+                                                span.ai-mvp-list__card--week 2 неделя
+                                                p.ai-mvp-list__card--text
+                                                    | Сборка, составление промпта, настройка workflow
+                                        .ai-mvp-list__card.card3
+                                            .ai-mvp-list__card--body
+                                                span.ai-mvp-list__card--week 3 неделя
+                                                p.ai-mvp-list__card--text
+                                                    | Тестирование и&nbsp;доработка AI-решения
+                                        .ai-mvp-list__card.card4
+                                            .ai-mvp-list__card--body
+                                                span.ai-mvp-list__card--week Финал
+                                                p.ai-mvp-list__card--text
+                                                    | Релиз ассистента и&nbsp;передача прав
+
+                    .ai-stack
+                        .ai-stack__container.container
+                            .ai-stack__body
+                                .ai-stack__header
+                                    p.h2 Используем лучшие мировые инструменты для создания умной архитектуры
+                                    p.description Мы&nbsp;не&nbsp;привязываемся к&nbsp;одной нейросети, а&nbsp;подбираем стек под вашу задачу и&nbsp;бюджет.
+                                .ai-stack__cards
+                                    .ai-stack__card
+                                        p.ai-stack__card--title Языковые Модели (LLM)
+                                        ul.ai-stack__card--list
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/1.png", alt="")
+                                                p GPT-4
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/2.png", alt="")
+                                                p Claude 3.5
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/3.png", alt="")
+                                                p YandexGPT
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/4.png", alt="")
+                                                p GigaChat (РФ)
+                                    .ai-stack__card
+                                        p.ai-stack__card--title Разработка и Логика
+                                        ul.ai-stack__card--list
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/5.png", alt="")
+                                                p LangChain
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/6.png", alt="")
+                                                p Python
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/7.png", alt="")
+                                                p OpenAI API
+                                    .ai-stack__card
+                                        p.ai-stack__card--title Оркестрация и Интеграции
+                                        ul.ai-stack__card--list
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/8.png", alt="")
+                                                p n8n (Low-code)
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/9.png", alt="")
+                                                p Airflow
+                                    .ai-stack__card
+                                        p.ai-stack__card--title Готовые библиотеки Github
+                                        ul.ai-stack__card--list
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/10.png", alt="")
+                                                p Vue
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/11.png", alt="")
+                                                p PyGitHub
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/12.png", alt="")
+                                                p Node.js
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/13.png", alt="")
+                                                p IoT
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/14.png", alt="")
+                                                p Data Science
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/15.png", alt="")
+                                                p SQLAlchemy
+                                            li
+                                                span
+                                                    img(src="./images/ai/items/16.png", alt="")
+                                                p TensorFlow
+                    .ai-tech-audit-banner
+                        .ai-tech-audit-banner__container.container
+                            .tech-audit-banner
+                                .tech-audit-banner__body
+                                    .tech-audit-banner__info
+                                        p.h2 Сомневаетесь, подойдет ли ваша IT-инфраструктура для AI?
+                                        p.description Закажите технический аудит
+                                        button(data-modal="consultation").btn.primary.medium.tech-audit-banner__button Получить тех. аудит бесплатно
+                                    .tech-audit-banner__image
+                                        img(src="./images/ai/tech-audit.webp" alt="")
+
+                    .ai-support
+                        .ai-support__container.container
+                            .ai-support__body
+                                .ai-support__header
+                                    p.h2 Внедрение, Обучение и&nbsp;Поддержка
+                                    p.description Мы&nbsp;остаемся на&nbsp;связи и&nbsp;помогаем вашей команде научиться использовать AI-ассистентов, чтобы выполнять задачи быстрее и&nbsp;эффективнее
+                                .ai-support__cards
+                                    .ai-support__card
+                                        .ai-support__card--body
+                                            span.ai-support__card--icon
+                                                img(src="./images/ai/items/i1.png", alt="")
+                                            p.ai-support__card--title Обучение команды
+                                            p.ai-support__card--text Проводим обучение для сотрудников: как ставить задачи&nbsp;ИИ и&nbsp;контролировать результат.
+                                    .ai-support__card
+                                        .ai-support__card--body
+                                            span.ai-support__card--icon
+                                                img(src="./images/ai/items/i1.png", alt="")
+                                            p.ai-support__card--title Поддержка
+                                            p.ai-support__card--text Техническая поддержка (SLA) гарантирует стабильность работы и&nbsp;оперативную реакцию специалистов.
+                                    .ai-support__card
+                                        .ai-support__card--body
+                                            p.ai-support__card--title Отчуждаем права на&nbsp;разработку в&nbsp;вашу пользу
+                                            p.ai-support__card--text Передаем интеллектуальные права и&nbsp;исходники готового решения&nbsp;&mdash; вы&nbsp;не&nbsp;зависите от&nbsp;вендора, все права, технология и&nbsp;код остаются у&nbsp;вас.
+                                        .ai-support__card--image
+                                            img(src="./images/ai/sc.png", alt="")
+                    .ai-questions
+                        .container
+                            .ai-questions__body
+                                .ai-questions__left
+                                    p.h2.ai-questions__title Частые вопросы
+                                .ai-questions__right
+                                    .collapse-stages.collapse-block
+                                        .collaps-stages__body
+                                            .collapse-stages__items
+                                                .collapse-stages__item.collapse-block__item
+                                                    p.collapse-stages__item--title Как ваши технологии помогают обычным сотрудникам в работе?
+                                                    .collapse-stages__item--button
+                                                        button
+                                                            span
+                                                                +svg('plus')
+                                                    .collapse-stages__item--info.collapse-block__wrap
+                                                        .collapse-block__data
+                                                            .collapse-stages__item--text
+                                                                p Мы превращаем сложные алгоритмы в простые продукты-помощники. Вместо того чтобы тратить часы на рутину, ваши сотрудники получают инструменты, которые сами заполняют CRM, находят ответы в базах знаний (RAG) и формируют отчеты. Технологии работают «под капотом», позволяя команде фокусироваться на важных задачах.
+                                                .collapse-stages__item.collapse-block__item
+                                                    p.collapse-stages__item--title Насколько мощная архитектура стоит за вашими решениями?
+                                                    .collapse-stages__item--button
+                                                        button
+                                                            span
+                                                                +svg('plus')
+                                                    .collapse-stages__item--info.collapse-block__wrap
+                                                        .collapse-block__data
+                                                            .collapse-stages__item--text
+                                                                p Наши системы спроектированы для работы с высокими нагрузками в фоновом режиме. Ежегодно алгоритмы обрабатывают более 1 млн документов, а каждый месяц системы анализируют свыше 500 000 минут аудиозаписей. Это гарантирует стабильность и точность анализа даже в крупных корпорациях.
+                                                .collapse-stages__item.collapse-block__item
+                                                    p.collapse-stages__item--title С какими типами данных умеет работать система?
+                                                    .collapse-stages__item--button
+                                                        button
+                                                            span
+                                                                +svg('plus')
+                                                    .collapse-stages__item--info.collapse-block__wrap
+                                                        .collapse-block__data
+                                                            .collapse-stages__item--text
+                                                                p Мы строим решения на основе «твердых данных». Система бесшовно извлекает информацию из:
+                                                                ul
+                                                                    li Текстовых файлов: PDF, Excel, сканы документов.
+                                                                    li Коммуникаций: Звонки (IP-телефония), мессенджеры и Email.
+                                                                    li Структурированных данных: Базы данных MySQL и внутренние базы знаний компании.
+                                                .collapse-stages__item.collapse-block__item
+                                                    p.collapse-stages__item--title Придется&nbsp;ли сотрудникам переучиваться для работы с&nbsp;новыми инструментами?
+                                                    .collapse-stages__item--button
+                                                        button
+                                                            span
+                                                                +svg('plus')
+                                                    .collapse-stages__item--info.collapse-block__wrap
+                                                        .collapse-block__data
+                                                            .collapse-stages__item--text
+                                                                p Нет, это наше ключевое преимущество. Мы интегрируем ИИ-решения в вашу привычную рабочую среду. Сотрудники продолжают работать в интерфейсах, к которым привыкли:
+                                                                ul
+                                                                    li 1С: Предприятие
+                                                                    li Битрикс24 / amoCRM
+                                                                    li МойСклад
+                                                                    li SAP / ERP
+                                                .collapse-stages__item.collapse-block__item
+                                                    p.collapse-stages__item--title Какие конкретно продукты вы&nbsp;внедряете?
+                                                    .collapse-stages__item--button
+                                                        button
+                                                            span
+                                                                +svg('plus')
+                                                    .collapse-stages__item--info.collapse-block__wrap
+                                                        .collapse-block__data
+                                                            .collapse-stages__item--text
+                                                                p Мы создаем экосистему умных ассистентов под ваши задачи:
+                                                                ul
+                                                                    li Умные базы знаний (RAG): мгновенный поиск ответов по внутренним регламентам.
+                                                                    li Telegram-ассистенты: доступ к корпоративным данным из мессенджера.
+                                                                    li Автозаполнение CRM: автоматический перенос данных из звонков и писем в карточки клиентов.
+                                                                    li Голосовые помощники и Дашборды: визуализация и озвучка ключевых метрик бизнеса в реальном времени.
+                                                                p Вы можете озвучить свои задачи и мы подскажем какие из наших решений вам подойдут и как они будут внедрены в ваши бизнес-процессы.
+
+

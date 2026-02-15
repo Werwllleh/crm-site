@@ -1,0 +1,9 @@
+mixin readingTime()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //reading-time
+    span.reading-time&attributes(attributes)
+        +svg("clock")
+        p.reading-time__value 3 мин. чтения

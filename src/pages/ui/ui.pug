@@ -1,0 +1,73 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Ui"
+  - description = "Описание Ui"
+
+append content
+    +regPage('ui', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    +regBlock('section-contacts', true, true)
+    +regComponent('modal', true, true)
+    +regComponent('button-calypso')
+
+    main.page.ui
+        .container
+            h1 Страница Ui
+            +sectionContacts()
+            button(data-modal="modal1") Modal 1
+            button(data-modal="modal2") Modal 2
+            button(data-modal="consultation") Modal 2
+
+            .ui-block
+                p.ui-block__title Заголовки
+                .ui-block__content
+                    h1.h1 Журнал
+                    h2.h2 Журнал
+                    h3.h3 Журнал
+                    h4.h4 Журнал
+                    h5.h5 Журнал
+                    h6.h6 Журнал
+            .ui-block
+                p.ui-block__title Параграф
+                .ui-block__content
+                    p.text После создания
+                        span  отраслевой СРМ 
+                        | мы выделили для себя более узкую задачу — реализовать универсальное приложение для облачного портала Битрикс24 управляющей компании или ЖКХ для ежемесячного удаленного приема показаний жильцов.
+                    p.text Необходимо было разработать удобный и простой интерфейс в Битрикс24 для управления информацией о жильцах, счетчиках и периоде приема показаний, а также минималистичную веб-страницу для ввода показаний счетчиков жильцом.
+            .ui-block
+                p.ui-block__title Кнопки
+                .ui-block__content(style="background: #343434; padding: 40px;").buttons
+                    button(data-modal="modal1").btn.primary.lg Подобрать решение
+                    button(data-modal="modal1").btn.primary.medium Подобрать решение
+                    button(data-modal="success").btn.primary.medium Success modal
+                    button(data-modal="consultation").btn.primary.medium Consultation modal
+                    button(data-modal="analysis").btn.primary.medium Analysis modal
+                    button(data-modal="team").btn.primary.medium Team modal
+                    button(data-modal="live-demo").btn.primary.medium Live-demo modal
+                    button(data-modal="tender").btn.primary.medium Tender modal
+                    button(data-modal="case").btn.primary.medium Case modal
+                    button(data-modal="license").btn.primary.medium License
+                    button.btn.primary.small Подобрать решение
+                    button.btn.primary.download.small
+                        +svg("download")
+                        span Подобрать решение
+                    button.btn.bordered.small Подобрать решение
+                    +buttonCalypso(false, "Подобрать решение").lg
+                    +buttonCalypso(["circle", "arrow2"], "Подобрать решение").circle.lg
+                    a(href="#").messenger-link.telegram
+                        +svg("telegram_icon")
+                    a(href="#").messenger-link.whatsapp
+                        +svg("whatsapp_icon")
+            .ui-block
+                .segmented
+                    input.segmented__input(type="hidden", value="day")
+                    .segmented__wrap
+                        button(data-value="day").segmented__item.active День
+                        button(data-value="week").segmented__item Неделя
+                        button(data-value="month").segmented__item Месяц
+                        button(data-value="year").segmented__item Год
+                        span.segmented__thumb
+

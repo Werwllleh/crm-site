@@ -1,0 +1,15 @@
+mixin bannerCrm(image)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //banner-crm
+    .banner-crm&attributes(attributes)
+        .banner-crm__body
+            .banner-crm__description
+                p.banner-crm__title Получите пошаговый план внедрения CRM под ваши задачи
+                p.banner-crm__text Внедрение новой системы - всегда сопряжено со стрессом для сотрудников, мы разработали план, который поможет бесшовно внедрить портал и не вызвать негатива у сотрудников...
+                button(data-modal="consultation").btn.primary.medium.banner-crm__button Получить план внедрения
+            if image
+                img(src=`./images/banners/${image}`, alt="").banner-crm__image
+        img(src="./images/banner-blur2.svg", alt="").banner-crm__bg

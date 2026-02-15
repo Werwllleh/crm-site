@@ -1,0 +1,10 @@
+mixin sectionContacts()
+  //- регистрация
+  //- +regLib('lib-name/lib.js', 'lib-name/lib.css')
+  +regComponent('contacts-form', true, true)
+
+  //section-contacts
+  .section-contacts&attributes(attributes)
+    .container 
+      h2 Контакты
+      +contactsForm()

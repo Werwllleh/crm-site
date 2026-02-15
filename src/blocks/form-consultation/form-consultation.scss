@@ -1,0 +1,70 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// form-consultation
+.form-consultation {
+
+  &__body {}
+
+  &__form {
+
+    &_fieldset {}
+
+    &_top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+
+      @include desktop {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    &_middle {
+      margin-top: 30px;
+    }
+
+    &_footer {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include semiDesktop {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      @include desktop {
+        margin-top: 40px;
+        gap: 40px;
+      }
+    }
+
+    &_field {
+
+      &:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__deadlines {
+
+    &_title {
+      font-weight: 450;
+      font-size: 18px;
+      line-height: 1.24;
+      color: $text;
+    }
+
+    &_values {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 7px 16px;
+    }
+  }
+}

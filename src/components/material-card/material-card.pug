@@ -1,0 +1,23 @@
+mixin materialCard(image, title, tags, label)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('date', true, false)
+    +regComponent('reading-time', true, false)
+    //material-card
+    .material-card&attributes(attributes)
+        a(href="./article.html").material-card__link
+        .material-card__body
+            .material-card__image
+                img(src=`./images/blog/${image}`, alt="")
+                if label
+                    span.material-card__label= label
+            .material-card__info
+                .material-card__information
+                    +date("23","04","2025")
+                    +readingTime()
+                a(href="./article.html").material-card__title= title
+                if tags && tags.length
+                    .material-card__tags
+                      each tag in tags
+                          span.material-card__tag= tag

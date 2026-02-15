@@ -1,0 +1,170 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Article"
+  - description = "Описание Article"
+
+append content
+    +regPage('article', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    +regBlock('no-time-read', true, true)
+    +regBlock('search-team', true, true)
+    +regBlock('instruction-set', true, true)
+    +regBlock('banner-crm', true, true)
+    +regBlock('be-interested', true, true)
+    +regBlock('form-live-demo', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('chapters', true, true)
+    +regComponent('date', true, true)
+    +regComponent('button-share', true, true)
+    +regComponent('reading-time', true, true)
+    +regComponent('views', true, true)
+
+    .page-material.article
+        .page-material__grid
+            .page-material__grid_left
+                a(href="./blog").page__back-link
+                    +svg("arrow")
+                    span Все публикации
+                .page-material__chapters
+                    +chapters([
+                      {
+                        title: 'Введение',
+                        link: '#intro'
+                      },
+                      {
+                        title: 'Особенности продаж в B2B',
+                        link: '#sales-features'
+                      },
+                      {
+                        title: 'Актуальность решения',
+                        link: '#relevance-solution'
+                      },
+                      {
+                        title: 'Что получилось',
+                        link: '#what-happened'
+                      },
+                      {
+                        title: 'Будущее приложения',
+                        link: '#future-app'
+                      },
+                      {
+                        title: 'Заключение',
+                        link: '#conclusion'
+                      },
+                    ])
+                .page-material__no-time-read
+                    +noTimeRead()
+                .page-material__search-team
+                    +searchTeam()
+            .page-material__grid_right
+                .page__breadcrumbs
+                    +breadcrumbs(['Главная', 'Журнал', 'CRM для управляющих компаний, СНТ и ТСЖ. Сбор показаний счетчиков ЖКХ'])
+                .page-material__content
+                    .material-content
+                        img(src="./images/page-materials/preview1.jpg", alt="").material-content__preview-image
+                        .material-content__inner
+                            .material-content__header#intro
+                                h1.h2 CRM для управляющих компаний, СНТ и ТСЖ. Сбор показаний счетчиков ЖКХ
+                                .material-content__information
+                                    +buttonShare()
+                                    +date("23","04","2025")
+                                    +readingTime()
+                                    +views()
+                                p.material-content__header_description В этой статье хотим поговорить с чем сейчас сталкивается оптовый бизнес (множеством вызовов и изменений, которые требуют адаптации, а также оптимизации процессов) и на что делает ставку в своем развитии. Традиционные подходы к работе с оптовыми покупателями не так эффективны, как прежде, поэтому компании переходят на новые технологии и стратегии — выстраивают B2B-системы продаж.
+                            .material-content__chapter#sales-features
+                                h2.h3 Особенности продаж в B2B
+                                p.text Многие управляющие компании (УК) и товарищества собственников жилья (ТСЖ), а также садовые некоммерческие товарищества (СНТ) применяют Битрикс24 как среду для общения между собственниками. 
+                                p.text Мы обобщили опыт нескольких внедрений и создали  создали специализированную отраслевую CRM для работы с данными по квартирам.
+                                figure
+                                    img(src="./images/page-materials/img-article1.jpg", alt="")
+                                    figcaption Первая версия этой CRM доступна бесплатно для всех клиентов Битрикс24.
+                                p.text После создания
+                                    span  отраслевой СРМ 
+                                    | мы выделили для себя более узкую задачу — реализовать универсальное приложение для облачного портала Битрикс24 управляющей компании или ЖКХ для ежемесячного удаленного приема показаний жильцов.
+                                p.text Необходимо было разработать удобный и простой интерфейс в Битрикс24 для управления информацией о жильцах, счетчиках и периоде приема показаний, а также минималистичную веб-страницу для ввода показаний счетчиков жильцом.
+                                p.text Мы ориентировались на небольшие и средние управляющие компании и жилищно-коммунальные хозяйства, которым требуется автоматизация работы по приему показаний жильцов и удобная база для хранения данных о закрепленных домах.
+                                .blockquote
+                                    +svg("quote")
+                                    .blockquote__text
+                                        blockquote В разных отраслях наиболее популярные инструменты могут отличаться. Например, в сфере IT и телекоммуникаций часто используют email-рассылки, вебинары и партнёрства, а в банковской отрасли — личные встречи, деловые связи и освещение в СМИ.
+                            .material-content__chapter#relevance-solution
+                                h2.h3 Актуальность решения
+                                p.text В 2020 году все больше компаний стараются автоматизировать рутинные процессы, и управляющие компании не остаются в стороне. На них масса ежемесячной повторяющейся работы, которую можно и нужно автоматизировать.
+                                p.text Приложение по приему показаний ЖКХ можно установить двумя кликами на любое облако Битрикс24.
+                                .banner
+                                    +instructionSet()
+                                p.text При установке приложения на облачный портал управляющей компании автоматически создаются два универсальных списка “Дома под управлением УК” и “Прием показаний счетчиков”.
+                                p.text В первый список сотрудник УК заносит данные жильцов самостоятельно. 
+                                p.text Список “Прием показаний ЖКХ” заполняется ежемесячно скриптом за несколько часов до старта приема показаний, дату которого сотрудник выбирает в настройках.
+                                .material-link
+                                    p Где мы применили эту технологию читайте в кейсе:
+                                        a(href="#")  “Автоматизация обучения сотрудников для «BFF»”
+                                    a(href="#").btn.primary.medium Читать кейс
+                                p.text.highlight В разных отраслях наиболее популярные инструменты могут отличаться. Например, в сфере IT и телекоммуникаций часто используют email-рассылки, вебинары и партнёрства, а в банковской отрасли — личные встречи, деловые связи и освещение в СМИ.
+                            .material-content__chapter#what-happened
+                                h2.h3 Что получилось
+                                p.text Приложение позволяет:
+                                ul.text
+                                    li
+                                        p создавать два универсальных списка:
+                                        p “Дома под управлением УК” (хранит данные о жильцах домов под управление управляющей компании)
+                                        p “Прием показаний счетчиков” (хранит данные о показаниях счетчиков, внесенных жильцом за предыдущие периоды),
+                                    li
+                                        p управлять датами старта и окончания приема показаний жильцов,
+                                    li
+                                        p осуществлять рассылку на емейлы жильцам с уведомлением о старте сбора показаний,
+                                .material-content-video
+                                    //iframe(
+                                    //    src="https://rutube.ru/play/embed/a40f9fe53ecf0eb75a80e8a2c57bb416/",
+                                    //    frameBorder="0",
+                                    //    allow="clipboard-write; autoplay; encrypted-media",
+                                    //    webkitAllowFullScreen,
+                                    //    mozallowfullscreen,
+                                    //    allowFullScreen
+                                    //)
+                                    video
+                                        source(src="./images/videos/video.webm", type="video/webm")
+                                        span Ваш браузер не поддерживает встроенные видео :(
+                                    button.material-content-video__play-button
+                                        +svg("play")
+                            .material-content__chapter#future-app
+                                h2.h3 Будущее приложения
+                                p.text От розничных оптовые продажи отличают:
+                                ol.text
+                                    li
+                                        p долгосрочные отношения. B2B-клиенты предпочитают обращаться к одному (давно знакомому) поставщику услуг или товаров на протяжении долгого времени, из-за этого важно выстраивать долгие и доверительные взаимоотношения;
+                                    li
+                                        p сложная воронка продаж. В B2B-сегменте решение о сделке принимается группой лиц, что усложняет и удлиняет процесс его принятия;
+                                    li
+                                        p влияние персональных отношений. Качество личных отношений между продавцом и оптовым покупателем имеет значение (доверие и лояльность могут повлиять на успех сделки).
+                                .banner
+                                    +bannerCrm('crm1.png')
+                                .banner
+                                    +bannerCrm('crm2.png')
+                            .material-content__chapter#conclusion
+                                h2.h3 Заключение
+                                p.text Мы реализовали специализированное отраслевое решение для автоматизации работы управляющей компании по сбору показаний жильцов.
+                                p.text Это простое и удобное решение позволяет в пару кликов настроить период приема показаний жильцов.
+                                p.text Приложение отлично встраивается в
+                                    span &nbsp;Отраслевую СРМ&nbsp;
+                                    | для управляющей компании и расширяет ее функционал.
+                                p.text ИНТЕРВОЛГА знает, что нужно бизнесу и умеет решать сложные задачи.
+                                p.text Заполняйте форму, мы будем рады помочь вам!
+                            .material-content__form
+                                +formLiveDemo()
+                            .page-material__interested
+                                +beInterested()
+                            .material-content__footer
+                                .material-content__tags
+                                    p.material-content__tags_text Теги:
+                                    ul.material-content__tags_items
+                                        li
+                                            span #CRM Битрикс24
+                                        li
+                                            span #B2B
+                                        li
+                                            span #Производство и дистрибуция
+                                +buttonShare("Поделиться")

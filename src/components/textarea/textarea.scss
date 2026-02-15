@@ -1,0 +1,87 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// textarea
+.textarea {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &.borderless {
+    textarea {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      border-bottom: 1px solid $line-grey;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .textarea__placeholder {
+      left: 0;
+    }
+  }
+
+  textarea {
+    position: relative;
+    z-index: 1;
+    border: 1px solid $line-grey;
+    border-radius: 10px;
+    padding: 16px 12px;
+    outline: none;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 1.375;
+    color: $text;
+    width: 100%;
+    background-color: $white;
+    transition: color $transition-default, border-color $transition-default;
+    resize: vertical;
+    min-height: 100px;
+
+    @include desktop {
+      min-height: 120px;
+    }
+
+    &:focus {
+      border-color: $text;
+    }
+
+    &.focus + .textarea__placeholder,
+    &:focus + .textarea__placeholder {
+      transform: translateY(0);
+      font-weight: 450;
+      font-size: 13px;
+      line-height: 1.69231;
+      color: $grey-blue;
+    }
+
+    @include tablet {
+      padding: 20px 16px 15px 16px;
+      font-size: 16px;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 12px;
+    bottom: 0;
+    height: max-content;
+    font-weight: 450;
+    font-size: 15px;
+    line-height: 1.2;
+    color: $light-grey;
+    pointer-events: none;
+    user-select: none;
+    transform: translateY(18px);
+    transition: font-size $transition-default, transform $transition-default, color $transition-default;
+
+    @include tablet {
+      left: 16px;
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,277 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// training
+.training {
+
+  &__body {}
+
+  &__title {}
+
+  .training-swiper {
+    margin-top: 40px;
+
+    .swiper {
+      overflow: unset;
+    }
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      width: auto;
+      height: auto;
+    }
+
+    .training-swiper__card {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      max-width: 265px;
+
+      @include semiDesktop {
+        border-radius: 20px;
+        max-width: none;
+        min-width: 480px;
+        min-height: 280px;
+      }
+
+      &::before {
+        display: none;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("../../images/training/filter.png") no-repeat center center;
+        z-index: -1;
+
+        @include semiDesktop {
+          display: block;
+        }
+      }
+    }
+
+    .training-swiper__card--body {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      height: 100%;
+
+      @include semiDesktop {
+        padding: 20px;
+        flex-direction: column;
+      }
+
+      @include desktop {
+        padding: 30px;
+      }
+    }
+
+    .training-swiper__card--title {
+      margin-top: 10px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.1;
+      color: $black;
+      max-width: 385px;
+
+      @include semiDesktop {
+        margin-top: 0;
+        color: $white;
+        font-size: 26px;
+      }
+    }
+
+    .training-swiper__card--img {
+      max-width: 265px;
+      border-radius: 16px;
+
+      @include semiDesktop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: -2;
+        border-radius: 0;
+        max-width: none;
+      }
+    }
+  }
+
+  .training-features {
+    margin-top: 40px;
+
+    @include semiDesktop {
+      margin-top: 60px;
+    }
+
+    @include laptop {
+      margin-top: 120px;
+    }
+
+    .training-features__body {
+      display: grid;
+      flex-direction: column;
+      grid-template-columns: 100%;
+      gap: 40px;
+
+      @include semiDesktop {
+        flex-direction: row;
+        grid-template-columns: auto 1fr;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      @include w1250 {
+        gap: 100px;
+        align-items: flex-start;
+      }
+    }
+
+    .training-features__left {
+
+      @include semiDesktop {
+        max-width: 400px;
+      }
+
+      @include w1250 {
+        max-width: 500px;
+      }
+    }
+
+    .training-features__right {
+      width: 100%;
+
+      @include semiDesktop {
+        max-width: 800px;
+      }
+    }
+
+    .training-features__title {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: $black;
+
+      @include tablet {
+        font-size: 34px;
+      }
+
+      @include laptop {
+        font-size: 44px;
+      }
+    }
+
+    .training-features__types {
+      margin-top: 20px;
+
+      @include laptop {
+        margin-top: 30px;
+      }
+    }
+
+    .training-features__type {
+      cursor: pointer;
+      border-radius: 16px;
+      padding-block: 16px;
+      padding-inline: 20px;
+      overflow: hidden;
+      transition: background-color $transition-default;
+
+      @include desktop {
+        padding-block: 24px;
+        padding-inline: 30px;
+      }
+
+      &.active {
+        background-color: $background;
+
+        .collapse-block__wrap {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .training-features__type--title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.24;
+        color: $black;
+
+        @include laptop {
+          font-size: 22px;
+        }
+      }
+
+      .training-features__type--info {
+        padding-top: 10px;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 1.4;
+        color: $text;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include desktop {
+          font-size: 18px;
+        }
+      }
+
+      .collapse-block__wrap {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height $transition-default, opacity $transition-default, visibility $transition-default;
+      }
+    }
+
+    .training-features__images {
+      position: relative;
+      border-radius: 30px;
+      height: 345px;
+      background-color: $background;
+      overflow: hidden;
+
+      @include laptop {
+        height: 450px;
+      }
+    }
+
+    .training-features__content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-width: 95%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity $transition-default;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.show {
+        z-index: 1;
+        opacity: 1;
+      }
+
+      img {
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+}

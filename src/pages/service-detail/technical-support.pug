@@ -1,0 +1,613 @@
+extends ../../app/pug/layouts/service-layout
+
+append vars
+  - title = "Техподдержка"
+  - description = "Описание Техподдержка"
+
+append content
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regPage('service-detail', true, true)
+    +regComponent('header', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('case-card', true, true)
+    +regComponent('material-card', true, true)
+    +regComponent('pagination', true, true)
+    +regComponent('animate-button', true, true)
+    +regBlock('banner-tariff-selection', true, true)
+    +regBlock('collapse-stages', true, true)
+    +regBlock('ai-chat', true, true)
+    +regBlock('training', true, true)
+    +regBlock('tags', true, true)
+    +regBlock('stories', true, true)
+    +regBlock('company-rating', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+
+    +header().light
+    .service-layout
+        .service-layout__main.technical-support
+            .container
+                .service-layout__main--body
+                    .service-layout__breadcrumbs
+                        +breadcrumbs(['Главная', 'Услуги', 'Техническая поддержка и обучение'])
+                    .service-layout__main--content
+                        .service-layout__main--info
+                            h1.h1.service-layout__main--title Техподдержка Битрикс24
+                            p.service-layout__main--description Поддержка по всем техническим вопросам Битрикс24. Доработаем систему, исправим ошибки и и покажем, как эффективно с ней работать
+                            button(data-modal="license").btn.primary.lg Выбрать тариф
+                    .service-layout__companies
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    img(src="./images/companies/vodohod.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/sberstrahovane.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/x5.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/robokassa.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/ekra.svg", alt="")
+                                .swiper-slide
+                                    img(src="./images/companies/poliklinika.svg", alt="")
+        .service-layout__content.technical-support
+            .service-layout__content--inner
+                .service-layout__container.container
+                    .service-layout__content--bg
+                        section.service-layout__statistics
+                            .statistics-list
+                                .swiper
+                                    .swiper-wrapper
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    | с
+                                                    |
+                                                    span.h1 2017
+                                                    |
+                                                    | года
+                                                p.statistics-list__card--text
+                                                    | успешно внедряем продукты 1С-Битрикс в компаниях с оборотом от 10 млн до 2,5 млрд рублей
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    span.h1 300+
+                                                p.statistics-list__card--text
+                                                    | проектов по внедрению и развитию Битрикс24 в портфолио
+                                        .swiper-slide
+                                            .statistics-list__card
+                                                p.statistics-list__card--value
+                                                    span.h1 65+
+                                                p.statistics-list__card--text
+                                                    | сертифицированных специалистов команде
+                        section.service-layout__department
+                            p.h2 Ваш IT-отдел на удаленке
+                            p.description Ситуации, когда мы становимся вашим IT-отделом
+                            .service-layout__department--body
+                                .service-layout__department--left
+                                  -
+                                      const workStagesData = [
+                                          {
+                                              index: '01',
+                                              title: 'Нет своего специалиста или IT-служба перегружена',
+                                              text: 'Мы берем техподдержку вашего Битрикс24 на себя. Быстро реагируем, предупреждаем сбои и обеспечиваем стабильность системы, действуя как ваш собственный профильный IT-отдел на аутсорсе.'
+                                          },
+                                          {
+                                              index: '02',
+                                              title: 'Нужно обновить портал (или перейти на другой тариф), но есть риск, что «всё сломается»',
+                                              text: 'Мы берем техподдержку вашего Битрикс24 на себя. Быстро реагируем, предупреждаем сбои и обеспечиваем стабильность системы, действуя как ваш собственный профильный IT-отдел на аутсорсе.'
+                                          },
+                                          {
+                                              index: '03',
+                                              title: 'Битрикс24 перестал работать, и нужна срочная помощь',
+                                              text: 'Мы берем техподдержку вашего Битрикс24 на себя. Быстро реагируем, предупреждаем сбои и обеспечиваем стабильность системы, действуя как ваш собственный профильный IT-отдел на аутсорсе.'
+                                          },
+                                          {
+                                              index: '04',
+                                              title: 'Требуется постоянное развитие веб-системы',
+                                              text: 'Мы берем техподдержку вашего Битрикс24 на себя. Быстро реагируем, предупреждаем сбои и обеспечиваем стабильность системы, действуя как ваш собственный профильный IT-отдел на аутсорсе.'
+                                          },
+                                          {
+                                              index: '05',
+                                              title: 'После внедрения не можете разобраться, как работают бизнес-процессы, или нужно их адаптировать',
+                                              text: 'Мы берем техподдержку вашего Битрикс24 на себя. Быстро реагируем, предупреждаем сбои и обеспечиваем стабильность системы, действуя как ваш собственный профильный IT-отдел на аутсорсе.'
+                                          },
+                                          {
+                                              index: '06',
+                                              title: 'Вам нужны новые, нестандартные функции или нетиповые модули, которых нет в базовой версии Битрикс24',
+                                              text: 'Мы берем техподдержку вашего Битрикс24 на себя. Быстро реагируем, предупреждаем сбои и обеспечиваем стабильность системы, действуя как ваш собственный профильный IT-отдел на аутсорсе.'
+                                          },
+                                          {
+                                              index: '07',
+                                              title: 'Требуется настроить интеграцию (например, с 1С или телефонией)',
+                                              text: 'Мы берем техподдержку вашего Битрикс24 на себя. Быстро реагируем, предупреждаем сбои и обеспечиваем стабильность системы, действуя как ваш собственный профильный IT-отдел на аутсорсе.'
+                                          },
+                                      ]
+                                  + collapseStages(workStagesData)
+                                .service-layout__department--right
+                                    //+aiChat()
+
+                    section.service-layout__support
+                        p.h2 Техническая поддержка Битрикс24
+                        p.description Быстро решаем технические проблемы в&nbsp;Битрикс24, настраиваем нужные функции без долгих ожиданий и&nbsp;сложных процедур.
+                        .service-layout__support--content
+                            p.text
+                                b Тарифы на техническую поддержку Битрикс 24
+                            .service-layout__support--wrap
+                                table.service-layout__support--table
+                                    thead
+                                        tr
+                                            th
+                                            th
+                                                span Базовый
+                                            th
+                                                span Продвинутый
+                                            th
+                                                span Профессиональный
+                                    tr
+                                        td
+                                            b Часы
+                                        td
+                                            b 10
+                                        td
+                                            b 30
+                                        td
+                                            b 60
+                                    tr
+                                        td Диагностика и устранение ошибок и сбоев
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Установка пакетных обновлений, помощь с переездом на новый тариф или систему продаж (при необходимости).
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Управление правами доступа пользователей, настройка ограничений и общего интерфейса портала.
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Настройка карточек лидов, сделок, контактов и создание нескольких воронок продаж.
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Настройка и запуск автоматических действий: роботов, смарт-процессов, бизнес-процессов, автоматизация рассылок и постановки задач.
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Настройка всех инструментов для планирования: диаграммы Ганта, чек-листы, шаблоны, делегирование и контроль исполнения задач, а также учет рабочего времени.
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Подключение IP-телефонии, мобильных номеров, настройка звонков, интеграция с мессенджерами и соцсетями.
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Интеграция с 1С и документооборотом: Настройка оплаты и документооборота, организация совместной работы с документами, интеграция с облачными сервисами и офисными редакторами.
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Аналитика и Отчетность (BI): Настройка всех видов отчетов, включая BI-аналитику, для контроля ключевых показателей и планирования
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Консультации от экспертов золотого партнера, примеры решений или возможностей системы
+                                        td
+                                            +svg("dash")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Обучение сотрудников базовым и расширенным функциям CRM
+                                        td
+                                            +svg("dash")
+                                        td
+                                            +svg("dash")
+                                        td
+                                            +svg("check")
+                                    tfoot
+                                        tr
+                                            td Стоимость
+                                            td 35 000 ₽
+                                            td 150 000 ₽
+                                            td 300 000 ₽
+                                        tr
+                                            td
+                                            td
+                                                button(data-modal="consultation").btn.primary.medium Заказать
+                                            td
+                                                button(data-modal="consultation").btn.primary.medium Заказать
+                                            td
+                                                button(data-modal="consultation").btn.primary.medium Заказать
+                    section.service-layout__subscription-support
+                        p.h2 Техническая поддержка Битрикс24
+                        p.description Быстро решаем технические проблемы в&nbsp;Битрикс24, настраиваем нужные функции без долгих ожиданий и&nbsp;сложных процедур.
+                        .service-layout__subscription-support--content
+                            p.text Подписка на абонентское сопровождение — ваша страховка от глобальных сбоев и ресурс роста одновременно. Мы заключаем бессрочный договор с фиксированным количеством часов в месяц, чтобы оперативно реагировать на запросы и одновременно развивать систему управления вашей компанией.
+                            p.text
+                                b Сколько стоит абонентское обслуживание
+                            .service-layout__subscription-support--wrap
+                                table.service-layout__subscription-support--table
+                                    thead
+                                        tr
+                                            th
+                                            th
+                                                span Мини
+                                            th
+                                                span Миди
+                                            th
+                                                span Макси
+                                            th
+                                                span Мега
+                                    tr
+                                        td(colspan="5")
+                                            b Часы
+                                    tr
+                                        td Количество обязательных часов на контроль и мониторинг
+                                        td 4
+                                        td 6
+                                        td 9
+                                        td 12
+                                    tr
+                                        td Количество часов на доработки, инициированные заказчиком
+                                        td 3
+                                        td 10
+                                        td 24
+                                        td 38
+                                    tr
+                                        td Перенос часов на следующий месяц
+                                        td
+                                            +svg("dash")
+                                        td
+                                            +svg("dash")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td(colspan="5")
+                                            b Работы
+                                    tr
+                                        td Контроль продления домена, хостинга, SSL-сертификата
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td(colspan="5")
+                                            b Антивирусная защита
+                                    tr
+                                        td Ежедневная автоматическая проверка файлов сайта на вирусы
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td(colspan="5")
+                                            b Круглосуточный мониторинг работоспособности сайта
+                                    tr
+                                        td Частота проверок
+                                        td 45 минут
+                                        td 30 минут
+                                        td 10 минут
+                                        td 1 минута
+                                    tr
+                                        td Простая проверка доступности сайта или сервера методом HEAD
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Проверка внутренних ресурсов сервера: место на диске, загрузка, uptime и другое
+                                        td
+                                            +svg("dash")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Проверка доступности баз данных MySQL или PostgreSQL
+                                        td
+                                            +svg("dash")
+                                        td
+                                            +svg("dash")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td(colspan="5")
+                                            b Резервное копирование
+                                    tr
+                                        td Контроль создания резервных копий на исходный сервер
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Количество бесплатных восстановлений из резервных копий в месяц
+                                        td 0
+                                        td 1
+                                        td 1
+                                        td 2
+                                    tr
+                                        td Дополнительное резервное копирование сайта и базы данных на стороннее хранилище агентства (разовая настройка)
+                                        td платно
+                                        td платно
+                                        td бесплатно
+                                        td бесплатно
+                                    tr
+                                        td Максимальный объем стороннего хранилища агентства для резервных копий
+                                        td 100 Гб
+                                        td 200 Гб
+                                        td 500 Гб
+                                        td 1 000 Гб
+                                    tr
+                                        td Частота создания резервных копий на стороннем сервере агентства (копии перезаписываемые)
+                                        td 1 в день
+                                        td
+                                            | 1 в день
+                                            br
+                                            |1 в неделю
+                                        td
+                                            | 1 в день
+                                            br
+                                            | 1 в неделю
+                                        td
+                                            | 1 в день
+                                            br
+                                            | 1 в неделю
+                                    tr
+                                        td Резервное копирование сайта и базы данных на сервер заказчика
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td Взаимодействие с техподдержкой хостинг-провайдера при необходимости
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                    tr
+                                        td(colspan="5")
+                                            b Работы, инициированные заказчиком (часы)
+                                    tr
+                                        td Внесение изменений в контентРасширение функционала сайта Консультация по работе сайта, CMS Работы по дизайну сайта
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                            +svg("check")
+                                        td
+                                    tfoot
+                                        tr
+                                            td Стоимость
+                                            td 25 000 ₽
+                                            td 50 000 ₽
+                                            td 75 000 ₽
+                                            td 100 000 ₽
+                                        tr
+                                            td
+                                            td
+                                                button(data-modal="consultation").btn.primary.medium Заказать
+                                            td
+                                                button(data-modal="consultation").btn.primary.medium Заказать
+                                            td
+                                                button(data-modal="consultation").btn.primary.medium Заказать
+                                            td
+                                                button(data-modal="consultation").btn.primary.medium Заказать
+                    section.service-layout__tariff-selection
+                        +bannerTariffSelection()
+                    section.service-layout__training
+                        p.h2 Обучение Битрикс24 для вашей команды
+                        p.description Сводим к&nbsp;минимуму риски при переходе на&nbsp;новую систему управления компанией, даем инструкции и&nbsp;поддерживаем на&nbsp;каждом этапе
+                        +training()
+                    section.service-layout__advantages
+                        p.h2 Почему онлайн-обучение поможет вашей компании развиваться
+                        .advantages-block
+                            ul.advantages-block__list
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("flag")
+                                    p.advantages-block__item--title Повышает продуктивность и&nbsp;снижает ошибки
+                                    p.advantages-block__item--text Сотрудники быстрее осваивают систему, не&nbsp;саботируют процесс и&nbsp;делают меньше ошибок из-за непонимания функций
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("user-group")
+                                    p.advantages-block__item--title Управленческая аналитика и&nbsp;контроль становятся яснее
+                                    p.advantages-block__item--text Руководители получают навыки работы с&nbsp;CRM-отчетами, задачами и&nbsp;коммуникацией
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("chip")
+                                    p.advantages-block__item--title Обучение доступно из&nbsp;любого места
+                                    p.advantages-block__item--text Удобно для распределенных команд и&nbsp;удаленной работы
+                    section.service-layout__how-to-work
+                        .service-layout__how-to-work--inner
+                            p.h2 Как мы работаем
+                            .horizontal-animate-cards
+                                .horizontal-animate-cards__body
+                                    .horizontal-animate-cards__header
+                                    .horizontal-animate-cards__main
+                                        span.horizontal-animate-cards__line
+                                            span
+                                        .horizontal-animate-cards__main--bg
+                                            span
+                                            span
+                                            span
+                                            span
+                                            span
+                                            span
+                                            span
+                                        .horizontal-animate-cards__items
+                                            .horizontal-animate-cards__item.black
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Выбор пакета и&nbsp;анализ
+                                                    span.horizontal-animate-cards__item--index 01
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Вы&nbsp;выбираете пакет, мы&nbsp;проводим экспресс-анализ ваших процессов, чтобы убедиться, что пакет подходит
+                                            .horizontal-animate-cards__item
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Договор и&nbsp;оплата
+                                                    span.horizontal-animate-cards__item--index 02
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Фиксируем объем работ и&nbsp;стоимость в&nbsp;договоре
+                                            .horizontal-animate-cards__item.grey
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Настройка и&nbsp;адаптация
+                                                    span.horizontal-animate-cards__item--index 03
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Наши специалисты настраивают портал, адаптируя его под ваши поля, воронки и&nbsp;структуру
+                                            .horizontal-animate-cards__item
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Сдача и&nbsp;обучение
+                                                    span.horizontal-animate-cards__item--index 04
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Демонстрируем готовый портал, проводим обучение ключевых сотрудников
+                                            .horizontal-animate-cards__item.blue
+                                                .horizontal-animate-cards__item--top
+                                                    p.horizontal-animate-cards__item--title Запуск и&nbsp;поддержка
+                                                    span.horizontal-animate-cards__item--index 05
+                                                .horizontal-animate-cards__item--bottom
+                                                    p.horizontal-animate-cards__item--text Вы&nbsp;начинаете работу. Мы&nbsp;предоставляем вам 3&nbsp;часа технической поддержки в&nbsp;подарок для финишной настройки
+                    section.service-layout__advantages
+                        p.h2 Преимущества работы с нами
+                        .advantages-block.type2
+                            ul.advantages-block__list
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("flag")
+                                    p.advantages-block__item--title Золотой сертифицированный партнер Битрикс24
+                                    p.advantages-block__item--text Имеем 10+ лет опыта и 300+ реализованных проектов в&nbsp;портфолио
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("user-group")
+                                    p.advantages-block__item--title Любой масштаб бизнеса
+                                    p.advantages-block__item--text Внедряем систему управления в&nbsp;небольших компаниях и&nbsp;на&nbsp;предприятиях с&nbsp;оборотом до&nbsp;2,5 млрд рублей
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("chip")
+                                    p.advantages-block__item--title Кастомные решения
+                                    p.advantages-block__item--text Учитываем особенности вашей отрасли и&nbsp;бизнес-процессы в&nbsp;компании
+                                li.advantages-block__item
+                                    span.advantages-block__item--icon
+                                        +svg("chip")
+                                    p.advantages-block__item--title Обучение сотрудников
+                                    p.advantages-block__item--text Показываем, как работать в&nbsp;системе на&nbsp;онлайн-встрече, даем обучающие материалы: инструкции и&nbsp;чек листы
+                    section.service-layout__cases
+                        .section-cases
+                            p.h2.section-cases__title
+                                | Рассказываем про реализованные внедрения
+                            p.section-cases__description
+                                | Собрали для вас портфолио с кейсами, чтобы вы могли оценить нашу работу и принять решение
+                            .section-cases__content
+                                .section-cases__tags
+                                    +tags(['Все кейсы', 'Медицина', 'B2B', 'Производство и дистрибуция', 'Финансы и страхование', 'Государство', 'Электронная коммерция', 'Сфера услуг', 'Юридические услуги и консалтинг', 'Строительство и недвижимость', 'Логистика'])
+                                .section-cases__list
+                                    +caseCard('ctep.png', 'Внедрение корпоративного портала на Битрикс24 и его интеграция с OPERA для сети отелей «Роза Хутор»', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Автоматизация обучения сотрудников для «BFF»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Разработали единую систему по обработки обращений для 5 млн клиентской базы', ['B2B', 'Электронная коммерция'])
+                                    +caseCard('ctep.png', '«Личный кабинет руководителя HR» на платформе Битрикс24', ['B2B', 'Производство и дистрибуция', 'Электронная коммерция'])
+                                    +caseCard('bff.png', 'Разработка портала и кабинета менеджера для сервиса «Налог 24»', ['Сфера услуг', 'Электронная коммерция'])
+                                    +caseCard('iva.png', 'Автоматизация задач строительного холдинга с помощью Битрикс24: кейс ГК «Точно»', ['B2B', 'Электронная коммерция'])
+                                .section-cases__pagination
+                                    +pagination(true)
+                                    a(href="#").section-cases__link-cases Смотреть все кейсы
+                    section.service-layout__news
+                        p.h2
+                            | Делимся экспертизой
+                            |
+                            span про автоматизацию бизнеса
+                        .section-news
+                            .section-news__items
+                                .other-row
+                                    +materialCard('0.jpg', 'Как внедрять Битрикс24 – основные подходы, этапы, рекомендации', ['#CRM Битрикс24', '#Интеграция 1С', '#Автоматизация'])
+                                    +materialCard('1.jpg', 'Тренды найма 2025', ['#Управление персоналом', '#Бизнес-процессы'])
+                                    +materialCard('2.jpg', 'Киберугрозы нового поколения: как хакеры атакуют прямо сейчас и что с этим делать', ['#CRM Битрикс24', '#Автоматизация'])
+                                    +materialCard('3.jpg', 'Создание приложений как Airbnb: функциональность, цена, сроки разработки', ['#CRM Битрикс24', '#Интеграция 1С'])
+                            .section-news__footer
+                                +pagination(true)
+                                a(href="#").section-news__link Смотреть все статьи
+                    section.service-layout__stories
+                        .section-stories
+                            .section-stories__header
+                                p.h2.section-stories__title
+                                    | Истории команд,
+                                    |
+                                    span которые сделали бизнес проще и умнее
+                                .section-stories__navigation
+                                    +animateButton("prev").prev
+                                    +animateButton("next").next
+                            .section-stories__content
+                                +stories()
+                    section.service-layout__rating
+                        p.h2
+                            | Лидируем в&nbsp;рейтингах
+                            |
+                            span лучших it&nbsp;компаний
+                        .section-rating
+                            +companyRating()

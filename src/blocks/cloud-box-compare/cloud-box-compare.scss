@@ -1,0 +1,146 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// cloud-box-compare
+.cloud-box-compare {
+
+  &__title {}
+
+  &__text {
+    margin-top: 20px;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $text;
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include desktop {
+      font-size: 24px;
+    }
+  }
+
+  &__swiper {
+    margin-top: 30px;
+
+    @include desktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__type {
+    border: 6px solid $background;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
+    height: auto;
+
+    @include tablet {
+      padding: 30px;
+    }
+
+    @include w1250 {
+      padding: 40px;
+      border-width: 8px;
+    }
+
+    &--title {}
+
+    &--text {
+      margin-top: 20px;
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $text;
+      max-width: 540px;
+      margin-bottom: 30px;
+
+      @include tablet {
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+
+      @include desktop {
+        font-size: 18px;
+        margin-bottom: 60px;
+      }
+    }
+
+    &--advantages {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px 0;
+
+      @include semiDesktop {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px 20px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0 16px;
+
+        @include semiDesktop {
+          flex: 1 0 calc(50% - 10px);
+        }
+
+        span {
+          flex: 0 0 auto;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $background;
+          padding: 14px;
+          border-radius: 20px;
+
+
+
+          @include desktop {
+            padding: 16px;
+          }
+
+          svg {
+            width: 24px;
+            height: 22px;
+            color: $blue;
+
+            @include desktop {
+              width: 26px;
+              height: 24px;
+            }
+          }
+        }
+
+        p {
+          font-weight: 450;
+          font-size: 14px;
+          line-height: 1.24;
+          color: $text;
+
+          @include tablet {
+            font-size: 15px;
+          }
+
+          @include desktop {
+            font-size: 16px;
+            min-width: 200px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins' as *;
+
+// tech-exp
+.tech-exp {
+
+  &__title {}
+
+  &__description {
+    margin-top: 20px;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $text;
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include desktop {
+      font-size: 24px;
+    }
+  }
+
+  &__list {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 23px 20px;
+
+    @include desktop {
+      margin-top: 60px;
+    }
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      border-radius: 30px;
+      padding: 8px 20px 8px 12px;
+      background-color: $background;
+
+      @include desktop {
+        padding: 11px 24px 11px 14px;
+      }
+
+      img {
+        width: 28px;
+        height: 28px;
+        pointer-events: none;
+
+        @include desktop {
+          width: 34px;
+          height: 34px;
+        }
+      }
+
+      span {
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 1.2;
+        color: $text;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include desktop {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

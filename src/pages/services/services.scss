@@ -1,0 +1,90 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// services
+.page-services {
+
+  .page__breadcrumbs {
+    .breadcrumbs {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+  }
+
+  &__main {
+
+    &--title {
+    }
+
+    &--description {
+      margin-top: 30px;
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $text;
+      max-width: 1100px;
+
+      @include tablet {
+        margin-top: 40px;
+        font-size: 16px;
+      }
+
+      @include desktop {
+        margin-top: 60px;
+        font-size: 18px;
+      }
+
+    }
+  }
+
+  &__services {
+    margin-top: 60px;
+
+    @include tablet {
+      margin-top: 80px;
+    }
+  }
+
+  &__solutions {
+    margin-top: 60px;
+
+    @include tablet {
+      margin-top: 80px;
+    }
+
+    @include desktop {
+      margin-top: 160px;
+    }
+  }
+
+  &__cases {
+    margin-top: 60px;
+
+    @include tablet {
+      margin-top: 80px;
+    }
+
+    @include desktop {
+      margin-top: 160px;
+    }
+  }
+
+  &__stories {
+    margin-top: 60px;
+
+    @include tablet {
+      margin-top: 80px;
+    }
+
+    @include desktop {
+      margin-top: 160px;
+    }
+
+    .section-stories__title {
+
+    }
+  }
+
+}

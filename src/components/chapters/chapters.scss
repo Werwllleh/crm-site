@@ -1,0 +1,60 @@
+@use '../../app/scss/variables.scss' as *;
+
+// chapters
+.chapters {
+
+  &__title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.24;
+    color: $black;
+  }
+
+  &__list {
+    margin-top: 20px;
+  }
+
+  &__item {
+    padding-block: 12px;
+
+    &::marker {
+      display: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.375;
+    color: $grey-blue;
+    padding-left: 12px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      opacity: 0;
+      background-color: $blue;
+      transition: opacity $transition-default;
+    }
+
+    &:hover {
+      color: $color-link;
+    }
+
+    &.active {
+      &::before {
+        opacity: 1;
+      }
+
+      color: $color-link;
+    }
+  }
+}

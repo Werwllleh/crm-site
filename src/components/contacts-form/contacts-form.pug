@@ -1,0 +1,13 @@
+mixin contactsForm()
+  //contacts-form
+  //- регистрация
+  //- +regLib('lib-name/lib.js', 'lib-name/lib.css')
+  +regComponent('checkbox', true, false)
+  +regComponent('radio', true, false)
+
+  form.contacts-form
+    .contacts-form__row
+      +radio("choose", "Да", "true", false)
+      +radio("choose", "Нет", "false", false)
+    +checkbox("agreement", "Я соглашаюсь со всеми условиями", "agree", true)
+    button.button.button--color-blue.button--size-md(type="submit") Отправить

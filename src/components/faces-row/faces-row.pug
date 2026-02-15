@@ -1,0 +1,14 @@
+mixin facesRow()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //faces-row
+    .faces-row&attributes(attributes)
+        span
+            img(src="./images/search-team/1.png", alt="").faces-row__img
+        span
+            img(src="./images/search-team/2.png", alt="").faces-row__img
+        span
+            img(src="./images/search-team/3.png", alt="").faces-row__img
+        span.faces-row__count +3

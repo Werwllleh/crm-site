@@ -1,0 +1,150 @@
+mixin industriesBlock()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //industries-block
+    .industries&attributes(attributes)
+        ul.industries__list
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("medicine")
+                        p.industries__card_title Медицина
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("state")
+                        p.industries__card_title Государство
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("b2b")
+                        p.industries__card_title B2B
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("telecom")
+                        p.industries__card_title IT и&nbsp;Телеком
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("factory")
+                        p.industries__card_title Производство и&nbsp;дистрибуция
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("finance")
+                        p.industries__card_title Финансы и&nbsp;страхование
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("e-commerce")
+                        p.industries__card_title Электронная коммерция
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("lawyer")
+                        p.industries__card_title Юридические услуги и&nbsp;консалтинг
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("service")
+                        p.industries__card_title Сфера услуг
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("building")
+                        p.industries__card_title Строительство и&nbsp;недвижимость
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("logistics")
+                        p.industries__card_title Логистика
+                    span.industries__card_arrow
+                        p.industries__card_arrow-text Смотреть кейсы
+                        span.industries__card_arrow-icon
+                            +svg("arrow2")
+                            +svg("arrow2")
+                    a(href="#").industries__card_link
+            li.industries__item
+                .industries__card.not--found
+                    .industries__card_body
+                        span.industries__card_icon
+                            +svg("plus2")
+                        .industries__card_bg
+                        p.industries__card_title Не нашли свою отрасль?
+                    button(data-modal="consultation").industries__card_link
+
+

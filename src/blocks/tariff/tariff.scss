@@ -1,0 +1,563 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// tariff
+.tariff {
+
+  &__title {
+  }
+
+  &__body {
+    margin-top: 40px;
+  }
+
+  &__type-select {
+
+    .segmented {
+      border-radius: 20px;
+      padding: 4px;
+      background-color: $white;
+      border-color: $stroke;
+      box-shadow: none;
+
+      @include tablet {
+        padding: 6px;
+        max-width: 480px;
+      }
+
+      .segmented__thumb {
+        border-radius: 16px;
+        background-color: $blue;
+      }
+
+      .segmented__item {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 1.2;
+        border-radius: 16px;
+        padding: 10px;
+        color: $light-grey;
+
+        @include mobile {
+          font-size: 15px;
+          padding: 12px;
+        }
+
+        @include tablet {
+          font-size: 20px;
+          padding: 13px 24px;
+        }
+
+        &.active {
+          background-color: $blue;
+          color: $white;
+
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+  }
+
+  &__type-data {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__items {
+
+    [data-value="box-bitrix"] & {
+      .swiper-slide {
+        flex: 1 0 calc(90% - 12px);
+
+        @include mobile {
+          flex: 1 0 calc(75% - 12px);
+        }
+
+        @include tablet {
+          flex: 1 0 calc(50% - 12px);
+        }
+
+        @include semiDesktop {
+          flex: 0 0 400px;
+        }
+      }
+    }
+
+    [data-value="cloud-bitrix"] & {
+      .swiper-slide {
+        flex: 0 0 calc(25% - 12px);
+
+        .tariff-card {
+
+          .tariff-card__price--crossed {
+            display: inline-block;
+            text-decoration: none;
+            padding-block: 6px;
+            margin-bottom: 4px;
+          }
+
+          &.dark,
+          &.blue {
+            .tariff-card__users,
+            .tariff-card__memory {
+              background: rgba(255, 255, 255, 0.1);
+
+              p, span {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.swiper {
+      overflow: unset;
+      padding-block: 20px 30px;
+
+      .swiper-wrapper {
+        align-items: stretch;
+      }
+
+      .swiper-slide {
+        height: auto;
+      }
+    }
+  }
+
+}
+
+.tariff-card {
+  position: relative;
+  border: 1px solid $stroke;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 13px 0 rgba(7, 37, 97, 0.05);
+  background: $white;
+  height: 100%;
+
+  @include tablet {
+    padding: 30px;
+  }
+
+  &.dark {
+    background-color: $backimages;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background-image: url("../../images/gradients/tariff-card.png");
+      background-repeat: no-repeat;
+      background-position: top left;
+      background-size: cover;
+    }
+  }
+
+  &.blue {
+    background: $blue;
+  }
+
+  &__label {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    border-radius: 30px;
+    padding-block: 5px;
+    padding-inline: 20px;
+    background: $orange;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.53846;
+    color: $white;
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 12px;
+
+    @include tablet {
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.24;
+    color: $black;
+
+    @include tablet {
+      font-size: 26px;
+    }
+
+    .dark &,
+    .blue & {
+      color: $white;
+    }
+  }
+
+  &__description {
+    margin-top: -10px;
+    font-weight: 450;
+    font-size: 13px;
+    line-height: 1.24;
+    color: $grey-blue;
+    padding-bottom: 10px;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    .dark &,
+    .blue & {
+      color: $line-grey;
+    }
+  }
+
+  &__values {
+    min-height: 78px;
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+
+    @include tablet {
+      min-height: 84px;
+      gap: 10px;
+    }
+  }
+
+  &__segmented {
+    min-height: 78px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 6px;
+    background: rgba(255, 255, 255, 0.12);
+
+    @include tablet {
+      min-height: 84px;
+      padding: 10px 14px;
+    }
+
+    p {
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $white;
+    }
+
+    .segmented {
+      border-radius: 12px;
+      padding: 2px;
+
+      @include tablet {
+        border-radius: 16px;
+      }
+
+      &__item {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.1;
+        color: $light-grey;
+
+        @include tablet {
+          font-size: 20px;
+        }
+
+        &.active {
+          color: $white;
+        }
+      }
+
+      &__thumb {
+        background: $blue;
+        border-radius: 12px;
+
+        @include tablet {
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+
+  &__users {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    border-radius: 16px;
+    padding-block: 10px;
+    padding-inline: 14px;
+    background-color: $background;
+
+    p {
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $grey-blue;
+
+      @include tablet {
+        font-size: 14px;
+      }
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 1.1;
+      color: $black;
+
+      @include tablet {
+        font-size: 26px;
+      }
+    }
+
+    &.select {
+      position: relative;
+      cursor: pointer;
+
+      & > span {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      &.active {
+        .select__icon {
+          svg {
+            transform: rotate(0);
+          }
+        }
+
+        .select__list {
+          box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.25);
+          max-height: 170px;
+          opacity: 1;
+          visibility: visible;
+
+          @include tablet {
+            max-height: 190px;
+          }
+        }
+      }
+
+      .select__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 12px;
+          height: 8px;
+          transform: rotate(180deg);
+        }
+      }
+
+      .select__list {
+        position: absolute;
+        top: 86px;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        opacity: 0;
+        z-index: 1;
+        visibility: hidden;
+        border-radius: 10px;
+        box-shadow: none;
+        background: $white;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: $orange transparent;
+        transition: all $transition-default;
+
+        li {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 1.1;
+          color: $text;
+          padding: 8px 12px;
+          transition: background-color $transition-default;
+
+          &.selected,
+          &:hover {
+            background-color: $background;
+          }
+        }
+      }
+    }
+  }
+
+  &__memory {
+    flex: 1;
+    border-radius: 16px;
+    padding-block: 10px;
+    padding-inline: 14px;
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+
+    p {
+      font-weight: 450;
+      font-size: 13px;
+      line-height: 1.4;
+      color: $grey-blue;
+      white-space: nowrap;
+
+      @include tablet {
+        font-size: 14px;
+      }
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.1;
+      color: $black;
+      white-space: nowrap;
+
+      @include tablet {
+        font-size: 26px;
+      }
+    }
+
+    &--item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 64px;
+
+    &--top {
+    }
+
+    &--bottom {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+
+      @include tablet {
+        margin-top: auto;
+      }
+    }
+
+    &--crossed {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.24;
+      text-decoration: line-through;
+      color: $grey-blue;
+
+      @include tablet {
+        font-size: 18px;
+      }
+
+      .dark &,
+      .blue & {
+        color: $white;
+      }
+    }
+
+    &--current {
+      position: relative;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.24;
+      color: $black;
+      padding-block: 6px;
+
+      @include tablet {
+        font-size: 24px;
+      }
+
+      .dark &,
+      .blue & {
+        color: $white;
+      }
+    }
+
+    &--discount {
+      border-radius: 10px;
+      padding-block: 2px;
+      padding-inline: 8px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.53846;
+      color: $white;
+      background: $orange;
+
+      @include tablet {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__options {
+
+    li {
+      list-style-type: inherit;
+      list-style-position: inside;
+      list-style-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.53125 7.28761L5.30796 11.0643L13.0198 3.35156' stroke='%231E65F4' stroke-width='2.5' stroke-miterlimit='10' /%3E%3C/svg%3E");
+      padding-block: 4px;
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 1.24;
+      color: $text;
+
+      .dark & {
+        color: $white;
+      }
+
+      &.disabled {
+        color: $light-grey;
+        list-style-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 8L11 8' stroke='%23ABB1C3' stroke-width='2' /%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  &__buy-button {
+    margin-top: auto;
+    width: 100%;
+
+    .blue & {
+      background-color: $white;
+      color: $blue;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}

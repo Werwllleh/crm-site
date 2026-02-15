@@ -1,0 +1,25 @@
+mixin orderAnalysis()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('faces-row', true, true)
+    //order-analysis
+    .order-analysis&attributes(attributes)
+        .order-analysis__body
+            .order-analysis__left
+                .order-analysis__left_body
+                    p.order-analysis__title
+                        | Проведем бесплатно анализ бизес-процессов,
+                        |
+                        span выявим узкие места и разработаем кастомное решение для улучшения показтелей
+                    button(data-modal="analysis").btn.primary.lg.order-analysis__button Заказать анализ процессов
+            .order-analysis__right
+                .order-analysis__right_body
+                    .order-analysis__right_top
+                        +facesRow()
+                        p.order-analysis__description Наши специалисты готовы ответить на все вопросы и предложить несколько решений вашей задачи на основе тщательного анализа проблематики бизнеса.
+                    .order-analysis__right_bottom
+                        p Скачайте пример анализа,  чтобы понимать, что вы получите
+                        a(href="#", download).btn.primary.download.lg
+                            +svg("download")
+                            span Скачать пример анализа

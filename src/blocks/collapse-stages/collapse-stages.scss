@@ -1,0 +1,215 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// collapse-stages
+.collapse-stages {
+
+  &__body {}
+
+  &__items {}
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid $line-grey;
+    padding-block: 20px 30px;
+    display: grid;
+    grid-template-areas: "index title button"
+                          ". info .";
+    align-items: center;
+    grid-template-columns: 30px calc(100% - 30px - 20px - 46px) auto;
+    gap: 0 10px;
+
+    @include tablet {
+      padding-block: 30px;
+      grid-template-columns: 150px calc(100% - 150px - 40px - 46px) auto;
+    }
+
+    @include desktop {
+      gap: 0 40px;
+      padding-block: 40px;
+      grid-template-columns: 340px calc(100% - 340px - 80px - 46px) auto;
+    }
+
+    &--index {
+      grid-area: index;
+
+      span {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: $light-grey;
+        transition: color $transition-default;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include desktop {
+          font-size: 20px;
+        }
+      }
+    }
+
+    &--title {
+      grid-area: title;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.24;
+      letter-spacing: -0.02em;
+      color: $black;
+      transition: color $transition-default;
+
+      @include tablet {
+        font-size: 24px;
+      }
+
+      @include desktop {
+        font-size: 30px;
+      }
+    }
+
+    &--button {
+      grid-area: button;
+
+      button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+        background-color: $background;
+        overflow: hidden;
+        transition: max-height $transition-default;
+
+        @include desktop {
+          width: 46px;
+          height: 46px;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: 0;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          margin: auto;
+          transform: scale(0);
+          background-color: $blue;
+          border-radius: 100%;
+          transition: transform $transition-default;
+        }
+
+        span {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-height: 100%;
+          transition: max-height $transition-default;
+          overflow: hidden;
+        }
+
+        svg {
+          width: 11px;
+          height: 11px;
+          color: $grey-blue;
+
+          @include desktop {
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+    }
+
+    &--list {
+      padding-top: 15px;
+      padding-left: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      overflow: hidden;
+
+      li {
+        list-style-type: disc;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.4;
+        color: $text;
+
+        @include tablet {
+          font-size: 18px;
+        }
+
+        @include desktop {
+          font-size: 20px;
+        }
+
+        &::marker {
+          color: $blue;
+        }
+
+      }
+    }
+
+    &--text {
+      font-weight: 450;
+      font-size: 18px;
+      line-height: 1.4;
+      color: $text;
+    }
+
+    &--info {
+      grid-area: info;
+      max-height: 0;
+      visibility: hidden;
+      opacity: 0;
+      overflow: hidden;
+      pointer-events: none;
+      transition: max-height $transition-default, visibility $transition-default, opacity $transition-default;
+    }
+
+    &:hover,
+    &.active {
+      .collapse-stages__item--index {
+        span {
+          color: $color-link;
+        }
+      }
+      .collapse-stages__item--title {
+        color: $color-link;
+      }
+    }
+
+    &.active {
+      .collapse-stages__item--button {
+        button {
+
+          span {
+            max-height: 2px;
+          }
+
+          &::after {
+            transform: scale(1);
+          }
+
+          svg {
+            color: $white;
+          }
+        }
+      }
+      .collapse-stages__item--info {
+        pointer-events: all;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

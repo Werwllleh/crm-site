@@ -1,0 +1,51 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// tags
+.tags {
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 12px 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+
+    @include desktop {
+      flex-wrap: wrap;
+      padding-bottom: 0;
+    }
+
+    li {
+
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 9px 16px;
+    background: $background;
+    border: 1px solid transparent;
+    overflow: hidden;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 1.57;
+    color: $grey-blue;
+    white-space: nowrap;
+    transition: color $transition-default, background-color $transition-default, border-color $transition-default;
+
+    &:hover {
+      border-color: $grey-blue;
+    }
+
+    &.active {
+      border-color: $grey-blue;
+      background-color: $white;
+      color: $text;
+    }
+  }
+}
