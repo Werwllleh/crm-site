@@ -1,0 +1,28 @@
+.date {
+  display: flex;
+  align-items: center;
+  font-weight: 450;
+  font-size: 13px;
+  line-height: 1.24;
+  color: #6C789C;
+}
+@media (min-width: 768px) {
+  .date {
+    font-size: 14px;
+  }
+}
+.date span {
+  position: relative;
+  display: block;
+}
+.date span:not(:last-child) {
+  padding-right: 12px;
+}
+.date span:not(:last-child)::before {
+  content: "/";
+  position: absolute;
+  top: 0;
+  right: 3px;
+  bottom: 0;
+  margin: auto 0;
+}

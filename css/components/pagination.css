@@ -1,0 +1,122 @@
+.pagination__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pagination__show-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 13px 40px;
+  gap: 0 10px;
+  background-color: #EBEEF5;
+  transition: background-color 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .pagination__show-more {
+    padding: 14px 40px;
+  }
+}
+.pagination__show-more span {
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 1;
+  color: #3F4162;
+}
+@media (min-width: 768px) {
+  .pagination__show-more span {
+    font-size: 18px;
+  }
+}
+.pagination__show-more .icon {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 16px;
+  color: #3F4162;
+  transition: transform 0.3s ease-in-out;
+}
+.pagination__show-more:hover {
+  background-color: #F6F8FE;
+}
+.pagination__show-more:hover .icon {
+  animation: rotate-forward 0.3s linear forwards;
+}
+.pagination__show-more:not(:hover) .icon {
+  animation: rotate-back 0.3s linear forwards;
+}
+.pagination__pages {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0 4px;
+}
+@media (min-width: 768px) {
+  .pagination__pages {
+    margin-top: 30px;
+  }
+}
+.pagination__page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 5px;
+  width: 42px;
+  height: 40px;
+  transition: background-color 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .pagination__page {
+    width: 44px;
+    height: 44px;
+  }
+}
+.pagination__page:not(.active):hover {
+  background: #F6F8FE;
+}
+.pagination__page:not(.active):hover span {
+  color: #3F4162;
+}
+.pagination__page.active {
+  background-color: #1E65F4;
+}
+.pagination__page.active span {
+  color: #ffffff;
+}
+.pagination__page span {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.375;
+  color: #ABB1C3;
+  transition: color 0.3s ease-in-out;
+}
+.pagination__page.disable {
+  pointer-events: none;
+}
+
+@keyframes rotate-forward {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotate-back {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

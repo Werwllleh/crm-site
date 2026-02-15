@@ -1,0 +1,16 @@
+.no-time-read {
+  padding: 32px 12px 32px 32px;
+  background-color: #F6F8FE;
+  border-radius: 16px;
+}
+.no-time-read p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.24;
+  color: #191B36;
+}
+.no-time-read button {
+  margin-top: 24px;
+  width: 100%;
+  color: #ffffff;
+}

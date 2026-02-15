@@ -1,0 +1,22 @@
+.companies-swipers__body {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (min-width: 992px) {
+  .companies-swipers__body {
+    gap: 60px;
+  }
+}
+.companies-swipers__swiper {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.companies-swipers__swiper .swiper .swiper-wrapper {
+  align-items: stretch;
+  transition-timing-function: linear;
+}
+.companies-swipers__swiper .swiper .swiper-slide {
+  width: auto;
+}

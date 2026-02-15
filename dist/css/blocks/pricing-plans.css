@@ -1,0 +1,192 @@
+.pricing-plans__content {
+  margin-top: 60px;
+  padding-bottom: 16px;
+}
+@media (max-width: 900px) {
+  .pricing-plans__content {
+    overflow-x: auto;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.pricing-plans__table-wrap {
+  border-radius: 20px;
+  border: 1px solid #F6F8FE;
+}
+@media (max-width: 900px) {
+  .pricing-plans__table-wrap {
+    margin-inline: 16px;
+    min-width: 850px;
+  }
+}
+.pricing-plans__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  height: auto;
+  border-radius: 20px;
+}
+.pricing-plans__table svg {
+  width: 14px;
+  height: 14px;
+}
+.pricing-plans__table thead tr th {
+  background: #F6F8FE;
+}
+.pricing-plans__table thead tr th:not(:last-child) {
+  border-right: 1px solid #EBEEF5;
+}
+.pricing-plans__table thead tr th:nth-child(1) {
+  border-radius: 20px 0 0 0;
+  width: 27.6%;
+  overflow: hidden;
+}
+.pricing-plans__table thead tr th:nth-child(2) {
+  width: 18.1%;
+}
+.pricing-plans__table thead tr th:nth-child(3) {
+  width: 18.1%;
+}
+.pricing-plans__table thead tr th:nth-child(4) {
+  width: 18.1%;
+}
+.pricing-plans__table thead tr th:nth-child(5) {
+  border-radius: 0 20px 0 0;
+  width: 18.1%;
+}
+.pricing-plans__table thead tr span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 15px;
+  padding-inline: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.24;
+  text-align: center;
+  color: #191B36;
+}
+@media (min-width: 1024px) {
+  .pricing-plans__table thead tr span {
+    padding-block: 20px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 1440px) {
+  .pricing-plans__table thead tr span {
+    font-size: 22px;
+    padding-block: 30px;
+    padding-inline: 20px;
+  }
+}
+.pricing-plans__table tbody {
+  background-color: #ffffff;
+}
+.pricing-plans__table tbody tr:not(:last-child) {
+  border-bottom: 1px solid #EBEEF5;
+}
+.pricing-plans__table tbody tr td {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.24;
+  color: #3F4162;
+}
+.pricing-plans__table tbody tr td:first-child {
+  text-align: left;
+  padding: 12px 10px;
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 1.24;
+  color: #3F4162;
+}
+@media (min-width: 1024px) {
+  .pricing-plans__table tbody tr td:first-child {
+    padding: 14px;
+  }
+}
+@media (min-width: 1440px) {
+  .pricing-plans__table tbody tr td:first-child {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+}
+.pricing-plans__table tbody tr td:not(:last-child) {
+  border-right: 1px solid #EBEEF5;
+}
+.pricing-plans__table tfoot {
+  border-radius: 0 0 20px 20px;
+}
+.pricing-plans__table tfoot tr:nth-child(1) td {
+  background-color: #F6F8FE;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #191B36;
+  padding: 10px;
+  white-space: nowrap;
+}
+@media (min-width: 1024px) {
+  .pricing-plans__table tfoot tr:nth-child(1) td {
+    padding: 15px 15px 10px 15px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 1440px) {
+  .pricing-plans__table tfoot tr:nth-child(1) td {
+    font-size: 22px;
+    padding: 20px 20px 10px 20px;
+  }
+}
+.pricing-plans__table tfoot tr:nth-child(1) td:not(:first-child) {
+  text-align: center;
+}
+.pricing-plans__table tfoot tr:nth-child(1) td:not(:last-child) {
+  border-right: 1px solid #EBEEF5;
+}
+.pricing-plans__table tfoot tr:nth-child(2) td {
+  background-color: #F6F8FE;
+  text-align: center;
+  padding-block: 12px 27px;
+  padding-inline: 5px;
+}
+.pricing-plans__table tfoot tr:nth-child(2) td:first-child {
+  border-radius: 0 0 0 20px;
+}
+.pricing-plans__table tfoot tr:nth-child(2) td:last-child {
+  border-radius: 0 0 20px 0;
+}
+.pricing-plans__table tfoot tr:nth-child(2) td:not(:last-child) {
+  border-right: 1px solid #EBEEF5;
+}
+.pricing-plans__table tfoot button {
+  width: 100%;
+}
+.pricing-plans__table thead,
+.pricing-plans__table tfoot {
+  position: sticky;
+}
+@media (max-width: 900px) {
+  .pricing-plans__table thead,
+  .pricing-plans__table tfoot {
+    position: relative;
+  }
+}
+.pricing-plans__table thead {
+  top: 64px;
+}
+@media (max-width: 900px) {
+  .pricing-plans__table thead {
+    top: auto;
+  }
+}
+.pricing-plans__table tfoot {
+  bottom: 0;
+}
+@media (max-width: 900px) {
+  .pricing-plans__table tfoot {
+    bottom: auto;
+  }
+}

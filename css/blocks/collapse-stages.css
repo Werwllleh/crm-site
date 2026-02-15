@@ -1,0 +1,183 @@
+.collapse-stages__item {
+  cursor: pointer;
+  position: relative;
+  border-bottom: 1px solid #D9DDE9;
+  padding-block: 20px 30px;
+  display: grid;
+  grid-template-areas: "index title button" ". info .";
+  align-items: center;
+  grid-template-columns: 30px calc(100% - 30px - 20px - 46px) auto;
+  gap: 0 10px;
+}
+@media (min-width: 768px) {
+  .collapse-stages__item {
+    padding-block: 30px;
+    grid-template-columns: 150px calc(100% - 150px - 40px - 46px) auto;
+  }
+}
+@media (min-width: 1024px) {
+  .collapse-stages__item {
+    gap: 0 40px;
+    padding-block: 40px;
+    grid-template-columns: 340px calc(100% - 340px - 80px - 46px) auto;
+  }
+}
+.collapse-stages__item--index {
+  grid-area: index;
+}
+.collapse-stages__item--index span {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ABB1C3;
+  transition: color 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .collapse-stages__item--index span {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .collapse-stages__item--index span {
+    font-size: 20px;
+  }
+}
+.collapse-stages__item--title {
+  grid-area: title;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.24;
+  letter-spacing: -0.02em;
+  color: #191B36;
+  transition: color 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .collapse-stages__item--title {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .collapse-stages__item--title {
+    font-size: 30px;
+  }
+}
+.collapse-stages__item--button {
+  grid-area: button;
+}
+.collapse-stages__item--button button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: #F6F8FE;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+@media (min-width: 1024px) {
+  .collapse-stages__item--button button {
+    width: 46px;
+    height: 46px;
+  }
+}
+.collapse-stages__item--button button::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  transform: scale(0);
+  background-color: #1E65F4;
+  border-radius: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+.collapse-stages__item--button button span {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 100%;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
+.collapse-stages__item--button button svg {
+  width: 11px;
+  height: 11px;
+  color: #6C789C;
+}
+@media (min-width: 1024px) {
+  .collapse-stages__item--button button svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+.collapse-stages__item--list {
+  padding-top: 15px;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow: hidden;
+}
+.collapse-stages__item--list li {
+  list-style-type: disc;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #3F4162;
+}
+@media (min-width: 768px) {
+  .collapse-stages__item--list li {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  .collapse-stages__item--list li {
+    font-size: 20px;
+  }
+}
+.collapse-stages__item--list li::marker {
+  color: #1E65F4;
+}
+.collapse-stages__item--text {
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #3F4162;
+}
+.collapse-stages__item--info {
+  grid-area: info;
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 0.3s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.collapse-stages__item:hover .collapse-stages__item--index span, .collapse-stages__item.active .collapse-stages__item--index span {
+  color: #1352d1;
+}
+.collapse-stages__item:hover .collapse-stages__item--title, .collapse-stages__item.active .collapse-stages__item--title {
+  color: #1352d1;
+}
+.collapse-stages__item.active .collapse-stages__item--button button span {
+  max-height: 2px;
+}
+.collapse-stages__item.active .collapse-stages__item--button button::after {
+  transform: scale(1);
+}
+.collapse-stages__item.active .collapse-stages__item--button button svg {
+  color: #ffffff;
+}
+.collapse-stages__item.active .collapse-stages__item--info {
+  pointer-events: all;
+  visibility: visible;
+  opacity: 1;
+}

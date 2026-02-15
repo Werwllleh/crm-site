@@ -1,0 +1,30 @@
+.views {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.views svg {
+  width: 15px;
+  height: 15px;
+  color: #6C789C;
+}
+.views__value {
+  font-weight: 450;
+  font-size: 13px;
+  line-height: 1;
+  color: #6C789C;
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .views__value {
+    font-size: 14px;
+  }
+}
+.views__value span {
+  display: none;
+}
+@media (min-width: 992px) {
+  .views__value span {
+    display: inline;
+  }
+}

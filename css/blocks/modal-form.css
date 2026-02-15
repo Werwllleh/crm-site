@@ -1,0 +1,25 @@
+.modal-form__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #191B36;
+  max-width: 570px;
+}
+@media (min-width: 768px) {
+  .modal-form__title {
+    font-size: 34px;
+  }
+}
+@media (min-width: 1024px) {
+  .modal-form__title {
+    font-size: 44px;
+  }
+}
+.modal-form__description {
+  margin-top: 16px;
+  font-weight: 450;
+}
+.modal-form__content {
+  margin-top: 40px;
+}

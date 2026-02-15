@@ -1,0 +1,48 @@
+.form-consultation__form_top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+@media (min-width: 1024px) {
+  .form-consultation__form_top {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+.form-consultation__form_middle {
+  margin-top: 30px;
+}
+.form-consultation__form_footer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 992px) {
+  .form-consultation__form_footer {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  .form-consultation__form_footer {
+    margin-top: 40px;
+    gap: 40px;
+  }
+}
+.form-consultation__form_field:last-child {
+  grid-column: 1/-1;
+}
+.form-consultation__deadlines_title {
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 1.24;
+  color: #3F4162;
+}
+.form-consultation__deadlines_values {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7px 16px;
+}
