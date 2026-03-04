@@ -1,0 +1,25 @@
+.ui {
+  padding-block: 40px;
+}
+.ui .ui-block__title {
+  font-size: 24px;
+  font-weight: 400;
+}
+.ui .ui-block__content {
+  margin-top: 10px;
+}
+.ui .ui-block__content.buttons {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .ui .ui-block__content.buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.ui .ui-block + .ui-block {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #D9DDE9;
+}

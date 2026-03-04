@@ -1,0 +1,13 @@
+.see-also__swiper {
+  margin-top: 50px;
+}
+.see-also__swiper .swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.see-also__swiper .swiper .swiper-slide {
+  width: auto;
+  height: auto;
+}
+.see-also__swiper .swiper .swiper-slide .case-card {
+  height: 100%;
+}

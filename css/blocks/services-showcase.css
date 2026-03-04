@@ -1,0 +1,189 @@
+.services-showcase__items {
+  margin-top: 30px;
+}
+.services-showcase__item {
+  position: relative;
+  border-bottom: 1px solid #D9DDE9;
+  padding-block: 20px 30px;
+  display: grid;
+  grid-template-areas: "index link icon" ". text ." ". list .";
+  grid-template-columns: 30px calc(100% - 30px - 20px - 34px) auto;
+  gap: 0 10px;
+}
+@media (min-width: 768px) {
+  .services-showcase__item {
+    padding-block: 30px;
+    grid-template-columns: 150px calc(100% - 150px - 40px - 34px) auto;
+  }
+}
+@media (min-width: 1024px) {
+  .services-showcase__item {
+    gap: 0 40px;
+    padding-block: 40px;
+    grid-template-columns: 340px calc(100% - 340px - 80px - 34px) auto;
+  }
+}
+.services-showcase__item--index {
+  grid-area: index;
+}
+.services-showcase__item--index span {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ABB1C3;
+}
+@media (min-width: 768px) {
+  .services-showcase__item--index span {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .services-showcase__item--index span {
+    font-size: 20px;
+  }
+}
+.services-showcase__item--icon {
+  grid-area: icon;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .services-showcase__item--icon {
+    width: 34px;
+    height: 34px;
+  }
+}
+.services-showcase__item--icon svg {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.services-showcase__item--icon svg:nth-child(1) {
+  color: #D9DDE9;
+  transform: translate(0, 0);
+}
+.services-showcase__item--icon svg:nth-child(2) {
+  color: #1E65F4;
+  transform: translate(-200%, 200%);
+}
+@media (min-width: 1024px) {
+  .services-showcase__item--icon svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+.services-showcase__item--link {
+  grid-area: link;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.24;
+  letter-spacing: -0.02em;
+  color: #191B36;
+}
+@media (min-width: 768px) {
+  .services-showcase__item--link {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .services-showcase__item--link {
+    font-size: 30px;
+  }
+}
+.services-showcase__item--list {
+  grid-area: list;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .services-showcase__item--list {
+    margin-top: 16px;
+  }
+}
+.services-showcase__item--text {
+  margin-top: 16px;
+  grid-area: text;
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #3F4162;
+  max-width: 720px;
+}
+@media (min-width: 768px) {
+  .services-showcase__item--text {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .services-showcase__item--text {
+    margin-top: 24px;
+    font-size: 18px;
+  }
+}
+.services-showcase__item--sublink {
+  position: relative;
+  display: inline-block;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.24;
+  color: #3F4162;
+  padding-block: 8px;
+}
+.services-showcase__item--sublink > p {
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .services-showcase__item--sublink {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  .services-showcase__item--sublink {
+    font-size: 20px;
+  }
+}
+.services-showcase__item--sublink > span {
+  position: absolute;
+  top: 9px;
+  left: -30px;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.services-showcase__item--sublink > span svg {
+  width: 18px;
+  height: 9px;
+}
+.services-showcase__item--sublink:hover {
+  color: #1352d1;
+}
+.services-showcase__item--sublink:hover > p {
+  transform: translateX(5px);
+}
+.services-showcase__item--sublink:hover > span {
+  opacity: 1;
+  visibility: visible;
+}
+.services-showcase__item:hover .services-showcase__item--icon svg:nth-child(1) {
+  transform: translate(200%, -200%);
+}
+.services-showcase__item:hover .services-showcase__item--icon svg:nth-child(2) {
+  transform: translate(0, 0);
+}
+.services-showcase__item:hover .services-showcase__item--link {
+  color: #1352d1;
+}

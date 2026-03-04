@@ -1,0 +1,62 @@
+.exp-numbers .swiper {
+  overflow: unset;
+}
+.exp-numbers .swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.exp-numbers .swiper .swiper-slide {
+  width: auto;
+}
+.exp-numbers__card {
+  position: relative;
+  border: 8px solid #F6F8FE;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 330px;
+  width: 305px;
+}
+@media (min-width: 768px) {
+  .exp-numbers__card {
+    min-height: 410px;
+    width: 355px;
+    padding: 24px;
+  }
+}
+.exp-numbers__card--title {
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #1E65F4;
+}
+@media (min-width: 768px) {
+  .exp-numbers__card--title {
+    font-size: 70px;
+  }
+}
+.exp-numbers__card--text {
+  margin-top: 10px;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.24;
+  color: #3F4162;
+}
+@media (min-width: 768px) {
+  .exp-numbers__card--text {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}
+.exp-numbers__card--img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 200px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .exp-numbers__card--img {
+    max-width: 250px;
+  }
+}

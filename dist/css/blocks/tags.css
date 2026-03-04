@@ -1,0 +1,38 @@
+.tags__list {
+  display: flex;
+  flex-direction: row;
+  gap: 12px 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+@media (min-width: 1024px) {
+  .tags__list {
+    flex-wrap: wrap;
+    padding-bottom: 0;
+  }
+}
+.tags__item {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 9px 16px;
+  background: #F6F8FE;
+  border: 1px solid transparent;
+  overflow: hidden;
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 1.57;
+  color: #6C789C;
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.tags__item:hover {
+  border-color: #6C789C;
+}
+.tags__item.active {
+  border-color: #6C789C;
+  background-color: #ffffff;
+  color: #3F4162;
+}
