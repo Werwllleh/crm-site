@@ -3426,3 +3426,15 @@ button.show-more {
     }
   }
 }
+
+.contacts {
+  padding-bottom: 30px;
+
+  &__breadcrumbs {}
+
+  &__title {}
+
+  &__breadcrumbs + &__title {
+    margin-top: 20px;
+  }
+}

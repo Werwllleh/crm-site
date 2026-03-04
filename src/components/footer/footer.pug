@@ -1,4 +1,4 @@
-mixin footer()
+mixin footer(type)
     //- регистрация
     //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
     //- +regComponent('component-name', true, true)
@@ -11,12 +11,21 @@ mixin footer()
             .footer__form_container.container
                 .footer__form_grid
                     .footer__form_left
-                        p.h3.footer__form_title Предложим цифровое решение
-                            span  для улучшения показателей вашего бизнеса
+                        if type === 'contacts'
+                            p.h3.footer__form_title Расскажем о продуктах
+                                |
+                                |
+                                span и этапах работ
+                        else
+                            p.h3.footer__form_title Предложим цифровое решение
+                                span  для улучшения показателей вашего бизнеса
                         p.footer__form_text Оставьте заявку и получите индивидуальное решение по вашей задаче с этапами и сроками производства
                     .footer__form_right
                         .footer-form
-                            +formConsultation(true)
+                            if type === 'contacts'
+                                +formConsultation(true, 'contacts')
+                            else
+                                +formConsultation(true)
         .footer__content
             .footer-block
                 .footer-block__top

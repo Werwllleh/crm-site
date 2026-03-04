@@ -43,6 +43,7 @@
       bottom: 0;
       margin: auto 0;
       z-index: 1;
+      transition: all $transition-default;
     }
 
     .prev {
@@ -51,6 +52,11 @@
 
     .next {
       right: 0;
+    }
+
+    .swiper-button-disabled {
+      opacity: 0;
+      visibility: hidden;
     }
 
     .swiper {
@@ -66,17 +72,22 @@
       }
 
       .swiper-slide {
+        pointer-events: auto !important;
+        z-index: 2;
 
         @include tablet {
           width: auto;
         }
+
+        img, a {
+          pointer-events: auto !important;
+          z-index: 3;
+          position: relative;
+        }
       }
 
       .swiper-slide-active {
-        .certificates-slider__item img {
-          transform: scale(1.1);
-          //max-width: 368px;
-        }
+        z-index: 4;
       }
     }
   }

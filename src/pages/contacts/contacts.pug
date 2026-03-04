@@ -1,0 +1,17 @@
+extends ../../app/pug/layouts/contacts.pug
+
+append vars
+  - title = "Контакты"
+  - description = "Описание страницы контакты"
+
+append content
+    +regPage('contacts')
+    +regComponent('breadcrumbs', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    .contacts
+        .contacts__breadcrumbs
+            +breadcrumbs(['Главная', 'Контакты'])
+        h1.h1.contacts__title
+            | Контакты

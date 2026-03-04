@@ -24,7 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }*/
 
     new Swiper(certificatesSwiper, {
-      centeredSlides: true,
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 0,
+        scale: 0.9,
+        slideShadows: false,
+      },
 
       breakpoints: {
         320: {
@@ -38,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         768: {
           slidesPerView: "auto",
           spaceBetween: 86,
-          loop: true
         }
       },
 
@@ -46,6 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         el: '.certificates-slider__swiper .swiper-pagination',
         clickable: true,
       },
+
+      watchSlidesProgress: true,
 
       navigation: {
         nextEl: '.certificates-slider__swiper .next',

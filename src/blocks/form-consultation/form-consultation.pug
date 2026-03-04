@@ -1,4 +1,4 @@
-mixin formConsultation(borderless)
+mixin formConsultation(borderless, type)
     //- регистрация
     //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
     //- +regComponent('component-name', true, true)
@@ -9,13 +9,30 @@ mixin formConsultation(borderless)
     //form-consultation
     .form-consultation&attributes(attributes)
         .form-consultation__body
+            if type === 'contacts'
+              p.form-consultation__title Меня интересует:
             form(data-form="consultation").form-consultation__form
                 fieldset.form-consultation__form_fieldset
+                    if type === 'contacts'
+                        .form-consultation__types
+                            +radio("type", "HR порталы")
+                            +radio("type", "ERP системы")
+                            +radio("type", "CRM системы")
+                            +radio("type", "Корпоративные порталы")
+                            +radio("type", "Документооборот")
+                            +radio("type", "Личные кабинеты")
+                            +radio("type", "E-commerce")
                     .form-consultation__form_top
-                        .form-consultation__form_field
-                            +input('name', 'Ваше имя*', 'Некорректное имя')(class=`${borderless ? 'borderless' : ''}`)
-                        .form-consultation__form_field
-                            +input('company', 'Компания', '')(class=`${borderless ? 'borderless' : ''}`)
+                        if type === 'contacts'
+                            .form-consultation__form_field
+                                +input('company', 'Компания', '')(class=`${borderless ? 'borderless' : ''}`)
+                            .form-consultation__form_field
+                                +input('name', 'Ваше имя*', 'Некорректное имя')(class=`${borderless ? 'borderless' : ''}`)
+                        else
+                            .form-consultation__form_field
+                                +input('name', 'Ваше имя*', 'Некорректное имя')(class=`${borderless ? 'borderless' : ''}`)
+                            .form-consultation__form_field
+                                +input('company', 'Компания', '')(class=`${borderless ? 'borderless' : ''}`)
                         .form-consultation__form_field
                             +input('phone', 'Телефон*', 'Некорректный номер', 'input--phone', 'numeric')(class=`${borderless ? 'borderless' : ''}`)
                         .form-consultation__form_field
@@ -40,15 +57,25 @@ mixin formConsultation(borderless)
                 .form-note
                     label.checkbox
                         input.checkbox__input(type="checkbox", name="policy", value="agree", required)
-                        span.checkbox__label
-                            | Даю
-                            |
-                            a(href="#", target="_blank") согласие
-                            |
-                            | на обработку моих
-                            |
-                            a(href="#", target="_blank") персональных данных
-                            |
-                            | в соответствии
-                            |
-                            a(href="#", target="_blank") с&nbsp;политикой конфиденциальности
+                        if type === 'contacts'
+                            span.checkbox__label
+                                | Даю
+                                |
+                                a(href="#", target="_blank") согласие
+                                |
+                                | на обработку моих
+                                |
+                                a(href="#", target="_blank") персональных данных
+                        else
+                            span.checkbox__label
+                                | Даю
+                                |
+                                a(href="#", target="_blank") согласие
+                                |
+                                | на обработку моих
+                                |
+                                a(href="#", target="_blank") персональных данных
+                                |
+                                | в соответствии
+                                |
+                                a(href="#", target="_blank") с&nbsp;политикой конфиденциальности
