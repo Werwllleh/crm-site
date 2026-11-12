@@ -1,0 +1,136 @@
+.case-card {
+  position: relative;
+  padding: 22px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #ffffff;
+  width: 345px;
+  min-height: 340px;
+}
+@media (min-width: 768px) {
+  .case-card {
+    padding: 30px;
+    width: 480px;
+    min-height: 500px;
+  }
+}
+.case-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border: 1px solid #EBEEF5;
+  border-radius: 16px;
+  transition: border-width 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.case-card:hover::before {
+  border-width: 8px;
+  border-color: #F6F8FF;
+}
+.case-card:hover .case-card__icon svg:nth-child(1) {
+  transform: translate(200%, -200%);
+}
+.case-card:hover .case-card__icon svg:nth-child(2) {
+  transform: translate(0, 0);
+}
+.case-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 100%;
+}
+.case-card__logo {
+  display: flex;
+  height: 55px;
+}
+@media (min-width: 768px) {
+  .case-card__logo {
+    height: 70px;
+  }
+}
+.case-card__logo img {
+  max-width: 180px;
+  max-height: 55px;
+  object-fit: contain;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .case-card__logo img {
+    max-width: 254px;
+    max-height: 70px;
+  }
+}
+.case-card__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.24;
+  color: #191B36;
+  max-width: 360px;
+}
+@media (min-width: 768px) {
+  .case-card__title {
+    font-size: 26px;
+  }
+}
+.case-card__tags {
+  margin-top: auto;
+}
+.case-card__tags_list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.case-card__tags span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 450;
+  font-size: 12px;
+  line-height: 1.57;
+  color: #6C789C;
+  border-radius: 10px;
+  padding: 5px 12px;
+  background-color: #F6F8FE;
+}
+@media (min-width: 768px) {
+  .case-card__tags span {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+}
+.case-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.case-card__icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  z-index: 1;
+  overflow: hidden;
+}
+.case-card__icon svg {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  flex: 0 0 auto;
+  width: 19px;
+  height: 19px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.case-card__icon svg:nth-child(1) {
+  color: #D9DDE9;
+  transform: translate(0, 0);
+}
+.case-card__icon svg:nth-child(2) {
+  color: #1E65F4;
+  transform: translate(-200%, 200%);
+}

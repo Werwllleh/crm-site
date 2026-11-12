@@ -1,0 +1,128 @@
+.form-demo-request {
+  border: 8px solid #F6F8FE;
+  border-radius: 20px;
+  padding: 22px;
+}
+@media (min-width: 768px) {
+  .form-demo-request {
+    padding: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .form-demo-request {
+    padding: 40px;
+  }
+}
+.form-demo-request__top {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas: "images" "description";
+  align-items: flex-start;
+  gap: 10px;
+}
+@media (min-width: 992px) {
+  .form-demo-request__top {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "description images";
+  }
+}
+.form-demo-request__description {
+  grid-area: description;
+}
+.form-demo-request__text {
+  margin-top: 30px;
+}
+.form-demo-request__images {
+  grid-area: images;
+  position: relative;
+  max-width: 150px;
+  max-height: 150px;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 992px) {
+  .form-demo-request__images {
+    max-width: 170px;
+    max-height: 170px;
+  }
+}
+.form-demo-request__images_gif {
+  border-radius: 100%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.form-demo-request__images_manager {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 100%;
+  width: 56px;
+  height: 56px;
+}
+.form-demo-request__bottom {
+  margin-top: 30px;
+}
+@media (min-width: 992px) {
+  .form-demo-request__bottom {
+    margin-top: 60px;
+  }
+}
+.form-demo-request__form_top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+@media (min-width: 1250px) {
+  .form-demo-request__form_top {
+    grid-template-columns: 1fr 1fr auto;
+  }
+}
+.form-demo-request__form_bottom {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 16px;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .form-demo-request__form_bottom {
+    grid-template-columns: 0.55fr 1fr;
+    gap: 20px;
+  }
+}
+.form-demo-request__form_bottom .checkbox .checkbox__label {
+  white-space: nowrap;
+  font-size: 15px;
+}
+.form-demo-request__form_bottom .checkbox .checkbox__label::before {
+  width: 18px;
+  height: 18px;
+}
+@media (min-width: 768px) {
+  .form-demo-request__form_bottom .checkbox .checkbox__label {
+    font-size: 18px;
+  }
+  .form-demo-request__form_bottom .checkbox .checkbox__label::before {
+    width: 20px;
+    height: 20px;
+  }
+}
+.form-demo-request__note {
+  font-size: 11px;
+  text-align: left;
+  color: #ABB1C3;
+}
+.form-demo-request__note a {
+  color: #6C789C;
+}
+.form-demo-request__note a:hover {
+  color: #1E65F4;
+}
+@media (min-width: 768px) {
+  .form-demo-request__note {
+    font-size: 14px;
+    text-align: right;
+  }
+}

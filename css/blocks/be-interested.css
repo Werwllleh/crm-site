@@ -1,0 +1,20 @@
+.be-interested__swiper {
+  margin-top: 30px;
+}
+.be-interested__swiper .swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.be-interested__swiper .swiper .swiper-slide {
+  width: auto;
+  height: auto;
+}
+.be-interested__swiper .swiper .swiper-slide .material-card {
+  height: 100%;
+  max-width: 270px;
+}
+.be-interested__swiper .swiper .swiper-slide .material-card .material-card__image {
+  height: 182px;
+}
+.be-interested__swiper .swiper .swiper-slide .material-card .material-card__tags {
+  display: none;
+}

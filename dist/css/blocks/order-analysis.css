@@ -1,0 +1,125 @@
+.order-analysis {
+  border-radius: 20px;
+  border: 6px solid #F6F8FE;
+  background-color: #F6F8FE;
+}
+@media (min-width: 992px) {
+  .order-analysis {
+    border-width: 8px;
+    background-color: transparent;
+  }
+}
+.order-analysis__body {
+  display: grid;
+  grid-template-columns: auto;
+  align-items: stretch;
+}
+@media (min-width: 992px) {
+  .order-analysis__body {
+    grid-template-columns: 1fr 0.8fr;
+  }
+}
+@media (min-width: 1440px) {
+  .order-analysis__body {
+    grid-template-columns: 1fr 0.6fr;
+  }
+}
+.order-analysis__left {
+  padding: 30px 22px;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+@media (min-width: 992px) {
+  .order-analysis__left {
+    padding: 40px;
+    background-color: transparent;
+  }
+}
+.order-analysis__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #191B36;
+}
+@media (min-width: 1024px) {
+  .order-analysis__title {
+    font-size: 34px;
+  }
+}
+@media (min-width: 1440px) {
+  .order-analysis__title {
+    font-size: 44px;
+  }
+}
+.order-analysis__title span {
+  color: #ABB1C3;
+}
+.order-analysis__description {
+  margin-top: 16px;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.26;
+  color: #191B36;
+}
+@media (min-width: 992px) {
+  .order-analysis__description {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+}
+.order-analysis__button {
+  margin-top: 60px;
+}
+@media (min-width: 992px) {
+  .order-analysis__button {
+    margin-top: 200px;
+  }
+}
+.order-analysis__right {
+  padding: 30px 22px;
+  background-color: #F6F8FE;
+}
+@media (min-width: 992px) {
+  .order-analysis__right {
+    padding: 40px;
+  }
+}
+.order-analysis__right_body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 60px;
+}
+@media (min-width: 992px) {
+  .order-analysis__right_body {
+    gap: 10px;
+  }
+}
+.order-analysis__right_top {
+  max-width: 412px;
+}
+.order-analysis__right_bottom {
+  margin-top: auto;
+  max-width: 300px;
+}
+.order-analysis__right_bottom p {
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 1.26;
+  color: #ABB1C3;
+}
+@media (min-width: 992px) {
+  .order-analysis__right_bottom p {
+    font-size: 16px;
+  }
+}
+.order-analysis__right_bottom a.btn {
+  border-color: #1E65F4;
+}
+.order-analysis__right_bottom a.btn .icon {
+  color: #1E65F4;
+}
+.order-analysis__right_bottom a.btn span {
+  color: #1E65F4;
+}

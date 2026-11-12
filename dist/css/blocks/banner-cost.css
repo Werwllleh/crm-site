@@ -1,0 +1,147 @@
+.banner-cost {
+  position: relative;
+  background: #0c1323;
+  border-radius: 20px;
+  padding: 30px 22px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .banner-cost {
+    padding: 40px 40px 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .banner-cost {
+    padding: 44px 110px 50px 40px;
+  }
+}
+.banner-cost__body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "header" "values" "button";
+  gap: 30px 0;
+}
+@media (min-width: 768px) {
+  .banner-cost__body {
+    gap: 60px 50px;
+    grid-template-columns: auto auto;
+    grid-template-areas: "header header" "values button";
+  }
+}
+@media (min-width: 992px) {
+  .banner-cost__body {
+    grid-template-columns: auto auto auto;
+    grid-template-areas: "image header header" "image values button";
+    gap: 80px 50px;
+  }
+}
+.banner-cost__image {
+  display: none;
+  grid-area: image;
+  max-width: 213px;
+  height: auto;
+}
+@media (min-width: 992px) {
+  .banner-cost__image {
+    display: block;
+  }
+}
+.banner-cost__image img {
+  pointer-events: none;
+}
+.banner-cost__header {
+  grid-area: header;
+}
+.banner-cost__title {
+  color: #ffffff;
+  font-size: 30px;
+}
+@media (min-width: 768px) {
+  .banner-cost__title {
+    font-size: 34px;
+  }
+}
+@media (min-width: 1024px) {
+  .banner-cost__title {
+    font-size: 44px;
+  }
+}
+.banner-cost__text {
+  margin-top: 10px;
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 1.24;
+  color: rgba(255, 255, 255, 0.7);
+}
+@media (min-width: 768px) {
+  .banner-cost__text {
+    font-size: 18px;
+  }
+}
+.banner-cost__values {
+  grid-area: values;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  .banner-cost__values {
+    margin-top: 0;
+  }
+}
+@media (min-width: 992px) {
+  .banner-cost__values {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.banner-cost__values li {
+  flex: 1 1 calc(33% - 20px);
+}
+.banner-cost__values li span {
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.24;
+  color: #fff;
+}
+.banner-cost__values li p {
+  margin-top: 8px;
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 1.24;
+  color: rgba(255, 255, 255, 0.7);
+}
+.banner-cost__button {
+  grid-area: button;
+  margin-top: auto;
+}
+@media (min-width: 992px) {
+  .banner-cost__button {
+    margin-top: 0;
+  }
+  .banner-cost__button button {
+    width: auto;
+  }
+}
+.banner-cost__button button {
+  width: 100%;
+}
+.banner-cost__blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.banner-cost__blur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

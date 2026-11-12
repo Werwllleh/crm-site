@@ -1,0 +1,61 @@
+.animate-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.animate-button:hover {
+  background-color: #1E65F4;
+}
+.animate-button:hover .icon {
+  color: #ffffff;
+}
+.animate-button:hover .icon:nth-child(2) {
+  opacity: 1;
+  visibility: visible;
+}
+.animate-button .icon {
+  width: 15px;
+  height: 14px;
+  color: #6C789C;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.animate-button .icon:nth-child(2) {
+  color: #ffffff;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+.animate-button.prev .icon:nth-child(1) {
+  transform: translateX(0);
+}
+.animate-button.prev .icon:nth-child(2) {
+  transform: translateX(250%);
+}
+.animate-button.prev:hover .icon:nth-child(1) {
+  transform: translateX(-250%);
+}
+.animate-button.prev:hover .icon:nth-child(2) {
+  transform: translateX(0);
+}
+.animate-button.next .icon:nth-child(1) {
+  transform: translateX(0);
+}
+.animate-button.next .icon:nth-child(2) {
+  transform: translateX(-250%);
+}
+.animate-button.next:hover .icon:nth-child(1) {
+  transform: translateX(250%);
+}
+.animate-button.next:hover .icon:nth-child(2) {
+  transform: translateX(0);
+}

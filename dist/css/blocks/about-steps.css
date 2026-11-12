@@ -1,0 +1,127 @@
+.about-steps__list {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+  align-items: stretch;
+  gap: 20px;
+}
+@media (min-width: 550px) {
+  .about-steps__list {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+  }
+}
+@media (min-width: 1024px) {
+  .about-steps__list {
+    margin-top: 60px;
+  }
+}
+.about-steps__item {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 40px 0;
+  border: 8px solid #F6F8FE;
+  background-color: #ffffff;
+  padding: 22px;
+  border-radius: 16px;
+  min-height: 260px;
+}
+@media (min-width: 768px) {
+  .about-steps__item {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .about-steps__item {
+    padding: 40px;
+    min-height: 360px;
+  }
+}
+.about-steps__item:not(.plug) {
+  grid-template-areas: "title index" "text text";
+  grid-template-columns: 1fr auto;
+  gap: 50px 20px;
+  background-color: #F6F8FE;
+}
+@media (min-width: 1024px) {
+  .about-steps__item:not(.plug) {
+    gap: 60px 20px;
+  }
+}
+.about-steps__item:not(.plug) .about-steps__item--title {
+  grid-area: title;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.24;
+  color: #191B36;
+  max-width: 320px;
+}
+@media (min-width: 768px) {
+  .about-steps__item:not(.plug) .about-steps__item--title {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1024px) {
+  .about-steps__item:not(.plug) .about-steps__item--title {
+    font-size: 26px;
+  }
+}
+.about-steps__item:not(.plug) .about-steps__item--index {
+  grid-area: index;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: right;
+  color: #1E65F4;
+  margin-top: -10px;
+  margin-right: -10px;
+}
+@media (min-width: 768px) {
+  .about-steps__item:not(.plug) .about-steps__item--index {
+    font-size: 38px;
+  }
+}
+@media (min-width: 1024px) {
+  .about-steps__item:not(.plug) .about-steps__item--index {
+    font-size: 54px;
+  }
+}
+.about-steps__item:not(.plug) .about-steps__item--text {
+  grid-area: text;
+  margin-top: auto;
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #3F4162;
+  max-width: 360px;
+}
+@media (min-width: 768px) {
+  .about-steps__item:not(.plug) .about-steps__item--text {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .about-steps__item:not(.plug) .about-steps__item--text {
+    font-size: 18px;
+  }
+}
+.about-steps__item.plug .about-steps__item--title {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #1E65F4;
+}
+@media (min-width: 768px) {
+  .about-steps__item.plug .about-steps__item--title {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .about-steps__item.plug .about-steps__item--title {
+    font-size: 30px;
+  }
+}
+.about-steps__item.plug .about-steps__item--footer {
+  margin-top: auto;
+}

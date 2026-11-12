@@ -1,0 +1,63 @@
+.search-team, .quickly-consultation {
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #F6F8FE;
+}
+@media (min-width: 1250px) {
+  .search-team, .quickly-consultation {
+    padding: 32px;
+  }
+}
+.search-team__title, .quickly-consultation__title {
+  margin-top: 16px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.24;
+  color: #191B36;
+}
+@media (min-width: 1250px) {
+  .search-team__title, .quickly-consultation__title {
+    font-size: 24px;
+  }
+}
+.search-team__text, .quickly-consultation__text {
+  margin-top: 14px;
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 1.24;
+  color: #3F4162;
+}
+.search-team button, .quickly-consultation button {
+  margin-top: 60px;
+  width: 100%;
+}
+
+.quickly-consultation__form {
+  margin-top: 60px;
+}
+.quickly-consultation__form .input-field input {
+  background-color: transparent;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+}
+.quickly-consultation__form .input-field .input-field__placeholder {
+  font-size: 16px;
+}
+.quickly-consultation__form button[type=submit] {
+  margin-top: 30px;
+}
+.quickly-consultation__note {
+  margin-top: 20px;
+  display: block;
+  font-weight: 450;
+  font-size: 12px;
+  line-height: 1.24;
+  color: #ABB1C3;
+}
+.quickly-consultation__note a {
+  color: #3F4162;
+}
+.quickly-consultation__agree .checkbox__label {
+  font-size: 13px;
+}

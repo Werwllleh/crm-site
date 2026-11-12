@@ -1,0 +1,38 @@
+.page-index .page__content {
+  padding-top: 50px;
+}
+.page-index h1 {
+  margin-bottom: 40px;
+}
+.page-index__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.page-index__list li a {
+  position: relative;
+  display: inline-flex;
+  font-weight: 500;
+  font-size: 24px;
+  color: #3F4162;
+  padding-bottom: 5px;
+}
+.page-index__list li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #1352d1;
+  transform: scaleX(0);
+  transform-origin: right bottom;
+  transition: transform 0.3s ease-in-out;
+}
+.page-index__list li a:hover {
+  color: #1352d1;
+}
+.page-index__list li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left bottom;
+}

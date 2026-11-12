@@ -1,0 +1,302 @@
+.page-main__header .header .header__body {
+  position: relative;
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .page-main__header .header .header__body {
+    z-index: 2;
+  }
+}
+.page-main__header .header .header__logo,
+.page-main__header .header .select-city,
+.page-main__header .header .header__top-bar_links a,
+.page-main__header .header .header__navbar_item,
+.page-main__header .header .header__navbar_link,
+.page-main__header .header .header__search,
+.page-main__header .header .header__burger,
+.page-main__header .header .header__button-request {
+  position: relative;
+  pointer-events: all;
+}
+@media (min-width: 768px) {
+  .page-main__header .header .header__logo,
+  .page-main__header .header .select-city,
+  .page-main__header .header .header__top-bar_links a,
+  .page-main__header .header .header__navbar_item,
+  .page-main__header .header .header__navbar_link,
+  .page-main__header .header .header__search,
+  .page-main__header .header .header__burger,
+  .page-main__header .header .header__button-request {
+    z-index: 1;
+  }
+}
+@media (max-width: 991.9px) {
+  .page-main__header .header .header-multiblock .header__navbar_link {
+    color: #191B36 !important;
+  }
+}
+.page-main__main {
+  position: relative;
+  min-height: 100vh;
+  background-color: rgb(16, 26, 48);
+  overflow: hidden;
+}
+@media (min-width: 992px) {
+  .page-main__main {
+    min-height: 100vh;
+  }
+}
+@media (min-width: 1250px) {
+  .page-main__main {
+    padding-bottom: 200px;
+  }
+}
+@media (min-width: 1250px) and (min-height: 800px) {
+  .page-main__main {
+    padding-bottom: 400px;
+  }
+}
+@media (min-width: 992px) {
+  .page-main__main_content {
+    margin-top: 50px;
+  }
+}
+.page-main__main_spline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
+  animation: showSplineAnim 1s ease-in-out;
+}
+.page-main__main_spline spline-viewer {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 1024px) {
+  .page-main__main_spline {
+    pointer-events: all;
+  }
+}
+.page-main__content {
+  padding-block: 150px;
+}
+.page-main__section_title {
+  max-width: 1150px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #191B36;
+}
+.page-main__section_title span {
+  color: #ABB1C3;
+}
+.page-main__section_description {
+  margin-top: 30px;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #3F4162;
+}
+@media (min-width: 768px) {
+  .page-main__section_description {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .page-main__section_description {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+}
+.page-main__section_content {
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  .page-main__section_content {
+    margin-top: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .page-main__section_content {
+    margin-top: 60px;
+  }
+}
+.page-main__section + .page-main__section {
+  margin-top: 60px;
+}
+@media (min-width: 768px) {
+  .page-main__section + .page-main__section {
+    margin-top: 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .page-main__section + .page-main__section {
+    margin-top: 200px;
+  }
+}
+.page-main__section.section-seo {
+  max-width: 973px;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .page-main .section-industries .page-main__section_description {
+    display: none;
+  }
+}
+.page-main .section-news {
+  /*&__tags {
+  }
+
+  &__items {
+    margin-top: 30px;
+
+    @include semiDesktop {
+      margin-top: 60px;
+    }
+
+    .first-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: stretch;
+      grid-template-areas:  "a"
+                            "b"
+                            "c";
+      gap: 20px;
+
+      @include mobile {
+        gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+                            "a a"
+                            "b c";
+      }
+
+      @include semiDesktop {
+        gap: 60px 40px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "a b c";
+      }
+
+      @include w1250 {
+        gap: 80px 40px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "a a b c";
+      }
+
+      .material-card {
+        &:nth-child(1) {
+          grid-area: a;
+        }
+
+        &:nth-child(2) {
+          grid-area: b;
+        }
+
+        &:nth-child(3) {
+          grid-area: c;
+        }
+      }
+    }
+
+    .other-row {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: stretch;
+      gap: 20px;
+
+      @include mobile {
+        margin-top: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+
+      @include semiDesktop {
+        margin-top: 60px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px 40px;
+      }
+
+      @include w1250 {
+        margin-top: 80px;
+        gap: 80px 40px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @include laptop {
+
+      }
+    }
+
+    .material-card {
+
+    }
+  }
+
+  &__footer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include semiDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    padding-block: 6px;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 1.375;
+    text-align: center;
+    color: $grey-blue;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      transform: scale(0);
+      background-color: $blue;
+      transform-origin: left bottom;
+      transition: transform $transition-default;
+    }
+
+    &:hover {
+      color: $blue;
+
+      &::before {
+        transform: scale(1);
+      }
+
+    }
+  }*/
+}
+.page-main .section-news .page-main__section_title {
+  max-width: 850px;
+}
+
+@keyframes showSplineAnim {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+spline-viewer {
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}

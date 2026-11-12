@@ -1,0 +1,107 @@
+.logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 25px 25px;
+  overflow: hidden;
+  max-height: 90px;
+  transition: max-height 0.3s ease-in-out;
+}
+.logo.simple {
+  padding-block: 0;
+  padding-inline: 0;
+}
+.logo.simple .logo__label span {
+  color: #ffffff;
+}
+.logo.simple .logo__slogan,
+.logo.simple .logo__bg {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .logo {
+    padding-inline: 15px;
+    padding-block: 18px 38px;
+  }
+}
+@media (min-width: 1440px) {
+  .logo {
+    padding-block: 64px;
+    max-height: 180px;
+  }
+}
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px 0;
+}
+.logo__label {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.logo__label span {
+  font-size: 20px;
+  color: #191B36;
+  transition: color 0.3s ease-in-out;
+}
+@media (min-width: 1024px) {
+  .logo__label span {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1250px) {
+  .logo__label span {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1440px) {
+  .logo__label span {
+    font-size: 29px;
+  }
+}
+.logo__label span:nth-child(1) {
+  font-weight: 400;
+}
+.logo__label span:nth-child(2) {
+  font-weight: 600;
+}
+.logo__slogan {
+  font-weight: 500;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: #ABB1C3;
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out;
+}
+@media (min-width: 1024px) {
+  .logo__slogan {
+    font-size: 10px;
+  }
+}
+@media (min-width: 1250px) {
+  .logo__slogan {
+    font-size: 12px;
+  }
+}
+.logo__bg {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.logo__bg .icon {
+  width: 100%;
+  height: 100%;
+  color: #191B36;
+  opacity: 0.04;
+}
+.logo__link {
+  position: absolute;
+  inset: 0;
+}

@@ -1,0 +1,74 @@
+.banner-crm {
+  position: relative;
+  border-radius: 16px;
+  padding: 22px;
+  background-color: #101a30;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .banner-crm {
+    padding: 40px 50px;
+  }
+}
+.banner-crm__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .banner-crm__body {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+.banner-crm__description {
+  max-width: 460px;
+}
+.banner-crm__title {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.24;
+  color: #ffffff;
+}
+.banner-crm__text {
+  margin-top: 20px;
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+.banner-crm__button {
+  display: flex;
+  margin-top: 40px;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .banner-crm__button {
+    margin-inline: 0;
+  }
+}
+.banner-crm__image {
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+  min-width: 100px;
+  width: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .banner-crm__image {
+    max-width: 270px;
+    min-width: 150px;
+  }
+}
+.banner-crm__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

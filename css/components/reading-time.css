@@ -1,0 +1,22 @@
+.reading-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.reading-time svg {
+  width: 15px;
+  height: 15px;
+  color: #6C789C;
+}
+.reading-time__value {
+  font-weight: 450;
+  font-size: 13px;
+  line-height: 1;
+  color: #6C789C;
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .reading-time__value {
+    font-size: 14px;
+  }
+}

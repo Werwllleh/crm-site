@@ -1,0 +1,46 @@
+.chapters__title {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.24;
+  color: #191B36;
+}
+.chapters__list {
+  margin-top: 20px;
+}
+.chapters__item {
+  padding-block: 12px;
+}
+.chapters__item::marker {
+  display: none;
+}
+.chapters__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.375;
+  color: #6C789C;
+  padding-left: 12px;
+}
+.chapters__link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  opacity: 0;
+  background-color: #1E65F4;
+  transition: opacity 0.3s ease-in-out;
+}
+.chapters__link:hover {
+  color: #1352d1;
+}
+.chapters__link.active {
+  color: #1352d1;
+}
+.chapters__link.active::before {
+  opacity: 1;
+}
